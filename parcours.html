@@ -32,23 +32,21 @@
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
     .page-header {
-      padding: 8rem 2rem 4rem;
-      text-align: center;
+      padding: 8rem 2rem 4rem; text-align: center;
       background: linear-gradient(160deg, #0f1630 0%, #1a2350 60%, #0f1a3a 100%);
       position: relative;
     }
     .page-header::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
+      background-size: 60px 60px; pointer-events: none;
     }
     .page-header p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); position: relative; }
 
-    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 
+    /* TIMELINE */
     .timeline-item { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: flex-start; }
     .timeline-tag { min-width: 90px; text-align: center; }
     .tag-label { background: var(--gold); color: #0f1630; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 4px; letter-spacing: 0.05em; display: inline-block; }
@@ -58,31 +56,67 @@
     .timeline-body p { font-size: 0.88rem; color: var(--white-muted); line-height: 1.8; }
     .timeline-body p strong { color: var(--gold); }
 
-    .entreprises { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem; margin-top: 2rem; }
+    /* SAE SECTION */
+    .sae-section { margin-top: 1.5rem; }
+    .sae-section-title { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-bottom: 1rem; }
+
+    .sae-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+    .sae-card {
+      background: rgba(26,35,80,0.5);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .sae-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-3px); }
+
+    .sae-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .sae-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .sae-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.5rem; }
+    .sae-card p { font-size: 0.78rem; color: var(--white-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .sae-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .sae-tag {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    /* ENTREPRISES */
+    .entreprises { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem; margin-top: 3rem; }
     .entreprises-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: center; margin-bottom: 2rem; }
     .entreprises-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; }
-
     .entreprise-card { text-align: center; }
-    .entreprise-card .logo-box {
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 12px 20px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 160px;
-      height: 80px;
-    }
-    .entreprise-card .logo-box img {
-      max-width: 130px;
-      max-height: 55px;
-      object-fit: contain;
-    }
+    .entreprise-card .logo-box { background: #ffffff; border-radius: 8px; padding: 12px 20px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; width: 160px; height: 80px; }
+    .entreprise-card .logo-box img { max-width: 130px; max-height: 55px; object-fit: contain; }
     .entreprise-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); }
     .entreprise-card p { font-size: 0.72rem; color: var(--white-muted); margin-top: 4px; }
     .entreprise-card span { font-size: 0.68rem; color: var(--gold); display: block; margin-top: 2px; }
     .arrow { color: rgba(201,168,76,0.4); font-size: 1.5rem; }
+
+    /* CAS REELS */
+    .cas-reels { margin-top: 3rem; background: rgba(26,35,80,0.4); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 2rem; text-align: center; }
+    .cas-reels p.label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .cas-reels h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.5rem; }
+    .cas-reels p.sub { font-size: 0.82rem; color: var(--white-muted); margin-bottom: 1.2rem; line-height: 1.7; }
+    .ce-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .ce-tag { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); border-radius: 20px; padding: 4px 14px; font-size: 0.72rem; font-weight: 600; color: var(--gold); }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(201,168,76,0.15); font-size: 0.72rem; color: var(--white-muted); letter-spacing: 0.08em; }
   </style>
@@ -107,6 +141,7 @@
 
   <div class="content">
 
+    <!-- BUT 1 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 1</div>
@@ -114,10 +149,51 @@
       </div>
       <div class="timeline-body">
         <h3>Découverte et fondamentaux</h3>
-        <p>Découverte des notions comptables et de gestion · SAE boucherie · Projet tutoré <strong>GEA'Jouets</strong> · Stage <strong>AdduXi</strong></p>
+        <p>Première immersion dans le monde professionnel · Découverte des notions comptables et de gestion · Stage <strong>AdduXi</strong></p>
+
+        <div class="sae-section">
+          <p class="sae-section-title">SAE & Projets</p>
+          <div class="sae-grid">
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 1 · 2023-2024</div>
+              <div class="sae-icon">🥩</div>
+              <h4>Boucherie-Charcuterie</h4>
+              <p>La Maison Rivet · Ambérieu · Étude de l'environnement de l'entreprise, de son marché et de sa performance financière</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Analyse financière</span>
+                <span class="sae-tag">Environnement</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 1 · 2023-2024</div>
+              <div class="sae-icon">🎁</div>
+              <h4>Projet tutoré GEA'Jouets</h4>
+              <p>Collecte de jouets · Croix-Rouge · Radio Scoop · Century 21 · Keolis Bourg-en-Bresse</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Gestion de projet</span>
+                <span class="sae-tag">Communication</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 1 · 2023-2024</div>
+              <div class="sae-icon">🏦</div>
+              <h4>Stage AdduXi</h4>
+              <p>DEB · TVA · Lettrage · Gestion clients et fournisseurs · Première immersion comptable</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Comptabilité</span>
+                <span class="sae-tag">Immersion pro</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- BUT 2 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 2</div>
@@ -125,10 +201,62 @@
       </div>
       <div class="timeline-body">
         <h3>Montée en compétences</h3>
-        <p>SAE Banque de France · Création d'entreprise et statistiques · Projet tutoré <strong>GEA'Jouets</strong> · Stage <strong>Motelec Industrie</strong></p>
+        <p>Autonomie croissante · Missions comptables approfondies · Stage <strong>Motelec · Groupe SOGAP</strong></p>
+
+        <div class="sae-section">
+          <p class="sae-section-title">SAE & Projets</p>
+          <div class="sae-grid">
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 2 · 2024-2025</div>
+              <div class="sae-icon">📈</div>
+              <h4>SAÉ Banque de France</h4>
+              <p>Banque de France · Bourg-en-Bresse · Diagnostic financier complet pour convaincre la Banque de France d'accorder un prêt</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Diagnostic financier</span>
+                <span class="sae-tag">Argumentation</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 2 · 2024-2025</div>
+              <div class="sae-icon">🏪</div>
+              <h4>SAÉ Création d'entreprise · Lyon</h4>
+              <p>Plan stratégique et financier pour rendre une entreprise viable sur le marché lyonnais</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Plan financier</span>
+                <span class="sae-tag">Stratégie</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 2 · 2024-2025</div>
+              <div class="sae-icon">📊</div>
+              <h4>SAÉ Statistiques · Hôtel Griffon d'Or</h4>
+              <p>Hôtel Griffon d'Or · Bourg-en-Bresse · Étude de marché · Analyse concurrentielle pour fidéliser les clients</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Statistiques</span>
+                <span class="sae-tag">Étude de marché</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 2 · 2024-2025</div>
+              <div class="sae-icon">🏭</div>
+              <h4>Stage Motelec · Groupe SOGAP</h4>
+              <p>Comptabilité multi-filiales · Motelec, Billet Fournier, FIT, Firem, TSM, Isabelle, Technic+…</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Multi-entités</span>
+                <span class="sae-tag">Autonomie</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- BUT 3 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 3</div>
@@ -136,7 +264,61 @@
       </div>
       <div class="timeline-body">
         <h3>Expertise et vision stratégique</h3>
-        <p>SAE reprise d'entreprise · Accompagnement du développement · Travaux cas concret entreprise · Alternance <strong>Tecmaplast</strong></p>
+        <p>Vision globale · Missions en totale autonomie · Alternance <strong>Tecmaplast</strong></p>
+
+        <div class="sae-section">
+          <p class="sae-section-title">SAE & Projets</p>
+          <div class="sae-grid">
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 3 · 2025-2026</div>
+              <div class="sae-icon">👟</div>
+              <h4>SAÉ Reprise d'entreprise · SCIADO</h4>
+              <p>Business game · Choix stratégiques pour développer un commerce de chaussures</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Stratégie</span>
+                <span class="sae-tag">Décision</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 3 · 2025-2026</div>
+              <div class="sae-icon">📉</div>
+              <h4>SAÉ Développement · IPAJE</h4>
+              <p>Business game · Développement d'une entreprise de Choose · Vision long terme</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Développement</span>
+                <span class="sae-tag">Management</span>
+              </div>
+            </div>
+
+            <div class="sae-card">
+              <div class="sae-badge">BUT 3 · 2025-2026</div>
+              <div class="sae-icon">🏢</div>
+              <h4>Alternance Tecmaplast</h4>
+              <p>Trésorerie · Clôtures comptables · Fin d'exercice · Notes de frais · DEB · TVA</p>
+              <div class="sae-tags">
+                <span class="sae-tag">Expertise comptable</span>
+                <span class="sae-tag">Annuelle</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAS REELS -->
+    <div class="cas-reels">
+      <p class="label">3 ans · 1 trajectoire</p>
+      <h3>Des cas réels, des compétences prouvées</h3>
+      <p class="sub">Total Energies · Novartis · Géant Casino · Carrefour · Cogeci · BNP Paribas…</p>
+      <div class="ce-tags">
+        <span class="ce-tag">CE1 ✓</span>
+        <span class="ce-tag">CE2 ✓</span>
+        <span class="ce-tag">CE3 ✓</span>
+        <span class="ce-tag">CE4 ✓</span>
+        <span class="ce-tag">CE5 ✓</span>
       </div>
     </div>
 
