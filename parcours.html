@@ -58,11 +58,9 @@
     .timeline-body p { font-size: 0.88rem; color: var(--white-muted); line-height: 1.8; }
     .timeline-body p strong { color: var(--gold); }
 
-    .section-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .section-heading { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 2.5rem; }
-
     .entreprises { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem; margin-top: 2rem; }
-    .entreprises-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+    .entreprises-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: center; margin-bottom: 2rem; }
+    .entreprises-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; }
     .entreprise-card { text-align: center; }
     .entreprise-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); }
     .entreprise-card p { font-size: 0.72rem; color: var(--white-muted); margin-top: 4px; }
@@ -75,8 +73,10 @@
 <body>
 
   <nav>
-    <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="parcours.html">Parcours</a></li>
+    <a href="index.html" class="nav-logo">M. Hasanovic</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="parcours.html" class="active">Parcours</a></li>
       <li><a href="competences.html">Compétences</a></li>
       <li><a href="experiences.html">Expériences</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -124,7 +124,7 @@
     </div>
 
     <div class="entreprises">
-      <p class="section-title">Mes entreprises</p>
+      <p class="entreprises-title">Mes entreprises</p>
       <div class="entreprises-grid">
 
         <div class="entreprise-card">
