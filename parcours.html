@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcours – Mélina Hasanovic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy-dark: #0f1630;
+      --navy: #1a2350;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --white-soft: rgba(255,255,255,0.85);
+      --white-muted: rgba(255,255,255,0.55);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; background-color: var(--navy-dark); color: var(--white); min-height: 100vh; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,22,48,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 0 3rem; display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .page-header {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(160deg, #0f1630 0%, #1a2350 60%, #0f1a3a 100%);
+      position: relative;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .page-header p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); position: relative; }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    .timeline-item { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: flex-start; }
+    .timeline-tag { min-width: 90px; text-align: center; }
+    .tag-label { background: var(--gold); color: #0f1630; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 4px; letter-spacing: 0.05em; display: inline-block; }
+    .tag-year { font-size: 0.72rem; color: var(--white-muted); margin-top: 6px; }
+    .timeline-body { flex: 1; border-left: 2px solid rgba(201,168,76,0.3); padding-left: 2rem; }
+    .timeline-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; }
+    .timeline-body p { font-size: 0.88rem; color: var(--white-muted); line-height: 1.8; }
+    .timeline-body p strong { color: var(--gold); }
+
+    .section-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 2.5rem; }
+
+    .entreprises { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem; margin-top: 2rem; }
+    .entreprises-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+    .entreprise-card { text-align: center; }
+    .entreprise-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .entreprise-card p { font-size: 0.72rem; color: var(--white-muted); margin-top: 4px; }
+    .entreprise-card span { font-size: 0.68rem; color: var(--gold); display: block; margin-top: 2px; }
+    .arrow { color: rgba(201,168,76,0.4); font-size: 1.5rem; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(201,168,76,0.15); font-size: 0.72rem; color: var(--white-muted); letter-spacing: 0.08em; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="experiences.html">Expériences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p>3 années</p>
+    <h1>Mon parcours chronologique</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="timeline-item">
+      <div class="timeline-tag">
+        <div class="tag-label">BUT 1</div>
+        <p class="tag-year">2023 – 2024</p>
+      </div>
+      <div class="timeline-body">
+        <h3>Découverte et fondamentaux</h3>
+        <p>Découverte des notions comptables et de gestion · SAE boucherie · Projet tutoré <strong>GEA'Jouets</strong> · Stage <strong>AdduXi</strong></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-tag">
+        <div class="tag-label">BUT 2</div>
+        <p class="tag-year">2024 – 2025</p>
+      </div>
+      <div class="timeline-body">
+        <h3>Montée en compétences</h3>
+        <p>SAE Banque de France · Création d'entreprise et statistiques · Projet tutoré <strong>GEA'Jouets</strong> · Stage <strong>Motelec Industrie</strong></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-tag">
+        <div class="tag-label">BUT 3</div>
+        <p class="tag-year">2025 – 2026</p>
+      </div>
+      <div class="timeline-body">
+        <h3>Expertise et vision stratégique</h3>
+        <p>SAE reprise d'entreprise · Accompagnement du développement · Travaux cas concret entreprise · Alternance <strong>Tecmaplast</strong></p>
+      </div>
+    </div>
+
+    <div class="entreprises">
+      <p class="section-title">Mes entreprises</p>
+      <div class="entreprises-grid">
+
+        <div class="entreprise-card">
+          <h4>AdduXi</h4>
+          <p>BUT 1 · Job étudiant</p>
+          <span>2022 – 2023</span>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="entreprise-card">
+          <h4>Motelec Industrie</h4>
+          <p>BUT 2 · Stage</p>
+          <span>2024 – 2025</span>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="entreprise-card">
+          <h4>Tecmaplast</h4>
+          <p>BUT 3 · Alternance</p>
+          <span>2025 – 2026</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+</body>
+</html>
