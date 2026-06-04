@@ -61,8 +61,25 @@
     .entreprises { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem; margin-top: 2rem; }
     .entreprises-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: center; margin-bottom: 2rem; }
     .entreprises-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; }
+
     .entreprise-card { text-align: center; }
-    .entreprise-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .entreprise-card .logo-box {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 80px;
+    }
+    .entreprise-card .logo-box img {
+      max-width: 130px;
+      max-height: 55px;
+      object-fit: contain;
+    }
+    .entreprise-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); }
     .entreprise-card p { font-size: 0.72rem; color: var(--white-muted); margin-top: 4px; }
     .entreprise-card span { font-size: 0.68rem; color: var(--gold); display: block; margin-top: 2px; }
     .arrow { color: rgba(201,168,76,0.4); font-size: 1.5rem; }
@@ -123,11 +140,15 @@
       </div>
     </div>
 
+    <!-- LOGOS ENTREPRISES -->
     <div class="entreprises">
       <p class="entreprises-title">Mes entreprises</p>
       <div class="entreprises-grid">
 
         <div class="entreprise-card">
+          <div class="logo-box">
+            <img src="logo-addux.png" alt="Logo AdduXi">
+          </div>
           <h4>AdduXi</h4>
           <p>BUT 1 · Job étudiant</p>
           <span>2022 – 2023</span>
@@ -136,6 +157,9 @@
         <div class="arrow">→</div>
 
         <div class="entreprise-card">
+          <div class="logo-box">
+            <img src="logo-motelec.png" alt="Logo Motelec Industrie">
+          </div>
           <h4>Motelec Industrie</h4>
           <p>BUT 2 · Stage</p>
           <span>2024 – 2025</span>
@@ -144,6 +168,9 @@
         <div class="arrow">→</div>
 
         <div class="entreprise-card">
+          <div class="logo-box">
+            <img src="logo-tecmaplast.png" alt="Logo Tecmaplast">
+          </div>
           <h4>Tecmaplast</h4>
           <p>BUT 3 · Alternance</p>
           <span>2025 – 2026</span>
