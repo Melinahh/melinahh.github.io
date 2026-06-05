@@ -363,7 +363,143 @@
 
   </div>
 
-  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+ <!-- LES 5 COMPETENCES -->
+    <div style="margin-top: 4rem; border-top: 1px solid rgba(201,168,76,0.2); padding-top: 3rem;">
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <p style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;">Référentiel BUT GEA</p>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white);">Les 5 compétences</h2>
+          <p style="font-size: 0.7rem; color: var(--white-muted); margin-top: 4px; letter-spacing: 0.08em;">Niveau d'acquisition atteint en BUT 3</p>
+        </div>
+        <div style="font-size: 2.5rem;">⚙️</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
+
+        <div style="background: rgba(245,245,240,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <p style="font-size: 0.68rem; font-weight: 700; color: #4caf50; letter-spacing: 0.1em; margin-bottom: 0.4rem;">UE1</p>
+          <p style="font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem;">Analyser les processus de l'organisation dans son environnement</p>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; overflow: hidden;">
+            <div style="width: 80%; height: 100%; background: #4caf50; border-radius: 10px;"></div>
+          </div>
+        </div>
+
+        <div style="background: rgba(245,245,240,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <p style="font-size: 0.68rem; font-weight: 700; color: #4caf50; letter-spacing: 0.1em; margin-bottom: 0.4rem;">UE2</p>
+          <p style="font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem;">Aide à la prise de décision</p>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; overflow: hidden;">
+            <div style="width: 75%; height: 100%; background: #4caf50; border-radius: 10px;"></div>
+          </div>
+        </div>
+
+        <div style="background: rgba(245,245,240,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <p style="font-size: 0.68rem; font-weight: 700; color: #4caf50; letter-spacing: 0.1em; margin-bottom: 0.4rem;">UE3</p>
+          <p style="font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem;">Piloter les relations avec les parties prenantes de l'organisation</p>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; overflow: hidden;">
+            <div style="width: 70%; height: 100%; background: #4caf50; border-radius: 10px;"></div>
+          </div>
+        </div>
+
+        <div style="background: rgba(245,245,240,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <p style="font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.4rem;">UE4</p>
+          <p style="font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem;">Produire l'information comptable, fiscale et sociale de l'organisation</p>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; overflow: hidden;">
+            <div style="width: 65%; height: 100%; background: var(--gold); border-radius: 10px;"></div>
+          </div>
+        </div>
+
+        <div style="background: rgba(245,245,240,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <p style="font-size: 0.68rem; font-weight: 700; color: #1a3a6b; letter-spacing: 0.1em; margin-bottom: 0.4rem; color: #5b8dee;">UE5</p>
+          <p style="font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.8rem;">Evaluer l'activité de l'organisation</p>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; overflow: hidden;">
+            <div style="width: 75%; height: 100%; background: #5b8dee; border-radius: 10px;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GRAPHIQUE RADAR -->
+      <div style="margin-top: 2rem;">
+        <p style="font-size: 1rem; font-weight: 700; color: #5b8dee; margin-bottom: 2rem;">Progression BUT 1 vs BUT 2 vs BUT 3</p>
+
+        <div style="display: flex; justify-content: center;">
+          <canvas id="radarChart" width="450" height="450"></canvas>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+        <script>
+          const ctx = document.getElementById('radarChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'radar',
+            data: {
+              labels: ['CE1', 'CE2', 'CE3', 'CE4', 'CE5'],
+              datasets: [
+                {
+                  label: 'BUT 1',
+                  data: [25, 20, 20, 25, 20],
+                  borderColor: 'rgba(91,141,238,0.8)',
+                  backgroundColor: 'rgba(91,141,238,0.1)',
+                  borderWidth: 2,
+                  borderDash: [5, 5],
+                  pointBackgroundColor: 'rgba(91,141,238,0.8)',
+                  pointRadius: 4,
+                },
+                {
+                  label: 'BUT 2',
+                  data: [50, 45, 45, 50, 45],
+                  borderColor: 'rgba(26,35,80,1)',
+                  backgroundColor: 'rgba(26,35,80,0.2)',
+                  borderWidth: 2,
+                  pointBackgroundColor: '#1a2350',
+                  pointRadius: 4,
+                },
+                {
+                  label: 'BUT 3',
+                  data: [80, 75, 70, 65, 75],
+                  borderColor: 'rgba(201,168,76,0.9)',
+                  backgroundColor: 'rgba(201,168,76,0.15)',
+                  borderWidth: 2,
+                  pointBackgroundColor: '#c9a84c',
+                  pointRadius: 5,
+                }
+              ]
+            },
+            options: {
+              responsive: false,
+              scales: {
+                r: {
+                  min: 0,
+                  max: 100,
+                  ticks: {
+                    stepSize: 25,
+                    color: 'rgba(255,255,255,0.4)',
+                    font: { size: 10 },
+                    backdropColor: 'transparent'
+                  },
+                  grid: { color: 'rgba(255,255,255,0.1)' },
+                  angleLines: { color: 'rgba(255,255,255,0.1)' },
+                  pointLabels: {
+                    color: 'rgba(255,255,255,0.8)',
+                    font: { size: 13, weight: '600' }
+                  }
+                }
+              },
+              plugins: {
+                legend: {
+                  labels: {
+                    color: 'rgba(255,255,255,0.7)',
+                    font: { size: 12 },
+                    usePointStyle: true
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+
+    </div> <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
 
 </body>
 </html>
