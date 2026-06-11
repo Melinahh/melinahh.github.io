@@ -68,9 +68,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold);
-    }
+    .nav-links a.active { color: var(--gold); }
 
     .hero {
       min-height: 100vh;
@@ -87,8 +85,7 @@
 
     .hero::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(61,43,31,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(61,43,31,0.04) 1px, transparent 1px);
@@ -99,11 +96,9 @@
     .hero::after {
       content: '';
       position: absolute;
-      top: 30%;
-      left: 50%;
+      top: 30%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
@@ -165,14 +160,10 @@
       animation: fadeUp 0.7s 0.2s ease both;
     }
 
-    .hero-title strong {
-      color: var(--marron);
-      font-weight: 600;
-    }
+    .hero-title strong { color: var(--marron); font-weight: 600; }
 
     .hero-divider {
-      width: 60px;
-      height: 2px;
+      width: 60px; height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       margin: 2rem auto;
       position: relative;
@@ -236,10 +227,7 @@
       transition: background 0.2s, transform 0.2s;
     }
 
-    .btn-primary:hover {
-      background: var(--marron-mid);
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { background: var(--marron-mid); transform: translateY(-2px); }
 
     .btn-outline {
       background: transparent;
@@ -257,16 +245,11 @@
       transition: all 0.2s;
     }
 
-    .btn-outline:hover {
-      background: var(--marron);
-      color: var(--sable);
-      transform: translateY(-2px);
-    }
+    .btn-outline:hover { background: var(--marron); color: var(--sable); transform: translateY(-2px); }
 
     .scroll-indicator {
       position: absolute;
-      bottom: 2rem;
-      left: 50%;
+      bottom: 2rem; left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
@@ -280,8 +263,7 @@
     }
 
     .scroll-line {
-      width: 1px;
-      height: 40px;
+      width: 1px; height: 40px;
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: scrollPulse 2s infinite;
     }
@@ -291,7 +273,6 @@
       50% { opacity: 1; }
     }
 
-    /* QUI SUIS-JE */
     .section-quisuisje {
       background: var(--sable-dark);
       padding: 5rem 2rem;
@@ -316,7 +297,22 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       color: var(--marron);
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .iut-logo-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .iut-logo-box img {
+      height: 90px;
+      object-fit: contain;
+      background: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid rgba(61,43,31,0.1);
     }
 
     .citation-box {
@@ -403,10 +399,10 @@
 <body>
 
   <nav>
-   <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px;">
-  <a href="index.html" class="nav-logo">M. Hasanovic</a>
-  <img src="logo-iut.png" alt="IUT Lyon 1" style="height: 28px; object-fit: contain;">
-</div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px;">
+      <a href="index.html" class="nav-logo">M. Hasanovic</a>
+      <img src="logo-iut.png" alt="IUT Lyon 1" style="height: 24px; object-fit: contain;">
+    </div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="./parcours.html">Parcours</a></li>
@@ -468,6 +464,10 @@
 
       <p class="section-tag">Qui suis-je ?</p>
       <h2 class="section-title">Mon identité professionnelle</h2>
+
+      <div class="iut-logo-box">
+        <img src="logo-iut.png" alt="IUT Lyon 1 - l'excellence technologique">
+      </div>
 
       <div class="citation-box">
         <p>« Ces trois années de BUT m'ont permis de construire une identité professionnelle réelle, au contact du terrain.
