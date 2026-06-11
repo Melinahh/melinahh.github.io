@@ -13,14 +13,13 @@
       --marron: #3D2B1F;
       --marron-mid: #6B4C35;
       --gold: #D4A017;
-      --gold-light: #E8C060;
       --terra: #C17B4A;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
 
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: rgba(212,196,174,0.95); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(61,43,31,0.1);
       padding: 0 3rem; display: flex; align-items: center;
@@ -30,32 +29,13 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-
     .dropdown { position: relative; }
-    .dropdown-toggle {
-      cursor: pointer; display: flex; align-items: center; gap: 4px;
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--gold);
-      user-select: none;
-    }
+    .dropdown-toggle { cursor: pointer; display: flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); user-select: none; }
     .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
     .dropdown-toggle.open::after { transform: rotate(180deg); }
-    .dropdown-menu {
-      display: none;
-      position: absolute; top: calc(100% + 10px); left: 50%;
-      transform: translateX(-50%);
-      background: #fff; border: 0.5px solid rgba(61,43,31,0.15);
-      border-radius: 8px; padding: 8px 0; min-width: 280px;
-      box-shadow: 0 4px 20px rgba(61,43,31,0.1); z-index: 200;
-    }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px; padding: 8px 0; min-width: 280px; box-shadow: 0 4px 20px rgba(61,43,31,0.15); z-index: 9999; }
     .dropdown-menu.open { display: block; }
-    .dropdown-menu a {
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 16px; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--marron-mid); text-decoration: none;
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marron-mid); text-decoration: none; transition: background 0.15s, color 0.15s; }
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
@@ -72,40 +52,54 @@
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
     .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; }
 
-    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 
     .intro-box { background: var(--marron); border-radius: 10px; padding: 2rem; text-align: center; margin-bottom: 3rem; }
     .intro-box p { font-size: 0.88rem; color: rgba(237,224,206,0.7); line-height: 1.8; }
     .intro-box strong { color: var(--gold); }
 
-    .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; }
+    /* NOUVELLES CARTES COMPETENCES */
+    .comp-list { display: flex; flex-direction: column; gap: 12px; }
 
-    .comp-card {
-      background: rgba(255,255,255,0.45); border: 1px solid rgba(61,43,31,0.1);
-      border-radius: 12px; padding: 2rem; text-decoration: none; color: var(--marron);
-      transition: transform 0.2s, border-color 0.2s, background 0.2s; display: block;
+    .comp-item {
+      display: flex; align-items: stretch;
+      border-radius: 12px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: transform 0.2s;
     }
-    .comp-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.4); background: rgba(255,255,255,0.65); }
+    .comp-item:hover { transform: translateX(8px); }
 
-    .comp-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .comp-num-circle {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--marron); color: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; flex-shrink: 0;
+    .comp-left {
+      width: 120px; flex-shrink: 0;
+      background: var(--marron);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.5rem 1rem;
     }
-    .comp-card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); line-height: 1.3; }
-    .comp-card-desc { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .comp-ce { font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1; font-family: 'Playfair Display', serif; }
+    .comp-pct { font-size: 12px; color: rgba(237,224,206,0.5); margin-top: 6px; }
 
-    .comp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
-    .comp-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(212,160,23,0.1); color: var(--terra); border: 1px solid rgba(193,123,74,0.25); }
+    .comp-right {
+      flex: 1;
+      background: rgba(255,255,255,0.5);
+      padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column;
+      justify-content: center; position: relative;
+      overflow: hidden;
+    }
 
-    .comp-card-footer { display: flex; justify-content: space-between; align-items: center; }
-    .comp-progress-wrap { flex: 1; margin-right: 1rem; }
-    .comp-progress-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 4px; }
-    .comp-progress-bg { height: 6px; background: rgba(61,43,31,0.1); border-radius: 6px; overflow: hidden; }
-    .comp-progress-fill { height: 100%; background: var(--gold); border-radius: 6px; }
-    .comp-arrow { color: var(--gold); font-size: 1.2rem; }
+    .comp-bg-fill {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      background: var(--gold); opacity: 0.08;
+      transition: width 0.6s ease;
+    }
+
+    .comp-title { font-size: 0.92rem; font-weight: 600; color: var(--marron); position: relative; z-index: 1; line-height: 1.4; margin-bottom: 10px; }
+
+    .comp-bar-row { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+    .comp-bar-bg { flex: 1; height: 4px; background: rgba(61,43,31,0.12); border-radius: 4px; overflow: hidden; }
+    .comp-bar-fill { height: 100%; background: var(--marron); border-radius: 4px; }
+    .comp-arrow { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -119,7 +113,7 @@
       <li><a href="parcours.html">Parcours</a></li>
       <li class="dropdown">
         <span class="dropdown-toggle active" onclick="toggleDropdown(this)">Compétences</span>
-        <div class="dropdown-menu open">
+        <div class="dropdown-menu">
           <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
           <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
           <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
@@ -144,109 +138,80 @@
       <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Cliquez sur une compétence pour découvrir ma progression et mes preuves concrètes.</p>
     </div>
 
-    <div class="comp-grid">
+    <div class="comp-list">
 
-      <a href="competence1.html" class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-num-circle">1</div>
-          <p class="comp-card-title">Analyser les processus de l'organisation dans son environnement</p>
+      <a href="competence1.html" class="comp-item">
+        <div class="comp-left">
+          <div class="comp-ce">CE1</div>
+          <div class="comp-pct">88%</div>
         </div>
-        <div class="comp-tags">
-          <span class="comp-tag">CE1.01</span>
-          <span class="comp-tag">CE1.02</span>
-          <span class="comp-tag">CE1.03</span>
-        </div>
-        <p class="comp-card-desc">Identifier les enjeux socio-économiques, qualifier les types d'organisations et cartographier les parties prenantes.</p>
-        <div class="comp-card-footer">
-          <div class="comp-progress-wrap">
-            <p class="comp-progress-label">Niveau atteint · 88%</p>
-            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:88%;"></div></div>
+        <div class="comp-right">
+          <div class="comp-bg-fill" style="width: 88%;"></div>
+          <p class="comp-title">Analyser les processus de l'organisation dans son environnement</p>
+          <div class="comp-bar-row">
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 88%;"></div></div>
+            <span class="comp-arrow">→</span>
           </div>
-          <span class="comp-arrow">→</span>
         </div>
       </a>
 
-      <a href="competence2.html" class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-num-circle">2</div>
-          <p class="comp-card-title">Aide à la prise de décision</p>
+      <a href="competence2.html" class="comp-item">
+        <div class="comp-left">
+          <div class="comp-ce">CE2</div>
+          <div class="comp-pct">75%</div>
         </div>
-        <div class="comp-tags">
-          <span class="comp-tag">CE2.01</span>
-          <span class="comp-tag">CE2.02</span>
-          <span class="comp-tag">CE2.03</span>
-          <span class="comp-tag">CE2.04</span>
-        </div>
-        <p class="comp-card-desc">Utiliser les systèmes d'information, les outils numériques et interpréter les données pour accompagner la décision.</p>
-        <div class="comp-card-footer">
-          <div class="comp-progress-wrap">
-            <p class="comp-progress-label">Niveau atteint · 75%</p>
-            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:75%;"></div></div>
+        <div class="comp-right">
+          <div class="comp-bg-fill" style="width: 75%;"></div>
+          <p class="comp-title">Aide à la prise de décision</p>
+          <div class="comp-bar-row">
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 75%;"></div></div>
+            <span class="comp-arrow">→</span>
           </div>
-          <span class="comp-arrow">→</span>
         </div>
       </a>
 
-      <a href="competence3.html" class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-num-circle">3</div>
-          <p class="comp-card-title">Piloter les relations avec les parties prenantes de l'organisation</p>
+      <a href="competence3.html" class="comp-item">
+        <div class="comp-left">
+          <div class="comp-ce">CE3</div>
+          <div class="comp-pct">70%</div>
         </div>
-        <div class="comp-tags">
-          <span class="comp-tag">CE3.01</span>
-          <span class="comp-tag">CE3.02</span>
-          <span class="comp-tag">CE3.03</span>
-          <span class="comp-tag">CE3.04</span>
-        </div>
-        <p class="comp-card-desc">Travailler en équipe, communiquer efficacement et contribuer à la gestion collective des parties prenantes.</p>
-        <div class="comp-card-footer">
-          <div class="comp-progress-wrap">
-            <p class="comp-progress-label">Niveau atteint · 70%</p>
-            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:70%;"></div></div>
+        <div class="comp-right">
+          <div class="comp-bg-fill" style="width: 70%;"></div>
+          <p class="comp-title">Piloter les relations avec les parties prenantes de l'organisation</p>
+          <div class="comp-bar-row">
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 70%;"></div></div>
+            <span class="comp-arrow">→</span>
           </div>
-          <span class="comp-arrow">→</span>
         </div>
       </a>
 
-      <a href="competence4.html" class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-num-circle">4</div>
-          <p class="comp-card-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
+      <a href="competence4.html" class="comp-item">
+        <div class="comp-left">
+          <div class="comp-ce">CE4</div>
+          <div class="comp-pct">65%</div>
         </div>
-        <div class="comp-tags">
-          <span class="comp-tag">CE4.01</span>
-          <span class="comp-tag">CE4.02</span>
-          <span class="comp-tag">CE4.03</span>
-          <span class="comp-tag">CE4.04</span>
-        </div>
-        <p class="comp-card-desc">Traiter les opérations comptables, fiscales et sociales en conformité avec les règles professionnelles.</p>
-        <div class="comp-card-footer">
-          <div class="comp-progress-wrap">
-            <p class="comp-progress-label">Niveau atteint · 65%</p>
-            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:65%;"></div></div>
+        <div class="comp-right">
+          <div class="comp-bg-fill" style="width: 65%;"></div>
+          <p class="comp-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
+          <div class="comp-bar-row">
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 65%;"></div></div>
+            <span class="comp-arrow">→</span>
           </div>
-          <span class="comp-arrow">→</span>
         </div>
       </a>
 
-      <a href="competence5.html" class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-num-circle">5</div>
-          <p class="comp-card-title">Evaluer l'activité de l'organisation</p>
+      <a href="competence5.html" class="comp-item">
+        <div class="comp-left">
+          <div class="comp-ce">CE5</div>
+          <div class="comp-pct">75%</div>
         </div>
-        <div class="comp-tags">
-          <span class="comp-tag">CE5.01</span>
-          <span class="comp-tag">CE5.02</span>
-          <span class="comp-tag">CE5.03</span>
-          <span class="comp-tag">CE5.04</span>
-        </div>
-        <p class="comp-card-desc">Identifier les points forts et faibles, réaliser des prévisions et mettre en place une comptabilité analytique.</p>
-        <div class="comp-card-footer">
-          <div class="comp-progress-wrap">
-            <p class="comp-progress-label">Niveau atteint · 75%</p>
-            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:75%;"></div></div>
+        <div class="comp-right">
+          <div class="comp-bg-fill" style="width: 75%;"></div>
+          <p class="comp-title">Evaluer l'activité de l'organisation</p>
+          <div class="comp-bar-row">
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 75%;"></div></div>
+            <span class="comp-arrow">→</span>
           </div>
-          <span class="comp-arrow">→</span>
         </div>
       </a>
 
