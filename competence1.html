@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compétence 1 – Mélina Hasanovic</title>
+  <title>Compétences – Mélina Hasanovic</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,9 +27,37 @@
       justify-content: space-between; height: 60px;
     }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); letter-spacing: 0.05em; text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .dropdown { position: relative; }
+    .dropdown-toggle {
+      cursor: pointer; display: flex; align-items: center; gap: 4px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      user-select: none;
+    }
+    .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
+    .dropdown-toggle.open::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%);
+      background: #fff; border: 0.5px solid rgba(61,43,31,0.15);
+      border-radius: 8px; padding: 8px 0; min-width: 280px;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.1); z-index: 200;
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 16px; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--marron-mid); text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
+    .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
     .page-header {
       padding: 8rem 2rem 4rem; text-align: center;
@@ -41,70 +69,43 @@
       background-size: 60px 60px; pointer-events: none;
     }
     .page-header-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--sable); position: relative; line-height: 1.2; }
-    .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; line-height: 1.7; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
+    .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; }
 
     .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 
-    /* BADGES */
-    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.5rem; justify-content: center; }
-    .badge { font-size: 0.72rem; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
-    .badge-gold { background: rgba(212,160,23,0.15); color: var(--gold); border: 1px solid rgba(212,160,23,0.35); }
-    .badge-green { background: rgba(76,175,80,0.12); color: #2e7d32; border: 1px solid rgba(76,175,80,0.3); }
+    .intro-box { background: var(--marron); border-radius: 10px; padding: 2rem; text-align: center; margin-bottom: 3rem; }
+    .intro-box p { font-size: 0.88rem; color: rgba(237,224,206,0.7); line-height: 1.8; }
+    .intro-box strong { color: var(--gold); }
 
-    /* SECTION LABEL */
-    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 1.2rem; padding-bottom: 8px; border-bottom: 0.5px solid rgba(61,43,31,0.15); }
+    .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; }
 
-    /* COMPOSANTES GRID */
-    .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-    .comp-card { background: rgba(255,255,255,0.45); border: 1px solid rgba(61,43,31,0.1); border-radius: 10px; padding: 1.25rem; transition: transform 0.2s; }
-    .comp-card:hover { transform: translateY(-2px); }
-    .comp-card.featured { border: 2px solid var(--gold); background: rgba(255,255,255,0.6); }
-    .comp-num { font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px; }
-    .comp-title { font-size: 0.9rem; font-weight: 600; color: var(--marron); margin-bottom: 4px; line-height: 1.4; }
-    .comp-sub { font-size: 0.78rem; color: var(--marron-mid); font-style: italic; line-height: 1.4; margin-bottom: 10px; }
-    .comp-status { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(76,175,80,0.12); color: #2e7d32; border: 1px solid rgba(76,175,80,0.3); }
-    .featured-label { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 2px 10px; border-radius: var(--border-radius-md); background: rgba(212,160,23,0.15); color: var(--gold); margin-bottom: 8px; }
+    .comp-card {
+      background: rgba(255,255,255,0.45); border: 1px solid rgba(61,43,31,0.1);
+      border-radius: 12px; padding: 2rem; text-decoration: none; color: var(--marron);
+      transition: transform 0.2s, border-color 0.2s, background 0.2s; display: block;
+    }
+    .comp-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.4); background: rgba(255,255,255,0.65); }
 
-    /* DIVIDER */
-    .divider { height: 1px; background: rgba(61,43,31,0.1); margin: 2.5rem 0; }
+    .comp-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .comp-num-circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--marron); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; flex-shrink: 0;
+    }
+    .comp-card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); line-height: 1.3; }
+    .comp-card-desc { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; margin-bottom: 1.2rem; }
 
-    /* DEVELOPPEMENT */
-    .dev-box { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; }
-    .dev-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marron); margin-bottom: 0.4rem; }
-    .dev-sub { font-size: 0.82rem; color: var(--marron-mid); margin-bottom: 2rem; }
+    .comp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+    .comp-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(212,160,23,0.1); color: var(--terra); border: 1px solid rgba(193,123,74,0.25); }
 
-    /* PROGRESSION */
-    .prog-section { margin-bottom: 2rem; }
-    .prog-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 1rem; }
-    .prog-row { margin-bottom: 1rem; }
-    .prog-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--marron-mid); margin-bottom: 5px; }
-    .prog-labels strong { color: var(--marron); font-weight: 600; }
-    .prog-bg { height: 10px; background: rgba(61,43,31,0.1); border-radius: 10px; overflow: hidden; }
-    .prog-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
-    .prog-but1 { background: #B4B2A9; }
-    .prog-but3 { background: var(--gold); }
-
-    /* CONTEXTES */
-    .contextes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-    .contexte-card { background: rgba(61,43,31,0.05); border-radius: 8px; padding: 1rem 1.25rem; border-left: 3px solid; }
-    .contexte-card.but1 { border-color: #B4B2A9; }
-    .contexte-card.but3 { border-color: var(--gold); }
-    .contexte-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
-    .contexte-card.but1 .contexte-label { color: #888; }
-    .contexte-card.but3 .contexte-label { color: var(--gold); }
-    .contexte-text { font-size: 0.8rem; color: var(--marron-mid); line-height: 1.6; }
-
-    /* REFLEXION */
-    .reflexion { background: var(--marron); border-radius: 8px; padding: 1.5rem 2rem; margin-top: 1.5rem; }
-    .reflexion-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-    .reflexion-text { font-size: 0.9rem; color: rgba(237,224,206,0.85); font-style: italic; line-height: 1.8; }
-    .reflexion-author { font-size: 0.78rem; color: var(--gold); margin-top: 1rem; font-style: normal; }
-
-    /* NAV COMPETENCES */
-    .comp-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; flex-wrap: wrap; gap: 1rem; }
-    .comp-nav a { text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--marron-mid); padding: 8px 16px; border: 1px solid rgba(61,43,31,0.2); border-radius: 4px; transition: all 0.2s; }
-    .comp-nav a:hover { background: var(--marron); color: var(--sable); }
+    .comp-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .comp-progress-wrap { flex: 1; margin-right: 1rem; }
+    .comp-progress-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 4px; }
+    .comp-progress-bg { height: 6px; background: rgba(61,43,31,0.1); border-radius: 6px; overflow: hidden; }
+    .comp-progress-fill { height: 100%; background: var(--gold); border-radius: 6px; }
+    .comp-arrow { color: var(--gold); font-size: 1.2rem; }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -116,117 +117,156 @@
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="parcours.html">Parcours</a></li>
-      <li><a href="competences.html" class="active">Compétences</a></li>
+      <li class="dropdown">
+        <span class="dropdown-toggle active" onclick="toggleDropdown(this)">Compétences</span>
+        <div class="dropdown-menu open">
+          <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
+          <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
+          <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
+          <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
+        </div>
+      </li>
       <li><a href="experiences.html">Expériences</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <div class="page-header">
-    <p class="page-header-tag">Référentiel BUT GEA · Compétence 1</p>
-    <h1>Analyser les processus de l'organisation<br>dans son environnement</h1>
-    <p class="page-header-sub">Comprendre l'organisation dans sa globalité · Identifier ses enjeux · Cartographier ses parties prenantes</p>
-    <div class="badges" style="position:relative;">
-      <span class="badge badge-gold">3 composantes</span>
-      <span class="badge badge-green">Niveau acquis BUT 3</span>
-      <span class="badge badge-gold">88% maîtrise</span>
-    </div>
+    <p class="page-header-tag">Référentiel BUT GEA</p>
+    <h1>Les 5 compétences</h1>
+    <p class="page-header-sub">Parcours GC2F · Gestion comptable fiscale et financière</p>
   </div>
 
   <div class="content">
 
-    <!-- RAPPEL DES 3 COMPOSANTES -->
-    <p class="section-label">Les 3 composantes de la compétence</p>
+    <div class="intro-box">
+      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Cliquez sur une compétence pour découvrir ma progression et mes preuves concrètes.</p>
+    </div>
+
     <div class="comp-grid">
 
-      <div class="comp-card">
-        <p class="comp-num">CE1.01</p>
-        <p class="comp-title">Déterminer correctement les enjeux socio-économiques et juridiques</p>
-        <p class="comp-sub">Identifier les différents types d'enjeux</p>
-        <span class="comp-status">Acquis</span>
-      </div>
+      <a href="competence1.html" class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-num-circle">1</div>
+          <p class="comp-card-title">Analyser les processus de l'organisation dans son environnement</p>
+        </div>
+        <div class="comp-tags">
+          <span class="comp-tag">CE1.01</span>
+          <span class="comp-tag">CE1.02</span>
+          <span class="comp-tag">CE1.03</span>
+        </div>
+        <p class="comp-card-desc">Identifier les enjeux socio-économiques, qualifier les types d'organisations et cartographier les parties prenantes.</p>
+        <div class="comp-card-footer">
+          <div class="comp-progress-wrap">
+            <p class="comp-progress-label">Niveau atteint · 88%</p>
+            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:88%;"></div></div>
+          </div>
+          <span class="comp-arrow">→</span>
+        </div>
+      </a>
 
-      <div class="comp-card">
-        <p class="comp-num">CE1.02</p>
-        <p class="comp-title">Identifier les différentes dimensions de l'identité et des caractéristiques de l'organisation</p>
-        <p class="comp-sub">Qualifier les différents types d'organisations</p>
-        <span class="comp-status">Acquis</span>
-      </div>
+      <a href="competence2.html" class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-num-circle">2</div>
+          <p class="comp-card-title">Aide à la prise de décision</p>
+        </div>
+        <div class="comp-tags">
+          <span class="comp-tag">CE2.01</span>
+          <span class="comp-tag">CE2.02</span>
+          <span class="comp-tag">CE2.03</span>
+          <span class="comp-tag">CE2.04</span>
+        </div>
+        <p class="comp-card-desc">Utiliser les systèmes d'information, les outils numériques et interpréter les données pour accompagner la décision.</p>
+        <div class="comp-card-footer">
+          <div class="comp-progress-wrap">
+            <p class="comp-progress-label">Niveau atteint · 75%</p>
+            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:75%;"></div></div>
+          </div>
+          <span class="comp-arrow">→</span>
+        </div>
+      </a>
 
-      <div class="comp-card featured">
-        <span class="featured-label">Composante développée</span>
-        <p class="comp-num">CE1.03</p>
-        <p class="comp-title">Présenter de manière détaillée les attentes des acteurs et partenaires de l'organisation</p>
-        <p class="comp-sub">Identifier les parties prenantes et leurs relations au sein d'un processus</p>
-        <span class="comp-status">Acquis</span>
-      </div>
+      <a href="competence3.html" class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-num-circle">3</div>
+          <p class="comp-card-title">Piloter les relations avec les parties prenantes de l'organisation</p>
+        </div>
+        <div class="comp-tags">
+          <span class="comp-tag">CE3.01</span>
+          <span class="comp-tag">CE3.02</span>
+          <span class="comp-tag">CE3.03</span>
+          <span class="comp-tag">CE3.04</span>
+        </div>
+        <p class="comp-card-desc">Travailler en équipe, communiquer efficacement et contribuer à la gestion collective des parties prenantes.</p>
+        <div class="comp-card-footer">
+          <div class="comp-progress-wrap">
+            <p class="comp-progress-label">Niveau atteint · 70%</p>
+            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:70%;"></div></div>
+          </div>
+          <span class="comp-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="competence4.html" class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-num-circle">4</div>
+          <p class="comp-card-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
+        </div>
+        <div class="comp-tags">
+          <span class="comp-tag">CE4.01</span>
+          <span class="comp-tag">CE4.02</span>
+          <span class="comp-tag">CE4.03</span>
+          <span class="comp-tag">CE4.04</span>
+        </div>
+        <p class="comp-card-desc">Traiter les opérations comptables, fiscales et sociales en conformité avec les règles professionnelles.</p>
+        <div class="comp-card-footer">
+          <div class="comp-progress-wrap">
+            <p class="comp-progress-label">Niveau atteint · 65%</p>
+            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:65%;"></div></div>
+          </div>
+          <span class="comp-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="competence5.html" class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-num-circle">5</div>
+          <p class="comp-card-title">Evaluer l'activité de l'organisation</p>
+        </div>
+        <div class="comp-tags">
+          <span class="comp-tag">CE5.01</span>
+          <span class="comp-tag">CE5.02</span>
+          <span class="comp-tag">CE5.03</span>
+          <span class="comp-tag">CE5.04</span>
+        </div>
+        <p class="comp-card-desc">Identifier les points forts et faibles, réaliser des prévisions et mettre en place une comptabilité analytique.</p>
+        <div class="comp-card-footer">
+          <div class="comp-progress-wrap">
+            <p class="comp-progress-label">Niveau atteint · 75%</p>
+            <div class="comp-progress-bg"><div class="comp-progress-fill" style="width:75%;"></div></div>
+          </div>
+          <span class="comp-arrow">→</span>
+        </div>
+      </a>
 
     </div>
-
-    <div class="divider"></div>
-
-    <!-- COMPOSANTE DEVELOPPEE -->
-    <p class="section-label">Composante développée · CE1.03</p>
-    <div class="dev-box">
-
-      <h2 class="dev-title">Présenter les attentes des acteurs et partenaires</h2>
-      <p class="dev-sub">Identifier les parties prenantes et leurs relations au sein d'un processus</p>
-
-      <!-- PROGRESSION -->
-      <div class="prog-section">
-        <p class="prog-title">Ma progression BUT 1 → BUT 3</p>
-
-        <div class="prog-row">
-          <div class="prog-labels">
-            <strong>BUT 1</strong>
-            <span>La Maison Rivet · AdduXi · 35%</span>
-          </div>
-          <div class="prog-bg">
-            <div class="prog-fill prog-but1" style="width: 35%;"></div>
-          </div>
-        </div>
-
-        <div class="prog-row">
-          <div class="prog-labels">
-            <strong>BUT 3</strong>
-            <span>Tecmaplast · 88%</span>
-          </div>
-          <div class="prog-bg">
-            <div class="prog-fill prog-but3" style="width: 88%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTEXTES -->
-      <div class="contextes">
-        <div class="contexte-card but1">
-          <p class="contexte-label">BUT 1 · Point de départ</p>
-          <p class="contexte-text">Identification des enjeux socio-économiques et juridiques de La Maison Rivet et d'AdduXi. Première approche du PESTEL et des parties prenantes. Statut : en cours d'acquisition en S1, acquis en S2.</p>
-        </div>
-        <div class="contexte-card but3">
-          <p class="contexte-label">BUT 3 · Niveau atteint</p>
-          <p class="contexte-text">Chez Tecmaplast, j'identifie naturellement les parties prenantes internes et externes, leurs attentes et leurs interactions. Je sais cartographier les relations au sein d'un processus de manière autonome.</p>
-        </div>
-      </div>
-
-      <!-- REFLEXION -->
-      <div class="reflexion">
-        <p class="reflexion-label">Réflexion personnelle</p>
-        <p class="reflexion-text">« En BUT 1, j'ai découvert comment analyser l'environnement d'une organisation à travers des cas concrets comme La Maison Rivet et AdduXi. Du S1 au S2, j'ai progressé d'une simple identification des enjeux à une analyse structurée intégrant les dimensions socio-économiques et juridiques. En BUT 3, cette compétence est devenue un réflexe : chez Tecmaplast, j'identifie naturellement les enjeux de l'organisation et je sais les mettre en perspective avec son environnement. Si c'était à refaire, je m'appuierais davantage sur des sources primaires dès le début plutôt que de me limiter aux informations disponibles en ligne. »</p>
-        <p class="reflexion-author">— Mélina Hasanovic · Juin 2026</p>
-      </div>
-
-    </div>
-
-    <!-- NAVIGATION ENTRE COMPETENCES -->
-    <div class="comp-nav">
-      <a href="competences.html">← Toutes les compétences</a>
-      <a href="competence2.html">Compétence 2 →</a>
-    </div>
-
   </div>
 
   <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+  <script>
+    function toggleDropdown(el) {
+      el.classList.toggle('open');
+      el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('open'));
+      }
+    });
+  </script>
 
 </body>
 </html>
