@@ -39,15 +39,8 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
-    .page-header {
-      padding: 8rem 2rem 4rem; text-align: center;
-      background: var(--marron); position: relative; overflow: hidden;
-    }
-    .page-header::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px);
-      background-size: 60px 60px; pointer-events: none;
-    }
+    .page-header { padding: 8rem 2rem 4rem; text-align: center; background: var(--marron); position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
     .page-header-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
     .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; }
@@ -71,31 +64,40 @@
     .comp-bar-fill { height: 100%; background: var(--marron); border-radius: 4px; }
     .comp-pct-label { font-size: 0.72rem; font-weight: 600; color: var(--marron-mid); flex-shrink: 0; }
 
-    .heatmap-section { background: rgba(255,255,255,0.4); border-radius: 12px; padding: 2rem; }
+    .heatmap-section { background: rgba(255,255,255,0.4); border-radius: 12px; padding: 2rem; margin-bottom: 4rem; }
     .heatmap-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marron); margin-bottom: 0.4rem; }
     .heatmap-sub { font-size: 0.82rem; color: var(--marron-mid); margin-bottom: 2rem; }
-
     .heatmap-table { width: 100%; border-collapse: separate; border-spacing: 8px; }
     .heatmap-table th { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 8px; text-align: center; }
     .heatmap-table th.col-label { text-align: left; color: var(--marron-mid); }
     .heatmap-table th.but1 { color: #888780; }
     .heatmap-table th.but2 { color: var(--terra); }
     .heatmap-table th.but3 { color: var(--gold); }
-
     .heatmap-table td { border-radius: 8px; text-align: center; padding: 14px 10px; font-size: 0.82rem; font-weight: 600; transition: transform 0.2s; cursor: default; }
     .heatmap-table td:hover { transform: scale(1.05); }
     .heatmap-table td.row-label { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); text-align: left; background: transparent; padding-left: 0; font-weight: 700; }
-
     .cell-but1 { background: rgba(180,178,169,0.3); color: #5F5E5A; }
     .cell-but2 { background: rgba(193,123,74,0.4); color: #712B13; }
     .cell-but3-low { background: rgba(61,43,31,0.65); color: var(--gold); }
     .cell-but3-mid { background: rgba(61,43,31,0.75); color: var(--gold); }
     .cell-but3-high { background: rgba(61,43,31,0.88); color: var(--gold); }
     .cell-empty { background: rgba(61,43,31,0.05); color: var(--marron-mid); font-size: 0.72rem; font-style: italic; }
-
     .heatmap-legend { display: flex; align-items: center; gap: 8px; margin-top: 1.5rem; justify-content: center; flex-wrap: wrap; }
     .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--marron-mid); }
     .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+
+    /* SECTIONS COMPETENCES */
+    .ce-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(61,43,31,0.1); }
+    .ce-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .ce-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .ce-circle { width: 50px; height: 50px; border-radius: 50%; background: var(--marron); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ce-circle span { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); }
+    .ce-info-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .ce-info-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marron); line-height: 1.2; }
+    .ce-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .ce-tag { font-size: 0.68rem; font-weight: 600; padding: 4px 14px; border-radius: 20px; background: rgba(212,160,23,0.12); color: var(--gold); border: 1px solid rgba(212,160,23,0.3); }
+    .ce-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--marron); color: var(--sable); text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s; }
+    .ce-btn:hover { background: var(--marron-mid); }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -131,83 +133,54 @@
   <div class="content">
 
     <div class="intro-box">
-      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Utilisez le menu déroulant pour accéder au détail de chaque compétence.</p>
+      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Cliquez sur une compétence pour découvrir ma progression et mes preuves concrètes.</p>
     </div>
 
+    <!-- LISTE -->
     <div class="comp-list">
 
       <div class="comp-item">
-        <div class="comp-left">
-          <div class="comp-ce">CE1</div>
-          <div class="comp-pct">88%</div>
-        </div>
+        <div class="comp-left"><div class="comp-ce">CE1</div><div class="comp-pct">88%</div></div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 88%;"></div>
+          <div class="comp-bg-fill" style="width:88%;"></div>
           <p class="comp-title">Analyser les processus de l'organisation dans son environnement</p>
-          <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 88%;"></div></div>
-            <span class="comp-pct-label">88%</span>
-          </div>
+          <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:88%;"></div></div><span class="comp-pct-label">88%</span></div>
         </div>
       </div>
 
       <div class="comp-item">
-        <div class="comp-left">
-          <div class="comp-ce">CE2</div>
-          <div class="comp-pct">80%</div>
-        </div>
+        <div class="comp-left"><div class="comp-ce">CE2</div><div class="comp-pct">80%</div></div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 80%;"></div>
+          <div class="comp-bg-fill" style="width:80%;"></div>
           <p class="comp-title">Aide à la prise de décision</p>
-          <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 80%;"></div></div>
-            <span class="comp-pct-label">80%</span>
-          </div>
+          <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:80%;"></div></div><span class="comp-pct-label">80%</span></div>
         </div>
       </div>
 
       <div class="comp-item">
-        <div class="comp-left">
-          <div class="comp-ce">CE3</div>
-          <div class="comp-pct">85%</div>
-        </div>
+        <div class="comp-left"><div class="comp-ce">CE3</div><div class="comp-pct">85%</div></div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 85%;"></div>
+          <div class="comp-bg-fill" style="width:85%;"></div>
           <p class="comp-title">Piloter les relations avec les parties prenantes de l'organisation</p>
-          <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 85%;"></div></div>
-            <span class="comp-pct-label">85%</span>
-          </div>
+          <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:85%;"></div></div><span class="comp-pct-label">85%</span></div>
         </div>
       </div>
 
       <div class="comp-item">
-        <div class="comp-left">
-          <div class="comp-ce">CE4</div>
-          <div class="comp-pct">65%</div>
-        </div>
+        <div class="comp-left"><div class="comp-ce">CE4</div><div class="comp-pct">65%</div></div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 65%;"></div>
+          <div class="comp-bg-fill" style="width:65%;"></div>
           <p class="comp-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
-          <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 65%;"></div></div>
-            <span class="comp-pct-label">65%</span>
-          </div>
+          <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:65%;"></div></div><span class="comp-pct-label">65%</span></div>
         </div>
       </div>
 
       <div class="comp-item">
-        <div class="comp-left">
-          <div class="comp-ce">CE5</div>
-          <div class="comp-pct">75%</div>
-        </div>
+        <div class="comp-left"><div class="comp-ce">CE5</div><div class="comp-pct">75%</div></div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 75%;"></div>
+          <div class="comp-bg-fill" style="width:75%;"></div>
           <p class="comp-title">Evaluer l'activité de l'organisation</p>
-          <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 75%;"></div></div>
-            <span class="comp-pct-label">75%</span>
-          </div>
+          <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:75%;"></div></div><span class="comp-pct-label">75%</span></div>
         </div>
       </div>
 
@@ -217,7 +190,6 @@
     <div class="heatmap-section">
       <h2 class="heatmap-title">Ma progression BUT 1 → BUT 3</h2>
       <p class="heatmap-sub">Plus la cellule est foncée, plus le niveau d'acquisition est élevé</p>
-
       <table class="heatmap-table">
         <thead>
           <tr>
@@ -228,53 +200,107 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="row-label">CE1</td>
-            <td class="cell-but1">30%</td>
-            <td class="cell-but2">55%</td>
-            <td class="cell-but3-high">88%</td>
-          </tr>
-          <tr>
-            <td class="row-label">CE2</td>
-            <td class="cell-but1">25%</td>
-            <td class="cell-but2">50%</td>
-            <td class="cell-but3-high">80%</td>
-          </tr>
-          <tr>
-            <td class="row-label">CE3</td>
-            <td class="cell-but1">20%</td>
-            <td class="cell-but2">55%</td>
-            <td class="cell-but3-high">85%</td>
-          </tr>
-          <tr>
-            <td class="row-label">CE4</td>
-            <td class="cell-empty">—</td>
-            <td class="cell-but2">40%</td>
-            <td class="cell-but3-low">65%</td>
-          </tr>
-          <tr>
-            <td class="row-label">CE5</td>
-            <td class="cell-empty">—</td>
-            <td class="cell-but2">45%</td>
-            <td class="cell-but3-mid">75%</td>
-          </tr>
+          <tr><td class="row-label">CE1</td><td class="cell-but1">30%</td><td class="cell-but2">55%</td><td class="cell-but3-high">88%</td></tr>
+          <tr><td class="row-label">CE2</td><td class="cell-but1">25%</td><td class="cell-but2">50%</td><td class="cell-but3-high">80%</td></tr>
+          <tr><td class="row-label">CE3</td><td class="cell-but1">20%</td><td class="cell-but2">55%</td><td class="cell-but3-high">85%</td></tr>
+          <tr><td class="row-label">CE4</td><td class="cell-empty">—</td><td class="cell-but2">40%</td><td class="cell-but3-low">65%</td></tr>
+          <tr><td class="row-label">CE5</td><td class="cell-empty">—</td><td class="cell-but2">45%</td><td class="cell-but3-mid">75%</td></tr>
         </tbody>
       </table>
-
       <div class="heatmap-legend">
-        <div class="legend-item">
-          <div class="legend-dot" style="background: rgba(180,178,169,0.3); border: 1px solid rgba(61,43,31,0.1);"></div>
-          <span>BUT 1 · Découverte</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-dot" style="background: rgba(193,123,74,0.4);"></div>
-          <span>BUT 2 · Montée en compétences</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-dot" style="background: rgba(61,43,31,0.85);"></div>
-          <span>BUT 3 · Expertise</span>
-        </div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(180,178,169,0.3);border:1px solid rgba(61,43,31,0.1);"></div><span>BUT 1 · Découverte</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(193,123,74,0.4);"></div><span>BUT 2 · Montée en compétences</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(61,43,31,0.85);"></div><span>BUT 3 · Expertise</span></div>
       </div>
+    </div>
+
+    <!-- DETAIL DES COMPETENCES -->
+    <div>
+
+      <div class="ce-section">
+        <div class="ce-header">
+          <div class="ce-circle"><span>1</span></div>
+          <div>
+            <p class="ce-info-tag">Compétence 1</p>
+            <h2 class="ce-info-title">Analyser les processus de l'organisation dans son environnement</h2>
+          </div>
+        </div>
+        <div class="ce-tags">
+          <span class="ce-tag">CE1.01 · Enjeux socio-économiques</span>
+          <span class="ce-tag">CE1.02 · Caractéristiques de l'organisation</span>
+          <span class="ce-tag">CE1.03 · Parties prenantes</span>
+        </div>
+        <a href="competence1.html" class="ce-btn">Voir le détail →</a>
+      </div>
+
+      <div class="ce-section">
+        <div class="ce-header">
+          <div class="ce-circle"><span>2</span></div>
+          <div>
+            <p class="ce-info-tag">Compétence 2</p>
+            <h2 class="ce-info-title">Aide à la prise de décision</h2>
+          </div>
+        </div>
+        <div class="ce-tags">
+          <span class="ce-tag">CE2.01 · Système d'information</span>
+          <span class="ce-tag">CE2.02 · Outils numériques</span>
+          <span class="ce-tag">CE2.03 · Données quantitatives</span>
+          <span class="ce-tag">CE2.04 · Contraintes et processus</span>
+        </div>
+        <a href="competence2.html" class="ce-btn">Voir le détail →</a>
+      </div>
+
+      <div class="ce-section">
+        <div class="ce-header">
+          <div class="ce-circle"><span>3</span></div>
+          <div>
+            <p class="ce-info-tag">Compétence 3</p>
+            <h2 class="ce-info-title">Piloter les relations avec les parties prenantes de l'organisation</h2>
+          </div>
+        </div>
+        <div class="ce-tags">
+          <span class="ce-tag">CE3.01 · Cohésion de groupe</span>
+          <span class="ce-tag">CE3.02 · Projets collaboratifs</span>
+          <span class="ce-tag">CE3.03 · Communication</span>
+          <span class="ce-tag">CE3.04 · Gestion collective</span>
+        </div>
+        <a href="competence3.html" class="ce-btn">Voir le détail →</a>
+      </div>
+
+      <div class="ce-section">
+        <div class="ce-header">
+          <div class="ce-circle"><span>4</span></div>
+          <div>
+            <p class="ce-info-tag">Compétence 4</p>
+            <h2 class="ce-info-title">Produire l'information comptable, fiscale et sociale de l'organisation</h2>
+          </div>
+        </div>
+        <div class="ce-tags">
+          <span class="ce-tag">CE4.01 · Comptabilité générale</span>
+          <span class="ce-tag">CE4.02 · Environnement réglementaire</span>
+          <span class="ce-tag">CE4.03 · Révision comptable</span>
+          <span class="ce-tag">CE4.04 · Comptes annuels</span>
+        </div>
+        <a href="competence4.html" class="ce-btn">Voir le détail →</a>
+      </div>
+
+      <div class="ce-section">
+        <div class="ce-header">
+          <div class="ce-circle"><span>5</span></div>
+          <div>
+            <p class="ce-info-tag">Compétence 5</p>
+            <h2 class="ce-info-title">Evaluer l'activité de l'organisation</h2>
+          </div>
+        </div>
+        <div class="ce-tags">
+          <span class="ce-tag">CE5.01 · Points forts et faibles</span>
+          <span class="ce-tag">CE5.02 · Rentabilité</span>
+          <span class="ce-tag">CE5.03 · Prévisions</span>
+          <span class="ce-tag">CE5.04 · Comptabilité analytique</span>
+        </div>
+        <a href="competence5.html" class="ce-btn">Voir le détail →</a>
+      </div>
+
     </div>
 
   </div>
