@@ -58,43 +58,45 @@
     .intro-box p { font-size: 0.88rem; color: rgba(237,224,206,0.7); line-height: 1.8; }
     .intro-box strong { color: var(--gold); }
 
-    .comp-list { display: flex; flex-direction: column; gap: 12px; }
-
-    .comp-item {
-      display: flex; align-items: stretch;
-      border-radius: 12px; overflow: hidden;
-      text-decoration: none; color: inherit;
-      cursor: default;
-    }
-
-    .comp-left {
-      width: 120px; flex-shrink: 0;
-      background: var(--marron);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 1.5rem 1rem;
-    }
+    /* COMP LIST */
+    .comp-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 4rem; }
+    .comp-item { display: flex; align-items: stretch; border-radius: 12px; overflow: hidden; cursor: default; }
+    .comp-left { width: 120px; flex-shrink: 0; background: var(--marron); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 1rem; }
     .comp-ce { font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1; font-family: 'Playfair Display', serif; }
     .comp-pct { font-size: 12px; color: rgba(237,224,206,0.5); margin-top: 6px; }
-
-    .comp-right {
-      flex: 1; background: rgba(255,255,255,0.5);
-      padding: 1.25rem 1.5rem;
-      display: flex; flex-direction: column;
-      justify-content: center; position: relative; overflow: hidden;
-    }
-
-    .comp-bg-fill {
-      position: absolute; left: 0; top: 0; bottom: 0;
-      background: var(--gold); opacity: 0.08;
-    }
-
+    .comp-right { flex: 1; background: rgba(255,255,255,0.5); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .comp-bg-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold); opacity: 0.08; }
     .comp-title { font-size: 0.92rem; font-weight: 600; color: var(--marron); position: relative; z-index: 1; line-height: 1.4; margin-bottom: 10px; }
-
     .comp-bar-row { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
     .comp-bar-bg { flex: 1; height: 4px; background: rgba(61,43,31,0.12); border-radius: 4px; overflow: hidden; }
     .comp-bar-fill { height: 100%; background: var(--marron); border-radius: 4px; }
     .comp-pct-label { font-size: 0.72rem; font-weight: 600; color: var(--marron-mid); flex-shrink: 0; }
+
+    /* GRILLE DE CHALEUR */
+    .heatmap-section { background: rgba(255,255,255,0.4); border-radius: 12px; padding: 2rem; }
+    .heatmap-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marron); margin-bottom: 0.4rem; }
+    .heatmap-sub { font-size: 0.82rem; color: var(--marron-mid); margin-bottom: 2rem; }
+
+    .heatmap-table { width: 100%; border-collapse: separate; border-spacing: 8px; }
+    .heatmap-table th { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 8px; text-align: center; }
+    .heatmap-table th.col-label { text-align: left; color: var(--marron-mid); }
+    .heatmap-table th.but1 { color: #888780; }
+    .heatmap-table th.but2 { color: var(--terra); }
+    .heatmap-table th.but3 { color: var(--gold); }
+
+    .heatmap-table td { border-radius: 8px; text-align: center; padding: 14px 10px; font-size: 0.82rem; font-weight: 600; transition: transform 0.2s; cursor: default; }
+    .heatmap-table td:hover { transform: scale(1.05); }
+    .heatmap-table td.row-label { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); text-align: left; background: transparent; padding-left: 0; font-weight: 700; }
+
+    .cell-but1 { background: rgba(180,178,169,0.3); color: #5F5E5A; }
+    .cell-but2 { background: rgba(193,123,74,0.4); color: #712B13; }
+    .cell-but3-low { background: rgba(61,43,31,0.65); color: var(--gold); }
+    .cell-but3-mid { background: rgba(61,43,31,0.75); color: var(--gold); }
+    .cell-but3-high { background: rgba(61,43,31,0.88); color: var(--gold); }
+
+    .heatmap-legend { display: flex; align-items: center; gap: 8px; margin-top: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--marron-mid); }
+    .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -133,6 +135,7 @@
       <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Utilisez le menu déroulant pour accéder au détail de chaque compétence.</p>
     </div>
 
+    <!-- LISTE DES COMPETENCES -->
     <div class="comp-list">
 
       <div class="comp-item">
@@ -211,6 +214,71 @@
       </div>
 
     </div>
+
+    <!-- GRILLE DE CHALEUR -->
+    <div class="heatmap-section">
+      <h2 class="heatmap-title">Ma progression BUT 1 → BUT 3</h2>
+      <p class="heatmap-sub">Plus la cellule est foncée, plus le niveau d'acquisition est élevé</p>
+
+      <table class="heatmap-table">
+        <thead>
+          <tr>
+            <th class="col-label"></th>
+            <th class="but1">BUT 1</th>
+            <th class="but2">BUT 2</th>
+            <th class="but3">BUT 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">CE1</td>
+            <td class="cell-but1">30%</td>
+            <td class="cell-but2">55%</td>
+            <td class="cell-but3-high">88%</td>
+          </tr>
+          <tr>
+            <td class="row-label">CE2</td>
+            <td class="cell-but1">25%</td>
+            <td class="cell-but2">50%</td>
+            <td class="cell-but3-high">80%</td>
+          </tr>
+          <tr>
+            <td class="row-label">CE3</td>
+            <td class="cell-but1">20%</td>
+            <td class="cell-but2">55%</td>
+            <td class="cell-but3-high">85%</td>
+          </tr>
+          <tr>
+            <td class="row-label">CE4</td>
+            <td class="cell-but1">20%</td>
+            <td class="cell-but2">40%</td>
+            <td class="cell-but3-low">65%</td>
+          </tr>
+          <tr>
+            <td class="row-label">CE5</td>
+            <td class="cell-but1">25%</td>
+            <td class="cell-but2">45%</td>
+            <td class="cell-but3-mid">75%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="heatmap-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(180,178,169,0.3); border: 1px solid rgba(61,43,31,0.1);"></div>
+          <span>BUT 1 · Découverte</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(193,123,74,0.4);"></div>
+          <span>BUT 2 · Montée en compétences</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(61,43,31,0.85);"></div>
+          <span>BUT 3 · Expertise</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
