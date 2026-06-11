@@ -20,7 +20,7 @@
     body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
 
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: rgba(212,196,174,0.95); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(61,43,31,0.1);
       padding: 0 3rem; display: flex; align-items: center;
@@ -40,11 +40,10 @@
     .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
     .dropdown-toggle.open::after { transform: rotate(180deg); }
     .dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 10px); left: 50%;
-      transform: translateX(-50%); background: #fff;
-      border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px;
-      padding: 8px 0; min-width: 280px;
-      box-shadow: 0 4px 20px rgba(61,43,31,0.1); z-index: 200;
+      display: none; position: fixed; top: 60px;
+      background: #fff; border: 0.5px solid rgba(61,43,31,0.15);
+      border-radius: 8px; padding: 8px 0; min-width: 280px;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.15); z-index: 9999;
     }
     .dropdown-menu.open { display: block; }
     .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marron-mid); text-decoration: none; transition: background 0.15s, color 0.15s; }
@@ -134,11 +133,10 @@
     .btn-outline-toggle.open::after { transform: rotate(180deg); }
     .btn-outline-toggle:hover { background: var(--marron); color: var(--sable); }
     .btn-dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%); background: #fff;
-      border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px;
-      padding: 8px 0; min-width: 280px;
-      box-shadow: 0 4px 20px rgba(61,43,31,0.12); z-index: 200;
+      display: none; position: fixed;
+      background: #fff; border: 0.5px solid rgba(61,43,31,0.15);
+      border-radius: 8px; padding: 8px 0; min-width: 280px;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.12); z-index: 9999;
     }
     .btn-dropdown-menu.open { display: block; }
     .btn-dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marron-mid); text-decoration: none; transition: background 0.15s, color 0.15s; }
@@ -288,13 +286,22 @@
 
   <script>
     function toggleDropdown(el) {
+      const menu = el.parentElement.querySelector('.dropdown-menu');
+      const rect = el.getBoundingClientRect();
+      menu.style.left = rect.left + (rect.width / 2) - 140 + 'px';
       el.classList.toggle('open');
-      el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
+      menu.classList.toggle('open');
     }
+
     function toggleBtnDropdown(el) {
+      const menu = el.parentElement.querySelector('.btn-dropdown-menu');
+      const rect = el.getBoundingClientRect();
+      menu.style.top = rect.bottom + 8 + 'px';
+      menu.style.left = rect.left + (rect.width / 2) - 140 + 'px';
       el.classList.toggle('open');
-      el.parentElement.querySelector('.btn-dropdown-menu').classList.toggle('open');
+      menu.classList.toggle('open');
     }
+
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown') && !e.target.closest('.btn-dropdown')) {
         document.querySelectorAll('.dropdown-menu, .btn-dropdown-menu').forEach(m => m.classList.remove('open'));
