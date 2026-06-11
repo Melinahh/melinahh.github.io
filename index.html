@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
       --sable: #EDE0CE;
       --sable-dark: #D4C4AE;
@@ -17,7 +16,6 @@
       --gold-light: #E8C060;
       --terra: #C17B4A;
     }
-
     html { scroll-behavior: smooth; }
     body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
 
@@ -29,16 +27,45 @@
       justify-content: space-between; height: 60px;
     }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); letter-spacing: 0.05em; text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
+    /* DROPDOWN */
+    .dropdown { position: relative; }
+    .dropdown-toggle { cursor: pointer; display: flex; align-items: center; gap: 4px; }
+    .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      margin-top: 10px;
+      background: #fff;
+      border: 0.5px solid rgba(61,43,31,0.15);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 280px;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.1);
+      z-index: 200;
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 16px;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--marron-mid); text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
+    .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
+    .dropdown-divider { height: 0.5px; background: rgba(61,43,31,0.1); margin: 4px 0; }
+
+    /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center; padding: 6rem 2rem 4rem;
-      position: relative; overflow: hidden;
-      background: var(--sable);
+      position: relative; overflow: hidden; background: var(--sable);
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
@@ -60,20 +87,13 @@
       color: var(--gold); margin-bottom: 2.5rem; position: relative; z-index: 1;
       animation: fadeDown 0.6s ease both;
     }
-    .hero-badge::before {
-      content: ''; width: 7px; height: 7px;
-      background: var(--gold); border-radius: 50%; animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
 
     .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 1.05;
-      color: var(--marron); position: relative; z-index: 1;
-      animation: fadeUp 0.7s 0.1s ease both;
+      font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900; line-height: 1.05; color: var(--marron);
+      position: relative; z-index: 1; animation: fadeUp 0.7s 0.1s ease both;
     }
     .hero-name span { color: var(--gold); }
 
@@ -94,8 +114,7 @@
 
     .hero-stats {
       display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
-      position: relative; z-index: 1;
-      animation: fadeUp 0.7s 0.4s ease both; margin-bottom: 3rem;
+      position: relative; z-index: 1; animation: fadeUp 0.7s 0.4s ease both; margin-bottom: 3rem;
     }
     .stat { text-align: center; }
     .stat-number { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; }
@@ -103,9 +122,9 @@
 
     .hero-buttons {
       display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-      position: relative; z-index: 1;
-      animation: fadeUp 0.7s 0.5s ease both;
+      position: relative; z-index: 1; animation: fadeUp 0.7s 0.5s ease both;
     }
+
     .btn-primary {
       background: var(--marron); color: var(--sable); border: none;
       padding: 0.85rem 2rem; border-radius: 4px; font-family: 'Raleway', sans-serif;
@@ -114,13 +133,33 @@
     }
     .btn-primary:hover { background: var(--marron-mid); transform: translateY(-2px); }
 
-    .btn-outline {
+    /* BOUTON DROPDOWN MES COMPETENCES */
+    .btn-dropdown { position: relative; display: inline-block; }
+    .btn-outline-toggle {
       background: transparent; color: var(--marron); border: 1.5px solid var(--marron);
       padding: 0.85rem 2rem; border-radius: 4px; font-family: 'Raleway', sans-serif;
       font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; cursor: pointer; transition: all 0.2s;
+      cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;
     }
-    .btn-outline:hover { background: var(--marron); color: var(--sable); transform: translateY(-2px); }
+    .btn-outline-toggle::after { content: '▾'; font-size: 0.65rem; }
+    .btn-outline-toggle:hover { background: var(--marron); color: var(--sable); }
+    .btn-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%);
+      background: #fff; border: 0.5px solid rgba(61,43,31,0.15);
+      border-radius: 8px; padding: 8px 0; min-width: 280px;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.12); z-index: 200;
+    }
+    .btn-dropdown:hover .btn-dropdown-menu { display: block; }
+    .btn-dropdown-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 16px; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--marron-mid); text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
+    .btn-dropdown-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
     .scroll-indicator {
       position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -128,26 +167,20 @@
       color: var(--marron-mid); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
       animation: fadeUp 1s 0.8s ease both;
     }
-    .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollPulse 2s infinite;
-    }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
+    /* QUI SUIS JE */
     .section-quisuisje { background: var(--sable-dark); padding: 5rem 2rem; }
     .section-inner { max-width: 900px; margin: 0 auto; text-align: center; }
     .section-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 2rem; }
-
     .iut-logo-box { display: flex; justify-content: center; margin-bottom: 2rem; }
     .iut-logo-box img { height: 90px; object-fit: contain; background: white; padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(61,43,31,0.1); }
-
     .citation-box { background: rgba(61,43,31,0.06); border: 1px solid rgba(212,160,23,0.25); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; }
     .citation-box p { font-size: 1.05rem; line-height: 1.9; color: var(--marron-mid); font-style: italic; }
     .citation-box p strong { color: var(--marron); font-weight: 600; }
     .citation-author { margin-top: 1.5rem; font-size: 0.85rem; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; }
-
     .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
     .info-card { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 1.5rem; text-align: left; }
     .info-card-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
@@ -166,25 +199,31 @@
     <a href="index.html" class="nav-logo">M. Hasanovic</a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="./parcours.html">Parcours</a></li>
-      <li><a href="./competences.html">Compétences</a></li>
-      <li><a href="./experiences.html">Expériences</a></li>
-      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li class="dropdown">
+        <span class="dropdown-toggle" style="font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--marron-mid); cursor:pointer;">Compétences</span>
+        <div class="dropdown-menu">
+          <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
+          <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
+          <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
+          <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
+        </div>
+      </li>
+      <li><a href="experiences.html">Expériences</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <section class="hero" id="accueil">
 
-    <!-- LOGO IUT EN HAUT A GAUCHE -->
     <div style="position: absolute; top: 75px; left: 3rem; z-index: 2;">
       <img src="logo-iut.png" alt="IUT Lyon 1" style="height: 70px; object-fit: contain; background: white; padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(61,43,31,0.1);">
     </div>
 
     <div class="hero-badge">Soutenance Portfolio · 22 juin 2026</div>
 
-    <h1 class="hero-name">
-      Mélina<br><span>Hasanovic</span>
-    </h1>
+    <h1 class="hero-name">Mélina<br><span>Hasanovic</span></h1>
 
     <p class="hero-title">
       <strong>BUT Gestion des Entreprises & Administrations</strong><br>
@@ -195,27 +234,24 @@
     <div class="hero-divider"></div>
 
     <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">3</div>
-        <div class="stat-label">ans de formation</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">5</div>
-        <div class="stat-label">compétences</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">6+</div>
-        <div class="stat-label">SAE réalisées</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">2026</div>
-        <div class="stat-label">diplôme obtenu</div>
-      </div>
+      <div class="stat"><div class="stat-number">3</div><div class="stat-label">ans de formation</div></div>
+      <div class="stat"><div class="stat-number">5</div><div class="stat-label">compétences</div></div>
+      <div class="stat"><div class="stat-number">6+</div><div class="stat-label">SAE réalisées</div></div>
+      <div class="stat"><div class="stat-number">2026</div><div class="stat-label">diplôme obtenu</div></div>
     </div>
 
     <div class="hero-buttons">
-      <a href="./parcours.html" class="btn-primary">Voir mon parcours</a>
-      <a href="./competences.html" class="btn-outline">Mes compétences</a>
+      <a href="parcours.html" class="btn-primary">Voir mon parcours</a>
+      <div class="btn-dropdown">
+        <div class="btn-outline-toggle">Mes compétences</div>
+        <div class="btn-dropdown-menu">
+          <a href="competence1.html"><span class="btn-dropdown-num">CE1</span>Analyser les processus</a>
+          <a href="competence2.html"><span class="btn-dropdown-num">CE2</span>Aide à la prise de décision</a>
+          <a href="competence3.html"><span class="btn-dropdown-num">CE3</span>Piloter les parties prenantes</a>
+          <a href="competence4.html"><span class="btn-dropdown-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="btn-dropdown-num">CE5</span>Evaluer l'activité</a>
+        </div>
+      </div>
     </div>
 
     <div class="scroll-indicator">
