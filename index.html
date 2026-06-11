@@ -9,33 +9,33 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #1a2350;
-      --navy-dark: #0f1630;
-      --navy-mid: #1e2d5a;
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --white: #ffffff;
-      --white-soft: rgba(255,255,255,0.85);
-      --white-muted: rgba(255,255,255,0.55);
+      --sable: #EDE0CE;
+      --sable-dark: #D4C4AE;
+      --marron: #3D2B1F;
+      --marron-mid: #6B4C35;
+      --gold: #D4A017;
+      --gold-light: #E8C060;
+      --terra: #C17B4A;
+      --white-soft: rgba(237,224,206,0.85);
+      --white-muted: rgba(237,224,206,0.55);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Raleway', sans-serif;
-      background-color: var(--navy-dark);
-      color: var(--white);
+      background-color: var(--sable);
+      color: var(--marron);
       min-height: 100vh;
     }
 
-    /* ── NAVIGATION ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(15, 22, 48, 0.92);
+      background: rgba(212,196,174,0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(61,43,31,0.1);
       padding: 0 3rem;
       display: flex;
       align-items: center;
@@ -46,8 +46,9 @@
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
-      color: var(--gold);
+      color: var(--marron);
       letter-spacing: 0.05em;
+      text-decoration: none;
     }
 
     .nav-links {
@@ -62,7 +63,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--white-muted);
+      color: var(--marron-mid);
       transition: color 0.2s;
     }
 
@@ -71,7 +72,6 @@
       color: var(--gold);
     }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -82,31 +82,29 @@
       padding: 6rem 2rem 4rem;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(160deg, #0f1630 0%, #1a2350 50%, #0f1a3a 100%);
+      background: var(--sable);
     }
 
-    /* subtle grid pattern */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(61,43,31,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61,43,31,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
     }
 
-    /* gold glow orb */
     .hero::after {
       content: '';
       position: absolute;
       top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -114,15 +112,15 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(201,168,76,0.12);
-      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.35);
       border-radius: 30px;
       padding: 6px 18px;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--gold);
       margin-bottom: 2.5rem;
       position: relative;
       z-index: 1;
@@ -147,22 +145,20 @@
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 900;
       line-height: 1.05;
-      color: var(--white);
+      color: var(--marron);
       position: relative;
       z-index: 1;
       animation: fadeUp 0.7s 0.1s ease both;
     }
 
-    .hero-name span {
-      color: var(--gold);
-    }
+    .hero-name span { color: var(--gold); }
 
     .hero-title {
       margin-top: 1.2rem;
       font-size: clamp(0.85rem, 2vw, 1rem);
       font-weight: 400;
       letter-spacing: 0.08em;
-      color: var(--white-muted);
+      color: var(--marron-mid);
       line-height: 1.8;
       position: relative;
       z-index: 1;
@@ -170,7 +166,7 @@
     }
 
     .hero-title strong {
-      color: var(--white-soft);
+      color: var(--marron);
       font-weight: 600;
     }
 
@@ -184,7 +180,6 @@
       animation: fadeUp 0.7s 0.3s ease both;
     }
 
-    /* ── STATS ── */
     .hero-stats {
       display: flex;
       gap: 3rem;
@@ -196,9 +191,7 @@
       margin-bottom: 3rem;
     }
 
-    .stat {
-      text-align: center;
-    }
+    .stat { text-align: center; }
 
     .stat-number {
       font-family: 'Playfair Display', serif;
@@ -213,11 +206,10 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--white-muted);
+      color: var(--marron-mid);
       margin-top: 4px;
     }
 
-    /* ── BUTTONS ── */
     .hero-buttons {
       display: flex;
       gap: 1rem;
@@ -229,8 +221,8 @@
     }
 
     .btn-primary {
-      background: var(--gold);
-      color: var(--navy-dark);
+      background: var(--marron);
+      color: var(--sable);
       border: none;
       padding: 0.85rem 2rem;
       border-radius: 4px;
@@ -245,14 +237,14 @@
     }
 
     .btn-primary:hover {
-      background: var(--gold-light);
+      background: var(--marron-mid);
       transform: translateY(-2px);
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--white-soft);
-      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--marron);
+      border: 1.5px solid var(--marron);
       padding: 0.85rem 2rem;
       border-radius: 4px;
       font-family: 'Raleway', sans-serif;
@@ -262,16 +254,15 @@
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+      transition: all 0.2s;
     }
 
     .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
+      background: var(--marron);
+      color: var(--sable);
       transform: translateY(-2px);
     }
 
-    /* ── SCROLL INDICATOR ── */
     .scroll-indicator {
       position: absolute;
       bottom: 2rem;
@@ -281,7 +272,7 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      color: var(--white-muted);
+      color: var(--marron-mid);
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -300,7 +291,94 @@
       50% { opacity: 1; }
     }
 
-    /* ── ANIMATIONS ── */
+    /* QUI SUIS-JE */
+    .section-quisuisje {
+      background: var(--sable-dark);
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--marron);
+      margin-bottom: 3rem;
+    }
+
+    .citation-box {
+      background: rgba(61,43,31,0.06);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-radius: 8px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .citation-box p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--marron-mid);
+      font-style: italic;
+    }
+
+    .citation-box p strong { color: var(--marron); font-weight: 600; }
+
+    .citation-author {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .info-card-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card-value {
+      font-size: 0.95rem;
+      color: var(--marron);
+      font-weight: 500;
+    }
+
+    .info-card-sub {
+      font-size: 0.8rem;
+      color: var(--marron-mid);
+      margin-top: 4px;
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -310,23 +388,31 @@
       from { opacity: 0; transform: translateY(-10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(61,43,31,0.1);
+      font-size: 0.72rem;
+      color: var(--marron-mid);
+      letter-spacing: 0.08em;
+      background: var(--sable-dark);
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
-    <div class="nav-logo">M. Hasanovic</div>
+    <a href="index.html" class="nav-logo">M. Hasanovic</a>
     <ul class="nav-links">
-      <li><a href="#accueil" class="active">Accueil</a></li>
+      <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="./parcours.html">Parcours</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#experiences">Expériences</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="./competences.html">Compétences</a></li>
+      <li><a href="./experiences.html">Expériences</a></li>
+      <li><a href="./contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO / PAGE DE GARDE -->
   <section class="hero" id="accueil">
 
     <div class="hero-badge">Soutenance Portfolio · 22 juin 2026</div>
@@ -364,7 +450,7 @@
 
     <div class="hero-buttons">
       <a href="./parcours.html" class="btn-primary">Voir mon parcours</a>
-      <a href="#competences" class="btn-outline">Mes compétences</a>
+      <a href="./competences.html" class="btn-outline">Mes compétences</a>
     </div>
 
     <div class="scroll-indicator">
@@ -374,54 +460,49 @@
 
   </section>
 
-<!-- QUI SUIS-JE -->
-  <section style="background: #0f1630; padding: 5rem 2rem;">
-    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+  <section class="section-quisuisje">
+    <div class="section-inner">
 
-      <p style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.5rem;">Qui suis-je ?</p>
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #ffffff; margin-bottom: 3rem;">Mon identité professionnelle</h2>
+      <p class="section-tag">Qui suis-je ?</p>
+      <h2 class="section-title">Mon identité professionnelle</h2>
 
-      <div style="background: rgba(26,35,80,0.6); border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; padding: 3rem; margin-bottom: 3rem;">
-        <p style="font-size: 1.05rem; line-height: 1.9; color: rgba(255,255,255,0.8); font-style: italic;">
-          « Ces trois années de BUT m'ont permis de construire une identité professionnelle réelle, au contact du terrain.
-          En alternance chez <strong style="color: #c9a84c;">Tecmaplast</strong>, et en stage chez <strong style="color: #c9a84c;">AdduXi</strong> et <strong style="color: #c9a84c;">Motelec Industrie</strong>,
-          j'ai pris en charge des missions concrètes de comptabilité générale — saisies, rapprochements, déclarations —
-          qui ont donné du sens à chaque compétence acquise en cours. Ce portfolio est le reflet honnête de ma progression :
-          de l'étudiante qui découvrait les principes comptables en BUT1, à celle qui gère aujourd'hui des opérations
-          en autonomie en alternance. »
-        </p>
-        <p style="margin-top: 1.5rem; font-size: 0.85rem; font-weight: 600; color: #c9a84c; letter-spacing: 0.08em;">
-          — Mélina Hasanovic · Juin 2026
-        </p>
+      <div class="citation-box">
+        <p>« Ces trois années de BUT m'ont permis de construire une identité professionnelle réelle, au contact du terrain.
+        En alternance chez <strong>Tecmaplast</strong>, et en stage chez <strong>AdduXi</strong> et <strong>Motelec Industrie</strong>,
+        j'ai pris en charge des missions concrètes de comptabilité générale — saisies, rapprochements, déclarations —
+        qui ont donné du sens à chaque compétence acquise en cours. Ce portfolio est le reflet honnête de ma progression :
+        de l'étudiante qui découvrait les principes comptables en BUT1, à celle qui gère aujourd'hui des opérations
+        en autonomie en alternance. »</p>
+        <p class="citation-author">— Mélina Hasanovic · Juin 2026</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
-
-        <div style="background: rgba(26,35,80,0.5); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem;">
-          <p style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.5rem;">Formation</p>
-          <p style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">BUT GEA · Parcours GC2F</p>
-          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 4px;">IUT Lyon 1 · Bourg-en-Bresse</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <p class="info-card-label">Formation</p>
+          <p class="info-card-value">BUT GEA · Parcours GC2F</p>
+          <p class="info-card-sub">IUT Lyon 1 · Bourg-en-Bresse</p>
         </div>
-
-        <div style="background: rgba(26,35,80,0.5); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem;">
-          <p style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.5rem;">Alternance</p>
-          <p style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">Tecmaplast</p>
-          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 4px;">Tuteur : Christophe Bénéjan-Moreau</p>
+        <div class="info-card">
+          <p class="info-card-label">Alternance</p>
+          <p class="info-card-value">Tecmaplast</p>
+          <p class="info-card-sub">Tuteur : Christophe Bénéjan-Moreau</p>
         </div>
-
-        <div style="background: rgba(26,35,80,0.5); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem;">
-          <p style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.5rem;">Tutrice pédagogique</p>
-          <p style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">Sylvie Morel</p>
-          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 4px;">IUT Lyon 1</p>
+        <div class="info-card">
+          <p class="info-card-label">Tutrice pédagogique</p>
+          <p class="info-card-value">Sylvie Morel</p>
+          <p class="info-card-sub">IUT Lyon 1</p>
         </div>
-
-        <div style="background: rgba(26,35,80,0.5); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem;">
-          <p style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 0.5rem;">Soutenance</p>
-          <p style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">22 juin 2026</p>
-          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 4px;">4ème RDV d'alternance</p>
+        <div class="info-card">
+          <p class="info-card-label">Soutenance</p>
+          <p class="info-card-value">22 juin 2026</p>
+          <p class="info-card-sub">4ème RV d'alternance</p>
         </div>
-
       </div>
+
     </div>
-  </section></body>
+  </section>
+
+  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+</body>
 </html>
