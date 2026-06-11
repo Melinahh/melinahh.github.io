@@ -58,16 +58,14 @@
     .intro-box p { font-size: 0.88rem; color: rgba(237,224,206,0.7); line-height: 1.8; }
     .intro-box strong { color: var(--gold); }
 
-    /* NOUVELLES CARTES COMPETENCES */
     .comp-list { display: flex; flex-direction: column; gap: 12px; }
 
     .comp-item {
       display: flex; align-items: stretch;
       border-radius: 12px; overflow: hidden;
       text-decoration: none; color: inherit;
-      transition: transform 0.2s;
+      cursor: default;
     }
-    .comp-item:hover { transform: translateX(8px); }
 
     .comp-left {
       width: 120px; flex-shrink: 0;
@@ -80,18 +78,15 @@
     .comp-pct { font-size: 12px; color: rgba(237,224,206,0.5); margin-top: 6px; }
 
     .comp-right {
-      flex: 1;
-      background: rgba(255,255,255,0.5);
+      flex: 1; background: rgba(255,255,255,0.5);
       padding: 1.25rem 1.5rem;
       display: flex; flex-direction: column;
-      justify-content: center; position: relative;
-      overflow: hidden;
+      justify-content: center; position: relative; overflow: hidden;
     }
 
     .comp-bg-fill {
       position: absolute; left: 0; top: 0; bottom: 0;
       background: var(--gold); opacity: 0.08;
-      transition: width 0.6s ease;
     }
 
     .comp-title { font-size: 0.92rem; font-weight: 600; color: var(--marron); position: relative; z-index: 1; line-height: 1.4; margin-bottom: 10px; }
@@ -99,7 +94,7 @@
     .comp-bar-row { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
     .comp-bar-bg { flex: 1; height: 4px; background: rgba(61,43,31,0.12); border-radius: 4px; overflow: hidden; }
     .comp-bar-fill { height: 100%; background: var(--marron); border-radius: 4px; }
-    .comp-arrow { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; }
+    .comp-pct-label { font-size: 0.72rem; font-weight: 600; color: var(--marron-mid); flex-shrink: 0; }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -135,12 +130,12 @@
   <div class="content">
 
     <div class="intro-box">
-      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Cliquez sur une compétence pour découvrir ma progression et mes preuves concrètes.</p>
+      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Utilisez le menu déroulant pour accéder au détail de chaque compétence.</p>
     </div>
 
     <div class="comp-list">
 
-      <a href="competence1.html" class="comp-item">
+      <div class="comp-item">
         <div class="comp-left">
           <div class="comp-ce">CE1</div>
           <div class="comp-pct">88%</div>
@@ -150,42 +145,42 @@
           <p class="comp-title">Analyser les processus de l'organisation dans son environnement</p>
           <div class="comp-bar-row">
             <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 88%;"></div></div>
-            <span class="comp-arrow">→</span>
+            <span class="comp-pct-label">88%</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a href="competence2.html" class="comp-item">
+      <div class="comp-item">
         <div class="comp-left">
           <div class="comp-ce">CE2</div>
-          <div class="comp-pct">75%</div>
+          <div class="comp-pct">80%</div>
         </div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 75%;"></div>
+          <div class="comp-bg-fill" style="width: 80%;"></div>
           <p class="comp-title">Aide à la prise de décision</p>
           <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 75%;"></div></div>
-            <span class="comp-arrow">→</span>
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 80%;"></div></div>
+            <span class="comp-pct-label">80%</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a href="competence3.html" class="comp-item">
+      <div class="comp-item">
         <div class="comp-left">
           <div class="comp-ce">CE3</div>
-          <div class="comp-pct">70%</div>
+          <div class="comp-pct">85%</div>
         </div>
         <div class="comp-right">
-          <div class="comp-bg-fill" style="width: 70%;"></div>
+          <div class="comp-bg-fill" style="width: 85%;"></div>
           <p class="comp-title">Piloter les relations avec les parties prenantes de l'organisation</p>
           <div class="comp-bar-row">
-            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 70%;"></div></div>
-            <span class="comp-arrow">→</span>
+            <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 85%;"></div></div>
+            <span class="comp-pct-label">85%</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a href="competence4.html" class="comp-item">
+      <div class="comp-item">
         <div class="comp-left">
           <div class="comp-ce">CE4</div>
           <div class="comp-pct">65%</div>
@@ -195,12 +190,12 @@
           <p class="comp-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
           <div class="comp-bar-row">
             <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 65%;"></div></div>
-            <span class="comp-arrow">→</span>
+            <span class="comp-pct-label">65%</span>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a href="competence5.html" class="comp-item">
+      <div class="comp-item">
         <div class="comp-left">
           <div class="comp-ce">CE5</div>
           <div class="comp-pct">75%</div>
@@ -210,10 +205,10 @@
           <p class="comp-title">Evaluer l'activité de l'organisation</p>
           <div class="comp-bar-row">
             <div class="comp-bar-bg"><div class="comp-bar-fill" style="width: 75%;"></div></div>
-            <span class="comp-arrow">→</span>
+            <span class="comp-pct-label">75%</span>
           </div>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
