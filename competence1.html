@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compétence 1 – Mélina Hasanovic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --sable: #EDE0CE;
+      --sable-dark: #D4C4AE;
+      --marron: #3D2B1F;
+      --marron-mid: #6B4C35;
+      --gold: #D4A017;
+      --gold-light: #E8C060;
+      --terra: #C17B4A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(212,196,174,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(61,43,31,0.1);
+      padding: 0 3rem; display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); letter-spacing: 0.05em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .page-header {
+      padding: 8rem 2rem 4rem; text-align: center;
+      background: var(--marron); position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    .page-header-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--sable); position: relative; line-height: 1.2; }
+    .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; line-height: 1.7; }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* BADGES */
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.5rem; justify-content: center; }
+    .badge { font-size: 0.72rem; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+    .badge-gold { background: rgba(212,160,23,0.15); color: var(--gold); border: 1px solid rgba(212,160,23,0.35); }
+    .badge-green { background: rgba(76,175,80,0.12); color: #2e7d32; border: 1px solid rgba(76,175,80,0.3); }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 1.2rem; padding-bottom: 8px; border-bottom: 0.5px solid rgba(61,43,31,0.15); }
+
+    /* COMPOSANTES GRID */
+    .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .comp-card { background: rgba(255,255,255,0.45); border: 1px solid rgba(61,43,31,0.1); border-radius: 10px; padding: 1.25rem; transition: transform 0.2s; }
+    .comp-card:hover { transform: translateY(-2px); }
+    .comp-card.featured { border: 2px solid var(--gold); background: rgba(255,255,255,0.6); }
+    .comp-num { font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px; }
+    .comp-title { font-size: 0.9rem; font-weight: 600; color: var(--marron); margin-bottom: 4px; line-height: 1.4; }
+    .comp-sub { font-size: 0.78rem; color: var(--marron-mid); font-style: italic; line-height: 1.4; margin-bottom: 10px; }
+    .comp-status { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(76,175,80,0.12); color: #2e7d32; border: 1px solid rgba(76,175,80,0.3); }
+    .featured-label { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 2px 10px; border-radius: var(--border-radius-md); background: rgba(212,160,23,0.15); color: var(--gold); margin-bottom: 8px; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: rgba(61,43,31,0.1); margin: 2.5rem 0; }
+
+    /* DEVELOPPEMENT */
+    .dev-box { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; }
+    .dev-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--marron); margin-bottom: 0.4rem; }
+    .dev-sub { font-size: 0.82rem; color: var(--marron-mid); margin-bottom: 2rem; }
+
+    /* PROGRESSION */
+    .prog-section { margin-bottom: 2rem; }
+    .prog-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); margin-bottom: 1rem; }
+    .prog-row { margin-bottom: 1rem; }
+    .prog-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--marron-mid); margin-bottom: 5px; }
+    .prog-labels strong { color: var(--marron); font-weight: 600; }
+    .prog-bg { height: 10px; background: rgba(61,43,31,0.1); border-radius: 10px; overflow: hidden; }
+    .prog-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
+    .prog-but1 { background: #B4B2A9; }
+    .prog-but3 { background: var(--gold); }
+
+    /* CONTEXTES */
+    .contextes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .contexte-card { background: rgba(61,43,31,0.05); border-radius: 8px; padding: 1rem 1.25rem; border-left: 3px solid; }
+    .contexte-card.but1 { border-color: #B4B2A9; }
+    .contexte-card.but3 { border-color: var(--gold); }
+    .contexte-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .contexte-card.but1 .contexte-label { color: #888; }
+    .contexte-card.but3 .contexte-label { color: var(--gold); }
+    .contexte-text { font-size: 0.8rem; color: var(--marron-mid); line-height: 1.6; }
+
+    /* REFLEXION */
+    .reflexion { background: var(--marron); border-radius: 8px; padding: 1.5rem 2rem; margin-top: 1.5rem; }
+    .reflexion-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .reflexion-text { font-size: 0.9rem; color: rgba(237,224,206,0.85); font-style: italic; line-height: 1.8; }
+    .reflexion-author { font-size: 0.78rem; color: var(--gold); margin-top: 1rem; font-style: normal; }
+
+    /* NAV COMPETENCES */
+    .comp-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; flex-wrap: wrap; gap: 1rem; }
+    .comp-nav a { text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--marron-mid); padding: 8px 16px; border: 1px solid rgba(61,43,31,0.2); border-radius: 4px; transition: all 0.2s; }
+    .comp-nav a:hover { background: var(--marron); color: var(--sable); }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">M. Hasanovic</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li><a href="competences.html" class="active">Compétences</a></li>
+      <li><a href="experiences.html">Expériences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-header-tag">Référentiel BUT GEA · Compétence 1</p>
+    <h1>Analyser les processus de l'organisation<br>dans son environnement</h1>
+    <p class="page-header-sub">Comprendre l'organisation dans sa globalité · Identifier ses enjeux · Cartographier ses parties prenantes</p>
+    <div class="badges" style="position:relative;">
+      <span class="badge badge-gold">3 composantes</span>
+      <span class="badge badge-green">Niveau acquis BUT 3</span>
+      <span class="badge badge-gold">88% maîtrise</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- RAPPEL DES 3 COMPOSANTES -->
+    <p class="section-label">Les 3 composantes de la compétence</p>
+    <div class="comp-grid">
+
+      <div class="comp-card">
+        <p class="comp-num">CE1.01</p>
+        <p class="comp-title">Déterminer correctement les enjeux socio-économiques et juridiques</p>
+        <p class="comp-sub">Identifier les différents types d'enjeux</p>
+        <span class="comp-status">Acquis</span>
+      </div>
+
+      <div class="comp-card">
+        <p class="comp-num">CE1.02</p>
+        <p class="comp-title">Identifier les différentes dimensions de l'identité et des caractéristiques de l'organisation</p>
+        <p class="comp-sub">Qualifier les différents types d'organisations</p>
+        <span class="comp-status">Acquis</span>
+      </div>
+
+      <div class="comp-card featured">
+        <span class="featured-label">Composante développée</span>
+        <p class="comp-num">CE1.03</p>
+        <p class="comp-title">Présenter de manière détaillée les attentes des acteurs et partenaires de l'organisation</p>
+        <p class="comp-sub">Identifier les parties prenantes et leurs relations au sein d'un processus</p>
+        <span class="comp-status">Acquis</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- COMPOSANTE DEVELOPPEE -->
+    <p class="section-label">Composante développée · CE1.03</p>
+    <div class="dev-box">
+
+      <h2 class="dev-title">Présenter les attentes des acteurs et partenaires</h2>
+      <p class="dev-sub">Identifier les parties prenantes et leurs relations au sein d'un processus</p>
+
+      <!-- PROGRESSION -->
+      <div class="prog-section">
+        <p class="prog-title">Ma progression BUT 1 → BUT 3</p>
+
+        <div class="prog-row">
+          <div class="prog-labels">
+            <strong>BUT 1</strong>
+            <span>La Maison Rivet · AdduXi · 35%</span>
+          </div>
+          <div class="prog-bg">
+            <div class="prog-fill prog-but1" style="width: 35%;"></div>
+          </div>
+        </div>
+
+        <div class="prog-row">
+          <div class="prog-labels">
+            <strong>BUT 3</strong>
+            <span>Tecmaplast · 88%</span>
+          </div>
+          <div class="prog-bg">
+            <div class="prog-fill prog-but3" style="width: 88%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTEXTES -->
+      <div class="contextes">
+        <div class="contexte-card but1">
+          <p class="contexte-label">BUT 1 · Point de départ</p>
+          <p class="contexte-text">Identification des enjeux socio-économiques et juridiques de La Maison Rivet et d'AdduXi. Première approche du PESTEL et des parties prenantes. Statut : en cours d'acquisition en S1, acquis en S2.</p>
+        </div>
+        <div class="contexte-card but3">
+          <p class="contexte-label">BUT 3 · Niveau atteint</p>
+          <p class="contexte-text">Chez Tecmaplast, j'identifie naturellement les parties prenantes internes et externes, leurs attentes et leurs interactions. Je sais cartographier les relations au sein d'un processus de manière autonome.</p>
+        </div>
+      </div>
+
+      <!-- REFLEXION -->
+      <div class="reflexion">
+        <p class="reflexion-label">Réflexion personnelle</p>
+        <p class="reflexion-text">« En BUT 1, j'ai découvert comment analyser l'environnement d'une organisation à travers des cas concrets comme La Maison Rivet et AdduXi. Du S1 au S2, j'ai progressé d'une simple identification des enjeux à une analyse structurée intégrant les dimensions socio-économiques et juridiques. En BUT 3, cette compétence est devenue un réflexe : chez Tecmaplast, j'identifie naturellement les enjeux de l'organisation et je sais les mettre en perspective avec son environnement. Si c'était à refaire, je m'appuierais davantage sur des sources primaires dès le début plutôt que de me limiter aux informations disponibles en ligne. »</p>
+        <p class="reflexion-author">— Mélina Hasanovic · Juin 2026</p>
+      </div>
+
+    </div>
+
+    <!-- NAVIGATION ENTRE COMPETENCES -->
+    <div class="comp-nav">
+      <a href="competences.html">← Toutes les compétences</a>
+      <a href="competence2.html">Compétence 2 →</a>
+    </div>
+
+  </div>
+
+  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+</body>
+</html>
