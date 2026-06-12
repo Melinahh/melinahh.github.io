@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compétences – Mélina Hasanovic</title>
+  <title>CE1 – Analyser les processus – Mélina Hasanovic</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,7 +19,7 @@
     body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
 
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(212,196,174,0.95); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(61,43,31,0.1);
       padding: 0 3rem; display: flex; align-items: center;
@@ -33,7 +33,7 @@
     .dropdown-toggle { cursor: pointer; display: flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); user-select: none; }
     .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
     .dropdown-toggle.open::after { transform: rotate(180deg); }
-    .dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px; padding: 8px 0; min-width: 280px; box-shadow: 0 4px 20px rgba(61,43,31,0.15); z-index: 9999; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px; padding: 8px 0; min-width: 280px; box-shadow: 0 4px 20px rgba(61,43,31,0.1); z-index: 9999; }
     .dropdown-menu.open { display: block; }
     .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marron-mid); text-decoration: none; transition: background 0.15s, color 0.15s; }
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
@@ -41,53 +41,71 @@
 
     .page-header { padding: 8rem 2rem 4rem; text-align: center; background: var(--marron); position: relative; overflow: hidden; }
     .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-    .page-header-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
+    .page-header p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
-    .page-header-sub { font-size: 0.88rem; color: rgba(237,224,206,0.6); margin-top: 1rem; position: relative; }
 
-    .content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 
-    .intro-box { background: var(--marron); border-radius: 10px; padding: 2rem; text-align: center; margin-bottom: 3rem; }
-    .intro-box p { font-size: 0.88rem; color: rgba(237,224,206,0.7); line-height: 1.8; }
-    .intro-box strong { color: var(--gold); }
+    /* BLOC PRINCIPAL */
+    .comp-bloc { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 3rem; background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; }
+    .comp-number { width: 56px; height: 56px; background: var(--marron); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+    .comp-info { flex: 1; }
+    .comp-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .comp-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--marron); margin-bottom: 1rem; line-height: 1.3; }
+    .comp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .comp-tag { background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3); border-radius: 20px; padding: 4px 14px; font-size: 0.68rem; font-weight: 600; color: var(--marron-mid); }
 
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem; align-items: start; }
+    /* TIMELINE */
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--marron); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid rgba(212,160,23,0.3); }
+    .timeline { display: flex; gap: 1rem; margin-bottom: 3rem; align-items: stretch; }
+    .timeline-step { flex: 1; background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem; }
+    .step-but { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .step-title { font-size: 0.95rem; font-weight: 600; color: var(--marron); margin-bottom: 0.5rem; }
+    .step-text { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; }
+    .timeline-arrow { color: rgba(212,160,23,0.5); font-size: 1.5rem; align-self: center; flex-shrink: 0; }
 
-    .comp-list { display: flex; flex-direction: column; gap: 12px; }
-    .comp-item { display: flex; align-items: stretch; border-radius: 12px; overflow: hidden; }
-    .comp-left { width: 100px; flex-shrink: 0; background: var(--marron); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.2rem 0.8rem; }
-    .comp-ce { font-size: 18px; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1; font-family: 'Playfair Display', serif; }
-    .comp-pct { font-size: 11px; color: rgba(237,224,206,0.5); margin-top: 5px; }
-    .comp-right { flex: 1; background: rgba(255,255,255,0.5); padding: 1rem 1.2rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
-    .comp-bg-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold); opacity: 0.08; }
-    .comp-title { font-size: 0.82rem; font-weight: 600; color: var(--marron); position: relative; z-index: 1; line-height: 1.4; margin-bottom: 8px; }
-    .comp-bar-row { display: flex; align-items: center; gap: 8px; position: relative; z-index: 1; }
-    .comp-bar-bg { flex: 1; height: 4px; background: rgba(61,43,31,0.12); border-radius: 4px; overflow: hidden; }
-    .comp-bar-fill { height: 100%; background: var(--marron); border-radius: 4px; }
-    .comp-pct-label { font-size: 0.68rem; font-weight: 600; color: var(--marron-mid); flex-shrink: 0; }
+    /* COMPOSANTES */
+    .composante { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+    .comp-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem; }
+    .acquis-badge { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.35); border-radius: 20px; padding: 2px 10px; font-size: 0.62rem; font-weight: 700; color: #2E7D32; white-space: nowrap; }
+    .comp-head-name { font-size: 0.92rem; font-weight: 600; color: var(--marron); }
+    .comp-text { font-size: 0.80rem; color: var(--marron-mid); line-height: 1.75; }
 
-    .heatmap-section { background: rgba(255,255,255,0.4); border-radius: 12px; padding: 1.5rem; }
-    .heatmap-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--marron); margin-bottom: 0.3rem; }
-    .heatmap-sub { font-size: 0.78rem; color: var(--marron-mid); margin-bottom: 1.5rem; }
-    .heatmap-table { width: 100%; border-collapse: separate; border-spacing: 6px; }
-    .heatmap-table th { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 6px; text-align: center; }
-    .heatmap-table th.col-label { text-align: left; color: var(--marron-mid); }
-    .heatmap-table th.but1 { color: #888780; }
-    .heatmap-table th.but2 { color: var(--terra); }
-    .heatmap-table th.but3 { color: var(--gold); }
-    .heatmap-table td { border-radius: 6px; text-align: center; padding: 10px 6px; font-size: 0.78rem; font-weight: 600; }
-    .heatmap-table td.row-label { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--gold); text-align: left; background: transparent; padding-left: 0; font-weight: 700; }
-    .cell-but1 { background: rgba(180,178,169,0.3); color: #5F5E5A; }
-    .cell-but2 { background: rgba(193,123,74,0.4); color: #712B13; }
-    .cell-but3-low { background: rgba(61,43,31,0.65); color: var(--gold); }
-    .cell-but3-mid { background: rgba(61,43,31,0.75); color: var(--gold); }
-    .cell-but3-high { background: rgba(61,43,31,0.88); color: var(--gold); }
-    .cell-empty { background: rgba(61,43,31,0.05); color: var(--marron-mid); font-size: 0.68rem; font-style: italic; }
-    .heatmap-legend { display: flex; align-items: center; gap: 8px; margin-top: 1.2rem; justify-content: center; flex-wrap: wrap; }
-    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: var(--marron-mid); }
-    .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+    /* SAE */
+    .sae-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .sae-card { background: rgba(255,255,255,0.45); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.3rem; }
+    .sae-card-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.5rem; }
+    .sae-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--marron); margin-bottom: 0.5rem; }
+    .sae-card p { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; }
 
-    @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+    /* NUAGE */
+    .cloud-section { background: var(--marron); border-radius: 12px; padding: 2rem; margin-bottom: 3rem; text-align: center; }
+    .cloud-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 16px; }
+    .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
+    .w:hover { transform: scale(1.08); }
+    .s1 { font-size: 2rem; }
+    .s2 { font-size: 1.5rem; }
+    .s3 { font-size: 1.1rem; }
+    .s4 { font-size: 0.88rem; }
+    .s5 { font-size: 0.72rem; }
+    .wgold { color: #D4A017; }
+    .wsable { color: #EDE0CE; }
+    .wterra { color: #C17B4A; }
+    .wmuted { color: rgba(237,224,206,0.5); }
+    .wvmuted { color: rgba(237,224,206,0.3); }
+    .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); }
+    .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
+    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+    /* CITATION */
+    .bilan-box { background: rgba(212,160,23,0.1); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; margin-bottom: 3rem; border-radius: 0 8px 8px 0; }
+    .bilan-text { font-size: 0.88rem; color: var(--marron); line-height: 1.8; font-style: italic; }
+
+    /* NAVIGATION */
+    .nav-comp { display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(61,43,31,0.15); }
+    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
+    .nav-comp a:hover { color: var(--gold); }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -102,7 +120,7 @@
       <li class="dropdown">
         <span class="dropdown-toggle active" onclick="toggleDropdown(this)">Compétences</span>
         <div class="dropdown-menu">
-          <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
+          <a href="competence1.html" class="active"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
           <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
           <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
           <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
@@ -115,89 +133,151 @@
   </nav>
 
   <div class="page-header">
-    <p class="page-header-tag">Référentiel BUT GEA</p>
-    <h1>Les 5 compétences</h1>
-    <p class="page-header-sub">Parcours GC2F · Gestion comptable fiscale et financière</p>
+    <p>Compétence 1</p>
+    <h1>Analyser les processus de l'organisation dans son environnement</h1>
   </div>
 
   <div class="content">
 
-    <div class="intro-box">
-      <p>Ces 5 compétences constituent le socle de mon diplôme BUT GEA. Chacune a été acquise progressivement à travers mes <strong>SAE, stages et alternance</strong>. Cliquez sur une compétence pour découvrir ma progression et mes preuves concrètes.</p>
+    <!-- BLOC PRINCIPAL -->
+    <div class="comp-bloc">
+      <div class="comp-number">1</div>
+      <div class="comp-info">
+        <p class="comp-label">Compétence CE1</p>
+        <h2 class="comp-name">Analyser les processus de l'organisation dans son environnement</h2>
+        <div class="comp-tags">
+          <span class="comp-tag">CE1.01 · Enjeux socio-économiques</span>
+          <span class="comp-tag">CE1.02 · Identité de l'organisation</span>
+          <span class="comp-tag">CE1.03 · Parties prenantes</span>
+        </div>
+      </div>
     </div>
 
-    <div class="two-col">
-
-      <div class="comp-list">
-        <div class="comp-item">
-          <div class="comp-left"><div class="comp-ce">CE1</div><div class="comp-pct">88%</div></div>
-          <div class="comp-right">
-            <div class="comp-bg-fill" style="width:88%;"></div>
-            <p class="comp-title">Analyser les processus de l'organisation dans son environnement</p>
-            <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:88%;"></div></div><span class="comp-pct-label">88%</span></div>
-          </div>
-        </div>
-        <div class="comp-item">
-          <div class="comp-left"><div class="comp-ce">CE2</div><div class="comp-pct">80%</div></div>
-          <div class="comp-right">
-            <div class="comp-bg-fill" style="width:80%;"></div>
-            <p class="comp-title">Aide à la prise de décision</p>
-            <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:80%;"></div></div><span class="comp-pct-label">80%</span></div>
-          </div>
-        </div>
-        <div class="comp-item">
-          <div class="comp-left"><div class="comp-ce">CE3</div><div class="comp-pct">85%</div></div>
-          <div class="comp-right">
-            <div class="comp-bg-fill" style="width:85%;"></div>
-            <p class="comp-title">Piloter les relations avec les parties prenantes de l'organisation</p>
-            <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:85%;"></div></div><span class="comp-pct-label">85%</span></div>
-          </div>
-        </div>
-        <div class="comp-item">
-          <div class="comp-left"><div class="comp-ce">CE4</div><div class="comp-pct">65%</div></div>
-          <div class="comp-right">
-            <div class="comp-bg-fill" style="width:65%;"></div>
-            <p class="comp-title">Produire l'information comptable, fiscale et sociale de l'organisation</p>
-            <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:65%;"></div></div><span class="comp-pct-label">65%</span></div>
-          </div>
-        </div>
-        <div class="comp-item">
-          <div class="comp-left"><div class="comp-ce">CE5</div><div class="comp-pct">75%</div></div>
-          <div class="comp-right">
-            <div class="comp-bg-fill" style="width:75%;"></div>
-            <p class="comp-title">Evaluer l'activité de l'organisation</p>
-            <div class="comp-bar-row"><div class="comp-bar-bg"><div class="comp-bar-fill" style="width:75%;"></div></div><span class="comp-pct-label">75%</span></div>
-          </div>
-        </div>
+    <!-- TIMELINE -->
+    <h2 class="section-title">Ma progression BUT 1 → BUT 3</h2>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="step-but">BUT 1 · 2023-2024</div>
+        <div class="step-title">Découverte</div>
+        <div class="step-text">SAE Boucherie-Charcuterie · Premiers outils d'analyse · PESTEL · identification des acteurs</div>
       </div>
-
-      <div class="heatmap-section">
-        <h2 class="heatmap-title">Ma progression BUT 1 → BUT 3</h2>
-        <p class="heatmap-sub">Plus la cellule est foncée, plus le niveau d'acquisition est élevé</p>
-        <table class="heatmap-table">
-          <thead>
-            <tr>
-              <th class="col-label"></th>
-              <th class="but1">BUT 1</th>
-              <th class="but2">BUT 2</th>
-              <th class="but3">BUT 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="row-label">CE1</td><td class="cell-but1">30%</td><td class="cell-but2">55%</td><td class="cell-but3-high">88%</td></tr>
-            <tr><td class="row-label">CE2</td><td class="cell-but1">25%</td><td class="cell-but2">50%</td><td class="cell-but3-high">80%</td></tr>
-            <tr><td class="row-label">CE3</td><td class="cell-but1">20%</td><td class="cell-but2">55%</td><td class="cell-but3-high">85%</td></tr>
-            <tr><td class="row-label">CE4</td><td class="cell-empty">—</td><td class="cell-but2">40%</td><td class="cell-but3-low">65%</td></tr>
-            <tr><td class="row-label">CE5</td><td class="cell-empty">—</td><td class="cell-but2">45%</td><td class="cell-but3-mid">75%</td></tr>
-          </tbody>
-        </table>
-        <div class="heatmap-legend">
-          <div class="legend-item"><div class="legend-dot" style="background:rgba(180,178,169,0.3);border:1px solid rgba(61,43,31,0.1);"></div><span>BUT 1 · Découverte</span></div>
-          <div class="legend-item"><div class="legend-dot" style="background:rgba(193,123,74,0.4);"></div><span>BUT 2 · Montée en compétences</span></div>
-          <div class="legend-item"><div class="legend-dot" style="background:rgba(61,43,31,0.85);"></div><span>BUT 3 · Expertise</span></div>
-        </div>
+      <div class="timeline-arrow">→</div>
+      <div class="timeline-step">
+        <div class="step-but">BUT 2 · 2024-2025</div>
+        <div class="step-title">Approfondissement</div>
+        <div class="step-text">SAE Banque de France · Diagnostic financier complet · Structure juridique · Analyse concurrentielle</div>
       </div>
+      <div class="timeline-arrow">→</div>
+      <div class="timeline-step">
+        <div class="step-but">BUT 3 · 2025-2026</div>
+        <div class="step-title">Expertise</div>
+        <div class="step-text">Alternance Tecmaplast · Analyse autonome des processus · Vision globale · Recommandations stratégiques</div>
+      </div>
+    </div>
 
+    <!-- COMPOSANTES -->
+    <h2 class="section-title">Les composantes évaluées</h2>
+
+    <div class="composante">
+      <div class="comp-header">
+        <span class="acquis-badge">✓ Acquis</span>
+        <span class="comp-head-name">CE1.01 · Intégrer l'impact des enjeux sur l'organisation</span>
+      </div>
+      <div class="comp-text">J'ai identifié les enjeux clés de la boucherie (fidélisation, satisfaction, positionnement) et mesuré leurs conséquences concrètes sur l'activité pour orienter les recommandations. En alternance chez Tecmaplast, j'ai appliqué cette même lecture des enjeux économiques et juridiques à une PME industrielle.</div>
+    </div>
+
+    <div class="composante">
+      <div class="comp-header">
+        <span class="acquis-badge">✓ Acquis</span>
+        <span class="comp-head-name">CE1.02 · Identifier les dimensions de l'identité de l'organisation</span>
+      </div>
+      <div class="comp-text">J'ai su analyser la structure juridique, l'organigramme et les caractéristiques propres à chaque organisation rencontrée — de la TPE artisanale à la PME industrielle. Cette compétence m'a permis d'adapter mes analyses à chaque contexte.</div>
+    </div>
+
+    <div class="composante">
+      <div class="comp-header">
+        <span class="acquis-badge">✓ Acquis</span>
+        <span class="comp-head-name">CE1.03 · Présenter les attentes des acteurs et partenaires</span>
+      </div>
+      <div class="comp-text">À partir des résultats d'enquêtes et d'analyses terrain, j'ai dégagé des axes d'amélioration opérationnels concrets en tenant compte des attentes de chaque partie prenante — clients, fournisseurs, collaborateurs.</div>
+    </div>
+
+    <!-- SAE -->
+    <h2 class="section-title" style="margin-top:3rem;">Mise en pratique · SAE & Missions</h2>
+    <div class="sae-grid">
+      <div class="sae-card">
+        <div class="sae-card-badge">BUT 1 · SAE Boucherie-Charcuterie</div>
+        <h4>La Maison Rivet · Ambérieu</h4>
+        <p>Analyse PESTEL · étude de marché · enquête clientèle · identification des dysfonctionnements · recommandations concrètes pour le gérant</p>
+      </div>
+      <div class="sae-card">
+        <div class="sae-card-badge">BUT 1 · Projet tutoré GEA'Jouets</div>
+        <h4>Collecte de jouets · Bourg-en-Bresse</div>
+        <p>Analyse des parties prenantes · coordination avec la Croix-Rouge, Radio Scoop, Century 21 · gestion des attentes de chaque acteur</p>
+      </div>
+      <div class="sae-card">
+        <div class="sae-card-badge">BUT 2 · SAE Banque de France</div>
+        <h4>Diagnostic financier complet</h4>
+        <p>Analyse de l'environnement économique · identification des enjeux · recommandations stratégiques pour convaincre la Banque de France</p>
+      </div>
+      <div class="sae-card">
+        <div class="sae-card-badge">BUT 3 · Alternance Tecmaplast</div>
+        <h4>Vision globale en entreprise</h4>
+        <p>Analyse des processus internes · compréhension de l'environnement industriel · application autonome des outils d'analyse</p>
+      </div>
+    </div>
+
+    <!-- NUAGE DE MOTS -->
+    <h2 class="section-title">Matières mobilisées</h2>
+    <div class="cloud-section">
+      <div class="cloud-label">CE1 · Ce que j'ai appris à travers les matières</div>
+      <div class="cloud">
+        <span class="w s1 wgold">Économie</span>
+        <span class="w s2 wsable">Droit des sociétés</span>
+        <span class="w s3 wterra">Marketing</span>
+        <span class="w s1 wsable">Management</span>
+        <span class="w s4 wmuted">Droit du travail</span>
+        <span class="w s2 wgold">Sociologie</span>
+        <span class="w s5 wvmuted">Droit du numérique</span>
+        <span class="w s3 wsable">Ressources humaines</span>
+        <span class="w s4 wterra">Institutions FR & UE</span>
+        <span class="w s1 wterra">Droit des affaires</span>
+        <span class="w s5 wmuted">Droit administratif</span>
+        <span class="w s2 wsable">Théorie des organisations</span>
+        <span class="w s3 wgold">Projet professionnel</span>
+        <span class="w s4 wmuted">Droit des obligations</span>
+        <span class="w s5 wvmuted">Entreprises en difficulté</span>
+        <span class="w s2 wterra">Management d'activités</span>
+        <span class="w s3 wsable">Analyse d'environnement</span>
+        <span class="w s4 wgold">Vision stratégique</span>
+        <span class="w s5 wmuted">Parties prenantes</span>
+        <span class="w s1 wgold">Organisation</span>
+        <span class="w s3 wterra">PESTEL</span>
+        <span class="w s4 wsable">Diagnostic</span>
+        <span class="w s5 wvmuted">Enjeux juridiques</span>
+        <span class="w s2 wsable">Autonomie</span>
+        <span class="w s3 wgold">Rigueur</span>
+        <span class="w s4 wterra">Adaptabilité</span>
+        <span class="w s5 wmuted">Recommandations</span>
+        <span class="w s2 wgold">Comprendre</span>
+        <span class="w s3 wsable">Recul stratégique</span>
+        <span class="w s4 wmuted">Acteurs</span>
+      </div>
+      <div class="cloud-legend">
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Matières juridiques & éco</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & management</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#C17B4A;"></div><span>Compétences acquises</span></div>
+      </div>
+    </div>
+
+    <!-- CITATION BILAN -->
+    <div class="bilan-box">
+      <div class="bilan-text">« Cette compétence m'a appris à lire une organisation dans sa globalité — pas seulement ses chiffres, mais ses processus, son environnement et ses acteurs. C'est ce regard systémique que j'ai ensuite appliqué en alternance chez Tecmaplast, où j'ai pu analyser en autonomie les enjeux d'une PME industrielle. »</div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-comp">
+      <a href="competence2.html">CE2 · Aide à la prise de décision →</a>
     </div>
 
   </div>
@@ -219,3 +299,4 @@
 
 </body>
 </html>
+ 
