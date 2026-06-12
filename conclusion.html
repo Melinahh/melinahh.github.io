@@ -39,27 +39,44 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
-    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; }
-    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-    .page-header::after { content: ''; position: absolute; right: 4rem; top: 50%; transform: translateY(-50%); width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
-    .header-deco { position: absolute; right: 6rem; top: 50%; transform: translateY(-50%); width: 140px; height: 140px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
-    .page-header p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--sable); position: relative; line-height: 1.1; max-width: 700px; }
-    .header-line { width: 60px; height: 3px; background: var(--gold); margin-top: 1.5rem; position: relative; }
+    /* DÉCO D globale */
+    .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+    .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
+    .deco-circle { position: absolute; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .deco-diamond { position: absolute; background: rgba(212,160,23,0.25); transform: rotate(45deg); pointer-events: none; z-index: 0; }
+    .deco-dot { position: absolute; background: rgba(212,160,23,0.4); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-tr { position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-bl { position: absolute; bottom: 16px; left: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .deco-inner { position: relative; z-index: 1; }
 
-    .content { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem 6rem; }
+    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .header-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; top: -100px; right: -100px; }
+    .header-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; top: -40px; right: -40px; }
+    .header-diamond { position: absolute; width: 16px; height: 16px; background: rgba(212,160,23,0.3); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
+    .header-dot-1 { position: absolute; width: 6px; height: 6px; background: rgba(212,160,23,0.4); border-radius: 50%; bottom: 3rem; right: 9rem; }
+    .header-dot-2 { position: absolute; width: 4px; height: 4px; background: rgba(212,160,23,0.3); border-radius: 50%; bottom: 4rem; right: 8rem; }
+    .corner-tl-header { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-left: 2px solid rgba(212,160,23,0.3); }
+    .page-header p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; }
+    .page-header p::after { content: ''; width: 40px; height: 1px; background: rgba(212,160,23,0.5); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.1; max-width: 700px; }
+    .header-line { width: 60px; height: 3px; background: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
+
+    .content { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem 6rem; display: flex; flex-direction: column; gap: 3rem; }
 
     .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
     .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 1.5rem; line-height: 1.2; }
 
     /* BILAN */
-    .bilan-section { margin-bottom: 5rem; position: relative; }
-    .bilan-section::before { content: ''; position: absolute; left: -4rem; top: 0; bottom: 0; width: 1px; background: rgba(212,160,23,0.2); }
+    .bilan-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
     .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
     .stat-box { background: var(--marron); border-radius: 10px; padding: 1.5rem 1rem; text-align: center; position: relative; overflow: hidden; }
-    .stat-box::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 60px; height: 60px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
+    .stat-box::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
     .stat-lbl { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(237,224,206,0.5); margin-top: 8px; }
     .quote-big { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: -1rem; }
@@ -71,48 +88,49 @@
     .bilan-point-text strong { color: var(--marron); font-weight: 600; }
 
     /* SÉPARATEUR */
-    .sep { display: flex; align-items: center; gap: 1.5rem; margin: 4rem 0; }
+    .sep { display: flex; align-items: center; gap: 1.5rem; }
     .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
     .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
     /* ET APRÈS */
-    .apres-section { margin-bottom: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .apres-outer { }
+    .apres-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; padding: 3rem; background: var(--sable); border: 1px solid rgba(212,160,23,0.2); }
     .apres-text { font-size: 0.95rem; color: var(--marron-mid); line-height: 1.9; margin-bottom: 1.5rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
     .tag { background: rgba(61,43,31,0.06); border: 1px solid rgba(61,43,31,0.12); border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; font-weight: 500; color: var(--marron-mid); }
     .tag.chosen { background: rgba(212,160,23,0.15); border-color: rgba(212,160,23,0.4); color: #8B5E0A; font-weight: 700; }
     .check-badge { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.35); border-radius: 20px; padding: 4px 14px; font-size: 0.78rem; font-weight: 700; color: #2E7D32; display: inline-block; margin-bottom: 1rem; }
-    .mbway-box { background: var(--marron); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.5rem; }
-    .mbway-icon { width: 50px; height: 50px; border-radius: 10px; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
-    .mbway-title { font-size: 1.05rem; font-weight: 700; color: var(--sable); }
-    .mbway-sub { font-size: 0.78rem; color: rgba(237,224,206,0.5); margin-top: 4px; }
+    .mbway-box { background: var(--marron); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+    .mbway-box::after { content: ''; position: absolute; right: -30px; top: -30px; width: 100px; height: 100px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
+    .mbway-icon { width: 50px; height: 50px; border-radius: 10px; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; position: relative; z-index: 1; }
+    .mbway-title { font-size: 1.05rem; font-weight: 700; color: var(--sable); position: relative; z-index: 1; }
+    .mbway-sub { font-size: 0.78rem; color: rgba(237,224,206,0.5); margin-top: 4px; position: relative; z-index: 1; }
     .apres-quote { border-left: 3px solid var(--gold); padding: 1rem 1.2rem; font-size: 0.92rem; font-style: italic; color: var(--marron-mid); line-height: 1.8; border-radius: 0 8px 8px 0; background: rgba(212,160,23,0.06); }
     .apres-deco { display: flex; flex-direction: column; gap: 1rem; padding-top: 3rem; }
-    .deco-card { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem 1.5rem; }
-    .deco-card-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: rgba(212,160,23,0.3); line-height: 1; margin-bottom: 4px; }
+    .deco-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem 1.5rem; position: relative; overflow: hidden; }
+    .deco-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 40px; height: 40px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
+    .deco-card-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: rgba(212,160,23,0.25); line-height: 1; margin-bottom: 4px; }
     .deco-card-title { font-size: 0.95rem; font-weight: 600; color: var(--marron); margin-bottom: 4px; }
     .deco-card-text { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; }
 
     /* REMERCIEMENTS */
-    .rem-section { background: var(--marron); border-radius: 16px; padding: 3rem; position: relative; overflow: hidden; margin-bottom: 2rem; }
-    .rem-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
-    .rem-section::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 140px; height: 140px; border: 1px solid rgba(212,160,23,0.08); border-radius: 50%; }
-    .rem-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-    .rem-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--sable); margin-bottom: 2rem; position: relative; }
-    .rem-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; margin-bottom: 2rem; }
-    .rem-card { background: rgba(237,224,206,0.06); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+    .rem-section { background: var(--marron); padding: 3rem; }
+    .rem-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 10px; }
+    .rem-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
+    .rem-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--sable); margin-bottom: 2rem; }
+    .rem-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
+    .rem-card { background: rgba(237,224,206,0.06); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem; display: flex; align-items: center; gap: 1rem; position: relative; overflow: hidden; }
+    .rem-card::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 36px; height: 36px; border: 1px solid rgba(212,160,23,0.15); transform: rotate(45deg); }
     .rem-card.special { border-color: rgba(212,160,23,0.5); background: rgba(212,160,23,0.08); }
     .rem-icon { font-size: 1.8rem; flex-shrink: 0; }
     .rem-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); }
     .rem-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(237,224,206,0.4); margin-top: 3px; }
 
     /* ORGANIGRAMME */
-    .org-section { background: var(--marron); border-radius: 12px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden; }
-    .org-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
-    .org-section::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 140px; height: 140px; border: 1px solid rgba(212,160,23,0.08); border-radius: 50%; }
+    .org-wrap { background: rgba(237,224,206,0.04); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 1.5rem; position: relative; overflow: hidden; }
     .org-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-    .org-title { font-size: 1.2rem; font-weight: 700; color: var(--sable); margin-bottom: 2.5rem; font-family: 'Playfair Display', serif; }
-    .org { display: flex; flex-direction: column; align-items: center; }
+    .org-title { font-size: 1.1rem; font-weight: 700; color: var(--sable); margin-bottom: 2rem; font-family: 'Playfair Display', serif; }
+    .org { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; }
     .org-card { background: rgba(237,224,206,0.07); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; padding: 1rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 200px; }
     .org-card.top { border-color: rgba(212,160,23,0.6); background: rgba(212,160,23,0.12); }
     .org-card.mid { border-color: rgba(212,160,23,0.4); background: rgba(212,160,23,0.08); }
@@ -155,7 +173,12 @@
   </nav>
 
   <div class="page-header">
-    <div class="header-deco"></div>
+    <div class="header-circle-1"></div>
+    <div class="header-circle-2"></div>
+    <div class="header-diamond"></div>
+    <div class="header-dot-1"></div>
+    <div class="header-dot-2"></div>
+    <div class="corner-tl-header"></div>
     <p>Portfolio BUT GEA · GC2F</p>
     <h1>Conclusion &<br>Remerciements</h1>
     <div class="header-line"></div>
@@ -164,40 +187,31 @@
   <div class="content">
 
     <!-- BILAN -->
-    <div class="bilan-section">
-      <p class="section-label">Bilan</p>
-      <h2 class="section-title">Une trajectoire construite pas à pas</h2>
-      <div class="bilan-grid">
-        <div>
-          <div class="stat-grid">
-            <div class="stat-box">
-              <div class="stat-num">3</div>
-              <div class="stat-lbl">ans de formation</div>
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:250px;height:250px;top:-100px;right:-100px;"></div>
+      <div class="deco-circle" style="width:140px;height:140px;top:-50px;right:-50px;"></div>
+      <div class="deco-diamond" style="width:14px;height:14px;bottom:20px;left:30px;"></div>
+      <div class="deco-dot" style="width:6px;height:6px;bottom:40px;left:55px;"></div>
+      <div class="deco-dot" style="width:4px;height:4px;bottom:50px;left:45px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="deco-inner bilan-section">
+        <p class="section-label">Bilan</p>
+        <h2 class="section-title">Une trajectoire construite pas à pas</h2>
+        <div class="bilan-grid">
+          <div>
+            <div class="stat-grid">
+              <div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl">ans de formation</div></div>
+              <div class="stat-box"><div class="stat-num">6+</div><div class="stat-lbl">SAE réalisées</div></div>
+              <div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl">entreprises</div></div>
             </div>
-            <div class="stat-box">
-              <div class="stat-num">6+</div>
-              <div class="stat-lbl">SAE réalisées</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">3</div>
-              <div class="stat-lbl">entreprises</div>
-            </div>
+            <div class="quote-big">«</div>
+            <div class="quote-text">Ces trois années de BUT GEA m'ont permis de construire une identité professionnelle solide, au contact du terrain et de professionnels exigeants. De la découverte en BUT1 à l'expertise en BUT3, chaque étape a renforcé ma vision du métier et ma confiance en mes capacités.</div>
           </div>
-          <div class="quote-big">«</div>
-          <div class="quote-text">Ces trois années de BUT GEA m'ont permis de construire une identité professionnelle solide, au contact du terrain et de professionnels exigeants. De la découverte en BUT1 à l'expertise en BUT3, chaque étape a renforcé ma vision du métier et ma confiance en mes capacités.</div>
-        </div>
-        <div class="bilan-right">
-          <div class="bilan-point">
-            <div class="bilan-dot"></div>
-            <div class="bilan-point-text"><strong>Des compétences concrètes</strong> — acquises sur le terrain, pas seulement en cours. Chaque SAE, chaque stage, chaque mission en alternance a ancré mes apprentissages dans la réalité.</div>
-          </div>
-          <div class="bilan-point">
-            <div class="bilan-dot"></div>
-            <div class="bilan-point-text"><strong>Une autonomie progressive</strong> — de stagiaire découvrant la comptabilité en BUT1 à alternante gérant des clôtures en totale autonomie en BUT3.</div>
-          </div>
-          <div class="bilan-point">
-            <div class="bilan-dot"></div>
-            <div class="bilan-point-text"><strong>Une vision globale</strong> — comprendre l'organisation dans sa totalité, ses enjeux, ses acteurs et ses processus.</div>
+          <div class="bilan-right">
+            <div class="bilan-point"><div class="bilan-dot"></div><div class="bilan-point-text"><strong>Des compétences concrètes</strong> — acquises sur le terrain, pas seulement en cours. Chaque SAE, chaque stage, chaque mission en alternance a ancré mes apprentissages dans la réalité.</div></div>
+            <div class="bilan-point"><div class="bilan-dot"></div><div class="bilan-point-text"><strong>Une autonomie progressive</strong> — de stagiaire découvrant la comptabilité en BUT1 à alternante gérant des clôtures en totale autonomie en BUT3.</div></div>
+            <div class="bilan-point"><div class="bilan-dot"></div><div class="bilan-point-text"><strong>Une vision globale</strong> — comprendre l'organisation dans sa totalité, ses enjeux, ses acteurs et ses processus.</div></div>
           </div>
         </div>
       </div>
@@ -210,43 +224,39 @@
       <p class="section-label">Et après ?</p>
       <h2 class="section-title">La Supply Chain, une suite logique.</h2>
     </div>
-    <div class="apres-section">
-      <div>
-        <p class="apres-text">Mon parcours en comptabilité, finance et gestion n'est pas un détour — c'est un atout. Comprendre les flux financiers, analyser la performance d'une organisation, maîtriser les outils de gestion : tout cela me donne une base solide pour appréhender la logistique et la Supply Chain avec une vision globale que peu ont.</p>
-        <p class="apres-text">J'ai candidaté dans des domaines variés pour m'assurer de mon choix. Mais c'est la Supply Chain qui réunit tout ce qui me motive : la gestion, la stratégie, le terrain et la coordination des acteurs. La comptabilité et la finance ne sont pas derrière moi — elles sont le socle sur lequel je construis la suite.</p>
-        <div class="tags">
-          <span class="tag">Finance</span>
-          <span class="tag">Contrôle de gestion</span>
-          <span class="tag">Audit</span>
-          <span class="tag">RH</span>
-          <span class="tag">Management</span>
-          <span class="tag chosen">→ Supply Chain ✓</span>
-        </div>
-        <div class="check-badge">✓ Admise</div>
-        <div class="mbway-box">
-          <div class="mbway-icon">🎓</div>
-          <div>
-            <div class="mbway-title">MBA Management de la Supply Chain</div>
-            <div class="mbway-sub">MBWAY Lyon · Alternance · Septembre 2026</div>
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:200px;height:200px;bottom:-80px;left:-80px;"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;top:30px;right:40px;"></div>
+      <div class="deco-dot" style="width:6px;height:6px;top:20px;right:60px;"></div>
+      <div class="deco-dot" style="width:4px;height:4px;top:35px;right:55px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-tr"></div>
+      <div class="deco-inner apres-section">
+        <div>
+          <p class="apres-text">Mon parcours en comptabilité, finance et gestion n'est pas un détour — c'est un atout. Comprendre les flux financiers, analyser la performance d'une organisation, maîtriser les outils de gestion : tout cela me donne une base solide pour appréhender la logistique et la Supply Chain avec une vision globale que peu ont.</p>
+          <p class="apres-text">J'ai candidaté dans des domaines variés pour m'assurer de mon choix. Mais c'est la Supply Chain qui réunit tout ce qui me motive : la gestion, la stratégie, le terrain et la coordination des acteurs. La comptabilité et la finance ne sont pas derrière moi — elles sont le socle sur lequel je construis la suite.</p>
+          <div class="tags">
+            <span class="tag">Finance</span>
+            <span class="tag">Contrôle de gestion</span>
+            <span class="tag">Audit</span>
+            <span class="tag">RH</span>
+            <span class="tag">Management</span>
+            <span class="tag chosen">→ Supply Chain ✓</span>
           </div>
+          <div class="check-badge">✓ Admise</div>
+          <div class="mbway-box">
+            <div class="mbway-icon">🎓</div>
+            <div>
+              <div class="mbway-title">MBA Management de la Supply Chain</div>
+              <div class="mbway-sub">MBWAY Lyon · Alternance · Septembre 2026</div>
+            </div>
+          </div>
+          <div class="apres-quote">« La comptabilité et la finance m'ont appris à lire une organisation en profondeur. La Supply Chain, c'est la prochaine étape — là où cette lecture prend tout son sens opérationnel. »</div>
         </div>
-        <div class="apres-quote">« La comptabilité et la finance m'ont appris à lire une organisation en profondeur. La Supply Chain, c'est la prochaine étape — là où cette lecture prend tout son sens opérationnel. »</div>
-      </div>
-      <div class="apres-deco">
-        <div class="deco-card">
-          <div class="deco-card-num">01</div>
-          <div class="deco-card-title">Une base solide en gestion</div>
-          <div class="deco-card-text">3 ans de comptabilité, finance et analyse organisationnelle — des compétences directement applicables en Supply Chain.</div>
-        </div>
-        <div class="deco-card">
-          <div class="deco-card-num">02</div>
-          <div class="deco-card-title">Une vision des flux</div>
-          <div class="deco-card-text">Comprendre comment une entreprise fonctionne financièrement, c'est aussi comprendre ses flux logistiques et opérationnels.</div>
-        </div>
-        <div class="deco-card">
-          <div class="deco-card-num">03</div>
-          <div class="deco-card-title">Un choix assumé</div>
-          <div class="deco-card-text">Après exploration de nombreuses pistes, la Supply Chain s'est imposée comme la synthèse parfaite de mes compétences et ambitions.</div>
+        <div class="apres-deco">
+          <div class="deco-card"><div class="deco-card-num">01</div><div class="deco-card-title">Une base solide en gestion</div><div class="deco-card-text">3 ans de comptabilité, finance et analyse organisationnelle — des compétences directement applicables en Supply Chain.</div></div>
+          <div class="deco-card"><div class="deco-card-num">02</div><div class="deco-card-title">Une vision des flux</div><div class="deco-card-text">Comprendre comment une entreprise fonctionne financièrement, c'est aussi comprendre ses flux logistiques et opérationnels.</div></div>
+          <div class="deco-card"><div class="deco-card-num">03</div><div class="deco-card-title">Un choix assumé</div><div class="deco-card-text">Après exploration de nombreuses pistes, la Supply Chain s'est imposée comme la synthèse parfaite de mes compétences et ambitions.</div></div>
         </div>
       </div>
     </div>
@@ -254,78 +264,65 @@
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
     <!-- REMERCIEMENTS -->
-    <div class="rem-section">
-      <div class="rem-label">Remerciements</div>
-      <div class="rem-title">Merci ✨</div>
-      <div class="rem-cards">
-        <div class="rem-card">
-          <div class="rem-icon">🎓</div>
-          <div>
-            <div class="rem-name">IUT Lyon 1 & Sylvie Morel</div>
-            <div class="rem-role">Formation · Tutrice pédagogique</div>
-          </div>
+    <div class="deco-wrap dark">
+      <div class="deco-circle" style="width:250px;height:250px;top:-100px;right:-100px;border-color:rgba(212,160,23,0.1);"></div>
+      <div class="deco-circle" style="width:140px;height:140px;bottom:-60px;left:-60px;border-color:rgba(212,160,23,0.08);"></div>
+      <div class="deco-diamond" style="width:14px;height:14px;top:30px;left:40px;"></div>
+      <div class="deco-dot" style="width:6px;height:6px;top:20px;left:60px;"></div>
+      <div class="deco-dot" style="width:4px;height:4px;top:35px;left:55px;"></div>
+      <div class="corner-tl" style="border-color:rgba(212,160,23,0.3);"></div>
+      <div class="corner-br" style="border-color:rgba(212,160,23,0.3);"></div>
+      <div class="deco-inner rem-section">
+        <div class="rem-label">Remerciements</div>
+        <div class="rem-title">Merci ✨</div>
+        <div class="rem-cards">
+          <div class="rem-card"><div class="rem-icon">🎓</div><div><div class="rem-name">IUT Lyon 1 & Sylvie Morel</div><div class="rem-role">Formation · Tutrice pédagogique</div></div></div>
+          <div class="rem-card special"><div class="rem-icon">🏭</div><div><div class="rem-name">Tecmaplast</div><div class="rem-role">Alternance BUT 3</div></div></div>
+          <div class="rem-card"><div class="rem-icon">⚙️</div><div><div class="rem-name">Motelec Industrie · Groupe SOGAP</div><div class="rem-role">Stage BUT 2</div></div></div>
+          <div class="rem-card special"><div class="rem-icon">⭐</div><div><div class="rem-name">AdduXi</div><div class="rem-role">Job étudiant · + de 3 ans</div></div></div>
         </div>
-        <div class="rem-card special">
-          <div class="rem-icon">🏭</div>
-          <div>
-            <div class="rem-name">Tecmaplast</div>
-            <div class="rem-role">Alternance BUT 3</div>
-          </div>
-        </div>
-        <div class="rem-card">
-          <div class="rem-icon">⚙️</div>
-          <div>
-            <div class="rem-name">Motelec Industrie · Groupe SOGAP</div>
-            <div class="rem-role">Stage BUT 2</div>
-          </div>
-        </div>
-        <div class="rem-card special">
-          <div class="rem-icon">⭐</div>
-          <div>
-            <div class="rem-name">AdduXi</div>
-            <div class="rem-role">Job étudiant · + de 3 ans</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ORGANIGRAMME TECMAPLAST -->
-      <div class="org-section">
-        <div class="org-label">Service financier · Tecmaplast</div>
-        <div class="org-title">Une équipe qui m'a tout appris 🙏</div>
-        <div class="org">
-          <div class="org-card top">
-            <div class="org-avatar">MD</div>
-            <div class="org-name">Mathieu Dalet</div>
-            <div class="org-role">Directeur Administratif & Financier</div>
-          </div>
-          <div class="connector-v"></div>
-          <div class="org-card mid">
-            <div class="org-avatar mid">CB</div>
-            <div class="org-name mid">Christophe Bénéjan-Moreau</div>
-            <div class="org-role">Chef comptable · Tuteur</div>
-          </div>
-          <div class="connector-v"></div>
-          <div class="row">
-            <div class="branch">
-              <div class="branch-top"></div>
-              <div class="org-card">
-                <div class="org-avatar low">UP</div>
-                <div class="org-name low">Umus Perrone</div>
-                <div class="org-role">Comptabilité fournisseurs</div>
-              </div>
+        <!-- ORGANIGRAMME -->
+        <div class="org-wrap">
+          <div class="deco-circle" style="width:120px;height:120px;top:-40px;right:-40px;border-color:rgba(212,160,23,0.1);"></div>
+          <div class="deco-diamond" style="width:10px;height:10px;bottom:20px;left:20px;"></div>
+          <div class="org-label">Service financier · Tecmaplast</div>
+          <div class="org-title">Une équipe qui m'a tout appris 🙏</div>
+          <div class="org">
+            <div class="org-card top">
+              <div class="org-avatar">MD</div>
+              <div class="org-name">Mathieu Dalet</div>
+              <div class="org-role">Directeur Administratif & Financier</div>
             </div>
-            <div class="branch">
-              <div class="branch-top"></div>
-              <div class="org-card">
-                <div class="org-avatar low">ED</div>
-                <div class="org-name low">Estelle Di Lullo</div>
-                <div class="org-role">Contrôleuse de gestion</div>
+            <div class="connector-v"></div>
+            <div class="org-card mid">
+              <div class="org-avatar mid">CB</div>
+              <div class="org-name mid">Christophe Bénéjan-Moreau</div>
+              <div class="org-role">Chef comptable · Tuteur</div>
+            </div>
+            <div class="connector-v"></div>
+            <div class="row">
+              <div class="branch">
+                <div class="branch-top"></div>
+                <div class="org-card">
+                  <div class="org-avatar low">UP</div>
+                  <div class="org-name low">Umus Perrone</div>
+                  <div class="org-role">Comptabilité fournisseurs</div>
+                </div>
+              </div>
+              <div class="branch">
+                <div class="branch-top"></div>
+                <div class="org-card">
+                  <div class="org-avatar low">ED</div>
+                  <div class="org-name low">Estelle Di Lullo</div>
+                  <div class="org-role">Contrôleuse de gestion</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
 
   </div>
