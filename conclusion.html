@@ -39,6 +39,7 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
+    /* DÉCO */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
     .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
@@ -48,21 +49,25 @@
     .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
     .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
     .corner-tr { position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
-    .corner-bl { position: absolute; bottom: 16px; left: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
     .deco-inner { position: relative; z-index: 1; }
 
-    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; }
+    /* HEADER CENTRÉ */
+    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; text-align: center; }
     .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
     .header-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; top: -100px; right: -100px; }
     .header-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; top: -40px; right: -40px; }
+    .header-circle-3 { position: absolute; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; bottom: -80px; left: -80px; }
     .header-diamond { position: absolute; width: 16px; height: 16px; background: rgba(212,160,23,0.3); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
     .header-dot-1 { position: absolute; width: 6px; height: 6px; background: rgba(212,160,23,0.4); border-radius: 50%; bottom: 3rem; right: 9rem; }
     .header-dot-2 { position: absolute; width: 4px; height: 4px; background: rgba(212,160,23,0.3); border-radius: 50%; bottom: 4rem; right: 8rem; }
-    .corner-tl-header { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-left: 2px solid rgba(212,160,23,0.3); }
-    .page-header p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; }
+    .header-diamond-2 { position: absolute; width: 12px; height: 12px; background: rgba(212,160,23,0.2); transform: rotate(45deg); top: 6rem; left: 6rem; }
+    .corner-tl-h { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-left: 2px solid rgba(212,160,23,0.3); }
+    .corner-tr-h { position: absolute; top: 80px; right: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-right: 2px solid rgba(212,160,23,0.3); }
+    .page-header p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .page-header p::before { content: ''; width: 40px; height: 1px; background: rgba(212,160,23,0.5); }
     .page-header p::after { content: ''; width: 40px; height: 1px; background: rgba(212,160,23,0.5); }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.1; max-width: 700px; }
-    .header-line { width: 60px; height: 3px; background: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.1; }
+    .header-line { width: 60px; height: 3px; background: var(--gold); margin: 1.5rem auto 0; position: relative; z-index: 1; }
 
     .content { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem 6rem; display: flex; flex-direction: column; gap: 3rem; }
 
@@ -70,8 +75,9 @@
     .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 1.5rem; line-height: 1.2; }
 
+    /* BILAN */
     .bilan-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
-    .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 2.5rem; }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
     .stat-box { background: var(--marron); border-radius: 10px; padding: 1.5rem 1rem; text-align: center; position: relative; overflow: hidden; }
     .stat-box::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
@@ -85,10 +91,26 @@
     .bilan-point-text { font-size: 0.95rem; color: var(--marron-mid); line-height: 1.8; }
     .bilan-point-text strong { color: var(--marron); font-weight: 600; }
 
+    /* SCHÉMA BILAN - Timeline */
+    .schema-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .schema-box { background: rgba(61,43,31,0.04); border: 1px solid rgba(212,160,23,0.15); border-radius: 10px; padding: 1.5rem; }
+    .timeline { display: flex; flex-direction: column; }
+    .tl-item { display: flex; gap: 16px; align-items: flex-start; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .tl-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--marron); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 13px; font-weight: 700; flex-shrink: 0; }
+    .tl-line { width: 2px; flex: 1; min-height: 16px; background: rgba(212,160,23,0.3); margin: 4px 0; }
+    .tl-content { background: rgba(255,255,255,0.5); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 10px 14px; flex: 1; margin-bottom: 8px; }
+    .tl-content.active { border-color: rgba(212,160,23,0.5); background: rgba(212,160,23,0.08); }
+    .tl-year { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    .tl-title { font-size: 0.88rem; font-weight: 600; color: var(--marron); margin-bottom: 3px; }
+    .tl-text { font-size: 0.75rem; color: var(--marron-mid); line-height: 1.5; }
+
+    /* SÉPARATEUR */
     .sep { display: flex; align-items: center; gap: 1.5rem; }
     .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
     .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
+    /* ET APRÈS */
     .apres-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; padding: 3rem; background: var(--sable); border: 1px solid rgba(212,160,23,0.2); }
     .apres-text { font-size: 0.95rem; color: var(--marron-mid); line-height: 1.9; margin-bottom: 1.5rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
@@ -100,28 +122,37 @@
     .mbway-icon { width: 50px; height: 50px; border-radius: 10px; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; position: relative; z-index: 1; }
     .mbway-title { font-size: 1.05rem; font-weight: 700; color: var(--sable); position: relative; z-index: 1; }
     .mbway-sub { font-size: 0.78rem; color: rgba(237,224,206,0.5); margin-top: 4px; position: relative; z-index: 1; }
-    .apres-quote { border-left: 3px solid var(--gold); padding: 1rem 1.2rem; font-size: 0.92rem; font-style: italic; color: var(--marron-mid); line-height: 1.8; border-radius: 0 8px 8px 0; background: rgba(212,160,23,0.06); }
-    .apres-deco { display: flex; flex-direction: column; gap: 1rem; padding-top: 3rem; }
-    .deco-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem 1.5rem; position: relative; overflow: hidden; }
-    .deco-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 40px; height: 40px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
-    .deco-card-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: rgba(212,160,23,0.25); line-height: 1; margin-bottom: 4px; }
-    .deco-card-title { font-size: 0.95rem; font-weight: 600; color: var(--marron); margin-bottom: 4px; }
-    .deco-card-text { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; }
+    .apres-quote { border-left: 3px solid var(--gold); padding: 1rem 1.2rem; font-size: 0.92rem; font-style: italic; color: var(--marron-mid); line-height: 1.8; border-radius: 0 8px 8px 0; background: rgba(212,160,23,0.06); margin-bottom: 1.5rem; }
 
+    /* SCHÉMA ET APRÈS - Progression */
+    .progression { display: flex; align-items: stretch; gap: 0; }
+    .prog-step { flex: 1; text-align: center; padding: 14px 8px; background: rgba(61,43,31,0.06); border: 1px solid rgba(61,43,31,0.1); border-radius: 8px; }
+    .prog-step.active { background: var(--marron); border-color: var(--marron); }
+    .prog-label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--marron-mid); }
+    .prog-step.active .prog-label { color: var(--gold); }
+    .prog-value { font-size: 0.78rem; font-weight: 700; color: var(--marron); margin-top: 5px; line-height: 1.3; }
+    .prog-step.active .prog-value { color: var(--sable); }
+    .prog-arrow { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; display: flex; align-items: center; padding: 0 6px; }
+
+    /* REMERCIEMENTS */
     .rem-section { background: var(--marron); padding: 3rem; }
     .rem-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 10px; }
     .rem-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
     .rem-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--sable); margin-bottom: 2rem; }
-    .rem-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
-    .rem-card { background: rgba(237,224,206,0.06); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem; display: flex; align-items: center; gap: 1rem; position: relative; overflow: hidden; }
-    .rem-card::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 36px; height: 36px; border: 1px solid rgba(212,160,23,0.15); transform: rotate(45deg); }
-    .rem-card.special { border-color: rgba(212,160,23,0.5); background: rgba(212,160,23,0.08); }
-    .rem-icon { font-size: 1.8rem; flex-shrink: 0; }
-    .rem-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); }
-    .rem-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(237,224,206,0.4); margin-top: 3px; }
+    .rem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 
-    .org-wrap { background: rgba(237,224,206,0.04); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 1.5rem; position: relative; overflow: hidden; }
-    .org-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    /* SCHÉMA REMERCIEMENTS */
+    .merci-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .merci-card { background: rgba(237,224,206,0.06); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1rem; display: flex; gap: 10px; align-items: center; position: relative; overflow: hidden; }
+    .merci-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 30px; height: 30px; border: 1px solid rgba(212,160,23,0.15); transform: rotate(45deg); }
+    .merci-card.special { border-color: rgba(212,160,23,0.5); background: rgba(212,160,23,0.08); }
+    .merci-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .merci-name { font-size: 0.85rem; font-weight: 700; color: var(--gold); }
+    .merci-role { font-size: 0.65rem; color: rgba(237,224,206,0.4); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ORGANIGRAMME */
+    .org-wrap { background: rgba(237,224,206,0.04); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 0; position: relative; overflow: hidden; }
+    .org-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .org { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; }
     .org-card { background: rgba(237,224,206,0.07); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; padding: 1rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 200px; }
     .org-card.top { border-color: rgba(212,160,23,0.6); background: rgba(212,160,23,0.12); }
@@ -132,7 +163,7 @@
     .org-name { font-size: 0.88rem; font-weight: 700; color: var(--gold); }
     .org-name.mid { color: var(--sable); }
     .org-name.low { color: rgba(237,224,206,0.7); }
-    .org-role { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(237,224,206,0.4); }
+    .org-role { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(237,224,206,0.4); }
     .connector-v { width: 1px; height: 28px; background: rgba(212,160,23,0.3); }
     .row { display: flex; justify-content: center; gap: 20px; position: relative; }
     .row::before { content: ''; position: absolute; top: 0; left: calc(50% - 110px); right: calc(50% - 110px); height: 1px; background: rgba(212,160,23,0.3); }
@@ -167,10 +198,13 @@
   <div class="page-header">
     <div class="header-circle-1"></div>
     <div class="header-circle-2"></div>
+    <div class="header-circle-3"></div>
     <div class="header-diamond"></div>
     <div class="header-dot-1"></div>
     <div class="header-dot-2"></div>
-    <div class="corner-tl-header"></div>
+    <div class="header-diamond-2"></div>
+    <div class="corner-tl-h"></div>
+    <div class="corner-tr-h"></div>
     <p>Portfolio BUT GEA · GC2F</p>
     <h1>Conclusion &<br>Remerciements</h1>
     <div class="header-line"></div>
@@ -206,6 +240,38 @@
             <div class="bilan-point"><div class="bilan-dot"></div><div class="bilan-point-text"><strong>Une vision globale</strong> — comprendre l'organisation dans sa totalité, ses enjeux, ses acteurs et ses processus.</div></div>
           </div>
         </div>
+
+        <!-- SCHÉMA BILAN -->
+        <div class="schema-box">
+          <div class="schema-title">Ma progression en 3 ans</div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-left"><div class="tl-dot">1</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-year">BUT 1 · 2023-2024</div>
+                <div class="tl-title">Découverte</div>
+                <div class="tl-text">Stage AdduXi · SAE Boucherie-Charcuterie · premiers outils comptables</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-left"><div class="tl-dot">2</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-year">BUT 2 · 2024-2025</div>
+                <div class="tl-title">Montée en compétences</div>
+                <div class="tl-text">Stage Motelec · SAE Banque de France · autonomie croissante</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-left"><div class="tl-dot">3</div></div>
+              <div class="tl-content active">
+                <div class="tl-year">BUT 3 · 2025-2026</div>
+                <div class="tl-title">Expertise & vision globale</div>
+                <div class="tl-text">Alternance Tecmaplast · clôtures · DEB · TVA · totale autonomie</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -226,7 +292,7 @@
       <div class="deco-inner apres-section">
         <div>
           <p class="apres-text">Mon parcours en comptabilité, finance et gestion n'est pas un détour — c'est un atout. Comprendre les flux financiers, analyser la performance d'une organisation, maîtriser les outils de gestion : tout cela me donne une base solide pour appréhender la logistique et la Supply Chain avec une vision globale que peu ont.</p>
-          <p class="apres-text">J'ai candidaté dans des domaines variés pour m'assurer de mon choix. Mais c'est la Supply Chain qui réunit tout ce qui me motive : la gestion, la stratégie, le terrain et la coordination des acteurs. La comptabilité et la finance ne sont pas derrière moi — elles sont le socle sur lequel je construis la suite.</p>
+          <p class="apres-text">J'ai candidaté dans des domaines variés pour m'assurer de mon choix. Mais c'est la Supply Chain qui réunit tout ce qui me motive : la gestion, la stratégie, le terrain et la coordination des acteurs.</p>
           <div class="tags">
             <span class="tag">Finance</span>
             <span class="tag">Contrôle de gestion</span>
@@ -245,10 +311,49 @@
           </div>
           <div class="apres-quote">« La comptabilité et la finance m'ont appris à lire une organisation en profondeur. La Supply Chain, c'est la prochaine étape — là où cette lecture prend tout son sens opérationnel. »</div>
         </div>
-        <div class="apres-deco">
-          <div class="deco-card"><div class="deco-card-num">01</div><div class="deco-card-title">Une base solide en gestion</div><div class="deco-card-text">3 ans de comptabilité, finance et analyse organisationnelle — des compétences directement applicables en Supply Chain.</div></div>
-          <div class="deco-card"><div class="deco-card-num">02</div><div class="deco-card-title">Une vision des flux</div><div class="deco-card-text">Comprendre comment une entreprise fonctionne financièrement, c'est aussi comprendre ses flux logistiques et opérationnels.</div></div>
-          <div class="deco-card"><div class="deco-card-num">03</div><div class="deco-card-title">Un choix assumé</div><div class="deco-card-text">Après exploration de nombreuses pistes, la Supply Chain s'est imposée comme la synthèse parfaite de mes compétences et ambitions.</div></div>
+        <div>
+          <!-- SCHÉMA ET APRÈS -->
+          <div class="schema-box" style="margin-bottom:1.5rem;">
+            <div class="schema-title">De la gestion vers la Supply Chain</div>
+            <div class="progression">
+              <div class="prog-step">
+                <div class="prog-label">Formation</div>
+                <div class="prog-value">BUT GEA</div>
+              </div>
+              <div class="prog-arrow">→</div>
+              <div class="prog-step">
+                <div class="prog-label">Compétences</div>
+                <div class="prog-value">Finance · Compta · Gestion</div>
+              </div>
+              <div class="prog-arrow">→</div>
+              <div class="prog-step">
+                <div class="prog-label">Candidatures</div>
+                <div class="prog-value">Finance · RH · Audit · SC</div>
+              </div>
+              <div class="prog-arrow">→</div>
+              <div class="prog-step active">
+                <div class="prog-label">Choix ✓</div>
+                <div class="prog-value">MBA Supply Chain MBWAY</div>
+              </div>
+            </div>
+          </div>
+          <div class="schema-box">
+            <div class="schema-title">Pourquoi la Supply Chain ?</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#D4A017;flex-shrink:0;margin-top:5px;"></div>
+                <div style="font-size:0.82rem;color:#6B4C35;line-height:1.6;"><strong style="color:#3D2B1F;">Base solide en gestion</strong> — 3 ans de comptabilité et finance directement applicables</div>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#D4A017;flex-shrink:0;margin-top:5px;"></div>
+                <div style="font-size:0.82rem;color:#6B4C35;line-height:1.6;"><strong style="color:#3D2B1F;">Vision des flux</strong> — comprendre les flux financiers, c'est comprendre les flux logistiques</div>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#D4A017;flex-shrink:0;margin-top:5px;"></div>
+                <div style="font-size:0.82rem;color:#6B4C35;line-height:1.6;"><strong style="color:#3D2B1F;">Un choix assumé</strong> — la Supply Chain comme synthèse parfaite de mes compétences</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -267,52 +372,57 @@
       <div class="deco-inner rem-section">
         <div class="rem-label">Remerciements</div>
         <div class="rem-title">Merci ✨</div>
-        <div class="rem-cards">
-          <div class="rem-card"><div class="rem-icon">🎓</div><div><div class="rem-name">IUT Lyon 1 & Sylvie Morel</div><div class="rem-role">Formation · Tutrice pédagogique</div></div></div>
-          <div class="rem-card special"><div class="rem-icon">🏭</div><div><div class="rem-name">Tecmaplast</div><div class="rem-role">Alternance BUT 3</div></div></div>
-          <div class="rem-card"><div class="rem-icon">⚙️</div><div><div class="rem-name">Motelec Industrie · Groupe SOGAP</div><div class="rem-role">Stage BUT 2</div></div></div>
-          <div class="rem-card special"><div class="rem-icon">⭐</div><div><div class="rem-name">AdduXi</div><div class="rem-role">Job étudiant · + de 3 ans</div></div></div>
-        </div>
+        <div class="rem-grid">
+          <div>
+            <!-- SCHÉMA REMERCIEMENTS -->
+            <div class="schema-title" style="color:var(--gold);margin-bottom:1rem;">Les acteurs de mon parcours</div>
+            <div class="merci-cards">
+              <div class="merci-card"><div class="merci-icon">🎓</div><div><div class="merci-name">IUT Lyon 1 & Sylvie Morel</div><div class="merci-role">Formation · Tutrice pédago</div></div></div>
+              <div class="merci-card special"><div class="merci-icon">🏭</div><div><div class="merci-name">Tecmaplast</div><div class="merci-role">Alternance BUT 3</div></div></div>
+              <div class="merci-card"><div class="merci-icon">⚙️</div><div><div class="merci-name">Motelec · Groupe SOGAP</div><div class="merci-role">Stage BUT 2</div></div></div>
+              <div class="merci-card special"><div class="merci-icon">⭐</div><div><div class="merci-name">AdduXi</div><div class="merci-role">Job étudiant · + de 3 ans</div></div></div>
+            </div>
+          </div>
 
-        <!-- ORGANIGRAMME -->
-        <div class="org-wrap">
-          <div class="deco-circle" style="width:120px;height:120px;top:-40px;right:-40px;border-color:rgba(212,160,23,0.1);"></div>
-          <div class="deco-diamond" style="width:10px;height:10px;bottom:20px;left:20px;"></div>
-          <div class="org-label">Service financier · Tecmaplast</div>
-          <div class="org">
-            <div class="org-card top">
-              <div class="org-avatar">MD</div>
-              <div class="org-name">Mathieu Dalet</div>
-              <div class="org-role">Directeur Administratif & Financier</div>
-            </div>
-            <div class="connector-v"></div>
-            <div class="org-card mid">
-              <div class="org-avatar mid">CB</div>
-              <div class="org-name mid">Christophe Bénéjan-Moreau</div>
-              <div class="org-role">Chef comptable · Tuteur</div>
-            </div>
-            <div class="connector-v"></div>
-            <div class="row">
-              <div class="branch">
-                <div class="branch-top"></div>
-                <div class="org-card">
-                  <div class="org-avatar low">UP</div>
-                  <div class="org-name low">Umus Perrone</div>
-                  <div class="org-role">Comptabilité fournisseurs</div>
-                </div>
+          <!-- ORGANIGRAMME -->
+          <div class="org-wrap">
+            <div class="deco-circle" style="width:100px;height:100px;top:-30px;right:-30px;border-color:rgba(212,160,23,0.1);"></div>
+            <div class="org-label">Service financier · Tecmaplast</div>
+            <div class="org">
+              <div class="org-card top">
+                <div class="org-avatar">MD</div>
+                <div class="org-name">Mathieu Dalet</div>
+                <div class="org-role">Directeur Administratif & Financier</div>
               </div>
-              <div class="branch">
-                <div class="branch-top"></div>
-                <div class="org-card">
-                  <div class="org-avatar low">ED</div>
-                  <div class="org-name low">Estelle Di Lullo</div>
-                  <div class="org-role">Contrôleuse de gestion</div>
+              <div class="connector-v"></div>
+              <div class="org-card mid">
+                <div class="org-avatar mid">CB</div>
+                <div class="org-name mid">Christophe Bénéjan-Moreau</div>
+                <div class="org-role">Chef comptable · Tuteur</div>
+              </div>
+              <div class="connector-v"></div>
+              <div class="row">
+                <div class="branch">
+                  <div class="branch-top"></div>
+                  <div class="org-card">
+                    <div class="org-avatar low">UP</div>
+                    <div class="org-name low">Umus Perrone</div>
+                    <div class="org-role">Comptabilité fournisseurs</div>
+                  </div>
+                </div>
+                <div class="branch">
+                  <div class="branch-top"></div>
+                  <div class="org-card">
+                    <div class="org-avatar low">ED</div>
+                    <div class="org-name low">Estelle Di Lullo</div>
+                    <div class="org-role">Contrôleuse de gestion</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
 
