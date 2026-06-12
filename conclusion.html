@@ -39,7 +39,6 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
-    /* DÉCO D globale */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
     .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
@@ -71,7 +70,6 @@
     .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 1.5rem; line-height: 1.2; }
 
-    /* BILAN */
     .bilan-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
     .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
@@ -87,13 +85,10 @@
     .bilan-point-text { font-size: 0.95rem; color: var(--marron-mid); line-height: 1.8; }
     .bilan-point-text strong { color: var(--marron); font-weight: 600; }
 
-    /* SÉPARATEUR */
     .sep { display: flex; align-items: center; gap: 1.5rem; }
     .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
     .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
-    /* ET APRÈS */
-    .apres-outer { }
     .apres-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; padding: 3rem; background: var(--sable); border: 1px solid rgba(212,160,23,0.2); }
     .apres-text { font-size: 0.95rem; color: var(--marron-mid); line-height: 1.9; margin-bottom: 1.5rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
@@ -113,7 +108,6 @@
     .deco-card-title { font-size: 0.95rem; font-weight: 600; color: var(--marron); margin-bottom: 4px; }
     .deco-card-text { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; }
 
-    /* REMERCIEMENTS */
     .rem-section { background: var(--marron); padding: 3rem; }
     .rem-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 10px; }
     .rem-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
@@ -126,10 +120,8 @@
     .rem-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); }
     .rem-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(237,224,206,0.4); margin-top: 3px; }
 
-    /* ORGANIGRAMME */
     .org-wrap { background: rgba(237,224,206,0.04); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 1.5rem; position: relative; overflow: hidden; }
-    .org-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-    .org-title { font-size: 1.1rem; font-weight: 700; color: var(--sable); margin-bottom: 2rem; font-family: 'Playfair Display', serif; }
+    .org-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .org { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; }
     .org-card { background: rgba(237,224,206,0.07); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; padding: 1rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 200px; }
     .org-card.top { border-color: rgba(212,160,23,0.6); background: rgba(212,160,23,0.12); }
@@ -287,7 +279,6 @@
           <div class="deco-circle" style="width:120px;height:120px;top:-40px;right:-40px;border-color:rgba(212,160,23,0.1);"></div>
           <div class="deco-diamond" style="width:10px;height:10px;bottom:20px;left:20px;"></div>
           <div class="org-label">Service financier · Tecmaplast</div>
-          <div class="org-title">Une équipe qui m'a tout appris 🙏</div>
           <div class="org">
             <div class="org-card top">
               <div class="org-avatar">MD</div>
