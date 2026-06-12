@@ -90,20 +90,28 @@
     .ce-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
     .ce-tag { background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.4); border-radius: 20px; padding: 4px 14px; font-size: 0.72rem; font-weight: 600; color: var(--gold); }
 
+    /* === SECTION COMPÉTENCES === */
     .competences-section { margin-top: 4rem; border-top: 1px solid rgba(61,43,31,0.15); padding-top: 3rem; }
-    .comp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-    .comp-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-    .comp-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--marron); }
-    .comp-sub { font-size: 0.7rem; color: var(--marron-mid); margin-top: 4px; }
 
-    .ue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-    .ue-card { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 1.2rem 1.5rem; }
-    .ue-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
-    .ue-text { font-size: 0.88rem; font-weight: 500; color: var(--marron); margin-bottom: 0.8rem; }
+    .comp-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+    .comp-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+    .comp-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--marron); margin-bottom: 0.3rem; line-height: 1.2; }
+    .comp-sub { font-size: 0.72rem; color: var(--marron-mid); margin-bottom: 2rem; }
+
+    .ue-list { display: flex; flex-direction: column; gap: 1rem; }
+    .ue-card { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 1.1rem 1.4rem; }
+    .ue-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .ue-text { font-size: 1rem; font-weight: 500; color: var(--marron); margin-bottom: 0.8rem; line-height: 1.4; }
     .progress-bg { background: rgba(61,43,31,0.1); border-radius: 10px; height: 6px; overflow: hidden; }
     .progress-bar { height: 100%; border-radius: 10px; }
 
-    .radar-title { font-size: 1rem; font-weight: 600; color: var(--marron); margin-bottom: 2rem; }
+    .radar-title { font-size: 1rem; font-weight: 600; color: var(--marron); margin-bottom: 1.5rem; text-align: center; }
+    .radar-wrapper { display: flex; justify-content: center; }
+
+    @media (max-width: 720px) {
+      .comp-layout { grid-template-columns: 1fr; }
+    }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -267,7 +275,6 @@
     <div class="entreprises">
       <p class="entreprises-title">Mes entreprises</p>
       <div class="entreprises-grid">
-
         <div class="entreprise-card">
           <div class="logo-box"><img src="logo-adduxi.png" alt="Logo AdduXi"></div>
           <div class="photo-box"><img src="photo-adduxi.png" alt="Locaux AdduXi"></div>
@@ -275,9 +282,7 @@
           <p>BUT 1 · Job étudiant</p>
           <span>2022 – 2023</span>
         </div>
-
         <div class="arrow">→</div>
-
         <div class="entreprise-card">
           <div class="logo-box"><img src="logo-motelec.png" alt="Logo Motelec Industrie"></div>
           <div class="photo-box"><img src="photo-motelec.png" alt="Locaux Motelec Industrie"></div>
@@ -285,9 +290,7 @@
           <p>BUT 2 · Stage</p>
           <span>2024 – 2025</span>
         </div>
-
         <div class="arrow">→</div>
-
         <div class="entreprise-card">
           <div class="logo-box"><img src="logo-tecmaplast.png" alt="Logo Tecmaplast"></div>
           <div class="photo-box"><img src="photo-tecmaplast.png" alt="Locaux Tecmaplast"></div>
@@ -295,87 +298,90 @@
           <p>BUT 3 · Alternance</p>
           <span>2025 – 2026</span>
         </div>
-
       </div>
     </div>
 
-    <!-- LES 5 COMPETENCES -->
+    <!-- LES 5 COMPÉTENCES — 2 COLONNES -->
     <div class="competences-section">
-      <div class="comp-header">
-        <div>
+      <div class="comp-layout">
+
+        <!-- GAUCHE : compétences -->
+        <div class="comp-left">
           <p class="comp-tag">Référentiel BUT GEA</p>
           <h2 class="comp-title">Les 5 compétences</h2>
           <p class="comp-sub">Niveau d'acquisition atteint en BUT 3</p>
+          <div class="ue-list">
+            <div class="ue-card">
+              <p class="ue-label" style="color:#4caf50;">UE1</p>
+              <p class="ue-text">Analyser les processus de l'organisation dans son environnement</p>
+              <div class="progress-bg"><div class="progress-bar" style="width:80%; background:#4caf50;"></div></div>
+            </div>
+            <div class="ue-card">
+              <p class="ue-label" style="color:#4caf50;">UE2</p>
+              <p class="ue-text">Aide à la prise de décision</p>
+              <div class="progress-bg"><div class="progress-bar" style="width:75%; background:#4caf50;"></div></div>
+            </div>
+            <div class="ue-card">
+              <p class="ue-label" style="color:#4caf50;">UE3</p>
+              <p class="ue-text">Piloter les relations avec les parties prenantes de l'organisation</p>
+              <div class="progress-bg"><div class="progress-bar" style="width:70%; background:#4caf50;"></div></div>
+            </div>
+            <div class="ue-card">
+              <p class="ue-label" style="color:var(--gold);">UE4</p>
+              <p class="ue-text">Produire l'information comptable, fiscale et sociale de l'organisation</p>
+              <div class="progress-bg"><div class="progress-bar" style="width:65%; background:var(--gold);"></div></div>
+            </div>
+            <div class="ue-card">
+              <p class="ue-label" style="color:var(--terra);">UE5</p>
+              <p class="ue-text">Evaluer l'activité de l'organisation</p>
+              <div class="progress-bg"><div class="progress-bar" style="width:75%; background:var(--terra);"></div></div>
+            </div>
+          </div>
         </div>
-        <div style="font-size: 2.5rem;">⚙️</div>
-      </div>
 
-      <div class="ue-grid">
-        <div class="ue-card">
-          <p class="ue-label" style="color:#4caf50;">UE1</p>
-          <p class="ue-text">Analyser les processus de l'organisation dans son environnement</p>
-          <div class="progress-bg"><div class="progress-bar" style="width:80%; background:#4caf50;"></div></div>
+        <!-- DROITE : radar -->
+        <div class="comp-right">
+          <p class="radar-title">Progression BUT 1 vs BUT 2 vs BUT 3</p>
+          <div class="radar-wrapper">
+            <canvas id="radarChart" width="380" height="380"></canvas>
+          </div>
         </div>
-        <div class="ue-card">
-          <p class="ue-label" style="color:#4caf50;">UE2</p>
-          <p class="ue-text">Aide à la prise de décision</p>
-          <div class="progress-bg"><div class="progress-bar" style="width:75%; background:#4caf50;"></div></div>
-        </div>
-        <div class="ue-card">
-          <p class="ue-label" style="color:#4caf50;">UE3</p>
-          <p class="ue-text">Piloter les relations avec les parties prenantes de l'organisation</p>
-          <div class="progress-bg"><div class="progress-bar" style="width:70%; background:#4caf50;"></div></div>
-        </div>
-        <div class="ue-card">
-          <p class="ue-label" style="color:var(--gold);">UE4</p>
-          <p class="ue-text">Produire l'information comptable, fiscale et sociale de l'organisation</p>
-          <div class="progress-bg"><div class="progress-bar" style="width:65%; background:var(--gold);"></div></div>
-        </div>
-        <div class="ue-card">
-          <p class="ue-label" style="color:var(--terra);">UE5</p>
-          <p class="ue-text">Evaluer l'activité de l'organisation</p>
-          <div class="progress-bg"><div class="progress-bar" style="width:75%; background:var(--terra);"></div></div>
-        </div>
-      </div>
 
-      <!-- GRAPHIQUE RADAR -->
-      <p class="radar-title">Progression BUT 1 vs BUT 2 vs BUT 3</p>
-      <div style="display: flex; justify-content: center;">
-        <canvas id="radarChart" width="450" height="450"></canvas>
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-      <script>
-        const ctx = document.getElementById('radarChart').getContext('2d');
-        new Chart(ctx, {
-          type: 'radar',
-          data: {
-            labels: ['CE1', 'CE2', 'CE3', 'CE4', 'CE5'],
-            datasets: [
-              { label: 'BUT 1', data: [25,20,20,25,20], borderColor: 'rgba(193,123,74,0.6)', backgroundColor: 'rgba(193,123,74,0.08)', borderWidth: 2, borderDash: [5,5], pointBackgroundColor: 'rgba(193,123,74,0.6)', pointRadius: 4 },
-              { label: 'BUT 2', data: [50,45,45,50,45], borderColor: 'rgba(61,43,31,0.8)', backgroundColor: 'rgba(61,43,31,0.1)', borderWidth: 2, pointBackgroundColor: '#3D2B1F', pointRadius: 4 },
-              { label: 'BUT 3', data: [80,75,70,65,75], borderColor: 'rgba(212,160,23,0.9)', backgroundColor: 'rgba(212,160,23,0.12)', borderWidth: 2, pointBackgroundColor: '#D4A017', pointRadius: 5 }
-            ]
-          },
-          options: {
-            responsive: false,
-            scales: {
-              r: {
-                min: 0, max: 100,
-                ticks: { stepSize: 25, color: 'rgba(61,43,31,0.5)', font: { size: 10 }, backdropColor: 'transparent' },
-                grid: { color: 'rgba(61,43,31,0.1)' },
-                angleLines: { color: 'rgba(61,43,31,0.1)' },
-                pointLabels: { color: 'var(--marron)', font: { size: 13, weight: '600' } }
-              }
-            },
-            plugins: { legend: { labels: { color: '#3D2B1F', font: { size: 12 }, usePointStyle: true } } }
-          }
-        });
-      </script>
     </div>
 
   </div>
 
   <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script>
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['CE1', 'CE2', 'CE3', 'CE4', 'CE5'],
+        datasets: [
+          { label: 'BUT 1', data: [25,20,20,25,20], borderColor: 'rgba(193,123,74,0.6)', backgroundColor: 'rgba(193,123,74,0.08)', borderWidth: 2, borderDash: [5,5], pointBackgroundColor: 'rgba(193,123,74,0.6)', pointRadius: 4 },
+          { label: 'BUT 2', data: [50,45,45,50,45], borderColor: 'rgba(61,43,31,0.8)', backgroundColor: 'rgba(61,43,31,0.1)', borderWidth: 2, pointBackgroundColor: '#3D2B1F', pointRadius: 4 },
+          { label: 'BUT 3', data: [80,75,70,65,75], borderColor: 'rgba(212,160,23,0.9)', backgroundColor: 'rgba(212,160,23,0.12)', borderWidth: 2, pointBackgroundColor: '#D4A017', pointRadius: 5 }
+        ]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          r: {
+            min: 0, max: 100,
+            ticks: { stepSize: 25, color: 'rgba(61,43,31,0.5)', font: { size: 10 }, backdropColor: 'transparent' },
+            grid: { color: 'rgba(61,43,31,0.1)' },
+            angleLines: { color: 'rgba(61,43,31,0.1)' },
+            pointLabels: { color: '#3D2B1F', font: { size: 13, weight: '600' } }
+          }
+        },
+        plugins: { legend: { labels: { color: '#3D2B1F', font: { size: 12 }, usePointStyle: true } } }
+      }
+    });
+  </script>
 
 </body>
 </html>
