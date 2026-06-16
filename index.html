@@ -193,20 +193,15 @@
 
   <section class="section-quisuisje">
     <div class="section-inner">
-
       <p class="section-tag">Qui suis-je ?</p>
       <h2 class="section-title">Mon identité professionnelle</h2>
-
       <div class="citation-box">
         <p>« Ces trois années de BUT m'ont permis de construire une identité professionnelle réelle, au contact du terrain.
         En alternance chez <strong>Tecmaplast</strong>, et en stage chez <strong>AdduXi</strong> et <strong>Motelec Industrie</strong>,
         j'ai pris en charge des missions concrètes de comptabilité générale — saisies, rapprochements, déclarations —
-        qui ont donné du sens à chaque compétence acquise en cours. Ce portfolio est le reflet honnête de ma progression :
-        de l'étudiante qui découvrait les principes comptables en BUT1, à celle qui gère aujourd'hui des opérations
-        en autonomie en alternance. »</p>
+        qui ont donné du sens à chaque compétence acquise en cours. »</p>
         <p class="citation-author">— Mélina Hasanovic · Juin 2026</p>
       </div>
-
       <div class="info-grid">
         <div class="info-card">
           <p class="info-card-label">Formation</p>
@@ -229,7 +224,6 @@
           <p class="info-card-sub">4ème RV d'alternance</p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -240,12 +234,10 @@
       el.classList.toggle('open');
       el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
     }
-
     function toggleBtnDropdown(el) {
       el.classList.toggle('open');
       el.parentElement.querySelector('.btn-dropdown-menu').classList.toggle('open');
     }
-
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown') && !e.target.closest('.btn-dropdown')) {
         document.querySelectorAll('.dropdown-menu, .btn-dropdown-menu').forEach(m => m.classList.remove('open'));
