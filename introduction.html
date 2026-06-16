@@ -43,16 +43,8 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
-    .page-header {
-      padding: 8rem 2rem 4rem; text-align: center;
-      background: var(--marron);
-      position: relative; overflow: hidden;
-    }
-    .page-header::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px);
-      background-size: 60px 60px; pointer-events: none;
-    }
+    .page-header { padding: 8rem 2rem 4rem; text-align: center; background: var(--marron); position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
     .page-header p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
 
@@ -129,7 +121,6 @@
       <li class="dropdown">
         <span class="dropdown-toggle" onclick="toggleDropdown(this)">Compétences</span>
         <div class="dropdown-menu">
-          <a href="presentation.html"><span class="dropdown-menu-num">00</span>Présentation</a>
           <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
           <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
           <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
@@ -149,7 +140,6 @@
 
   <div class="content">
 
-    <!-- BUT 1 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 1</div>
@@ -187,7 +177,6 @@
       </div>
     </div>
 
-    <!-- BUT 2 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 2</div>
@@ -203,7 +192,7 @@
               <div class="sae-badge">BUT 2 · 2024-2025</div>
               <div class="sae-icon">📈</div>
               <h4>SAÉ Banque de France</h4>
-              <p>Banque de France · Bourg-en-Bresse · Diagnostic financier complet pour convaincre la Banque de France d'accorder un prêt</p>
+              <p>Diagnostic financier complet pour convaincre la Banque de France d'accorder un prêt</p>
               <div class="sae-tags"><span class="sae-tag">Diagnostic financier</span><span class="sae-tag">Argumentation</span></div>
             </div>
             <div class="sae-card">
@@ -217,14 +206,14 @@
               <div class="sae-badge">BUT 2 · 2024-2025</div>
               <div class="sae-icon">📊</div>
               <h4>SAÉ Statistiques · Hôtel Griffon d'Or</h4>
-              <p>Hôtel Griffon d'Or · Bourg-en-Bresse · Étude de marché · Analyse concurrentielle pour fidéliser les clients</p>
+              <p>Étude de marché · Analyse concurrentielle pour fidéliser les clients</p>
               <div class="sae-tags"><span class="sae-tag">Statistiques</span><span class="sae-tag">Étude de marché</span></div>
             </div>
             <div class="sae-card">
               <div class="sae-badge">BUT 2 · 2024-2025</div>
               <div class="sae-icon">🏭</div>
               <h4>Stage Motelec · Groupe SOGAP</h4>
-              <p>Comptabilité multi-filiales · Motelec, Billet Fournier, FIT, Firem, TSM, Isabelle, Technic+…</p>
+              <p>Comptabilité multi-filiales · Motelec, Billet Fournier, FIT, Firem, TSM…</p>
               <div class="sae-tags"><span class="sae-tag">Multi-entités</span><span class="sae-tag">Autonomie</span></div>
             </div>
           </div>
@@ -232,7 +221,6 @@
       </div>
     </div>
 
-    <!-- BUT 3 -->
     <div class="timeline-item">
       <div class="timeline-tag">
         <div class="tag-label">BUT 3</div>
@@ -270,7 +258,6 @@
       </div>
     </div>
 
-    <!-- CAS REELS -->
     <div class="cas-reels">
       <p class="label">3 ans · 1 trajectoire</p>
       <h3>Des cas réels, des compétences prouvées</h3>
@@ -284,7 +271,6 @@
       </div>
     </div>
 
-    <!-- LOGOS + PHOTOS ENTREPRISES -->
     <div class="entreprises">
       <p class="entreprises-title">Mes entreprises</p>
       <div class="entreprises-grid">
@@ -314,7 +300,6 @@
       </div>
     </div>
 
-    <!-- LES 5 COMPÉTENCES -->
     <div class="competences-section">
       <div class="comp-layout">
         <div class="comp-left">
@@ -394,7 +379,6 @@
       el.classList.toggle('open');
       el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
     }
-
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
