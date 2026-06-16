@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan – Mélina Hasanovic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --sable: #EDE0CE;
+      --sable-dark: #D4C4AE;
+      --marron: #3D2B1F;
+      --marron-mid: #6B4C35;
+      --gold: #D4A017;
+      --terra: #C17B4A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; font-size: 16px; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(212,196,174,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(61,43,31,0.1);
+      padding: 0 3rem; display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); letter-spacing: 0.05em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .dropdown { position: relative; }
+    .dropdown-toggle { cursor: pointer; display: flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marron-mid); user-select: none; }
+    .dropdown-toggle::after { content: '▾'; font-size: 0.6rem; transition: transform 0.2s; }
+    .dropdown-toggle.open::after { transform: rotate(180deg); }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; border: 0.5px solid rgba(61,43,31,0.15); border-radius: 8px; padding: 8px 0; min-width: 280px; box-shadow: 0 4px 20px rgba(61,43,31,0.1); z-index: 9999; }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marron-mid); text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
+    .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
+
+    /* HEADER */
+    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; text-align: center; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .h-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; top: -100px; right: -100px; }
+    .h-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; top: -40px; right: -40px; }
+    .h-circle-3 { position: absolute; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; bottom: -80px; left: -80px; }
+    .h-diamond { position: absolute; width: 14px; height: 14px; background: rgba(212,160,23,0.3); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
+    .h-dot-1 { position: absolute; width: 6px; height: 6px; background: rgba(212,160,23,0.4); border-radius: 50%; bottom: 3rem; right: 9rem; }
+    .h-corner-tl { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-left: 2px solid rgba(212,160,23,0.3); }
+    .h-corner-tr { position: absolute; top: 80px; right: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-right: 2px solid rgba(212,160,23,0.3); }
+    .page-header p.tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .page-header p.tag::before, .page-header p.tag::after { content: ''; width: 40px; height: 1px; background: rgba(212,160,23,0.5); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.1; }
+    .header-line { width: 60px; height: 3px; background: var(--gold); margin: 1.5rem auto 0; position: relative; z-index: 1; }
+
+    /* DÉCO */
+    .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+    .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
+    .deco-circle { position: absolute; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .deco-diamond { position: absolute; background: rgba(212,160,23,0.25); transform: rotate(45deg); pointer-events: none; z-index: 0; }
+    .deco-dot { position: absolute; background: rgba(212,160,23,0.4); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-tr { position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .deco-inner { position: relative; z-index: 1; }
+
+    .content { max-width: 1200px; margin: 0 auto; padding: 5rem 4rem 6rem; display: flex; flex-direction: column; gap: 3rem; }
+
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 1.5rem; line-height: 1.2; }
+
+    .sep { display: flex; align-items: center; gap: 1.5rem; }
+    .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
+    .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+
+    /* POINTS FORTS */
+    .points-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
+    .points-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .point-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 1.8rem 1.5rem; text-align: center; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+    .point-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.5); }
+    .point-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 40px; height: 40px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
+    .point-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .point-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); margin-bottom: 0.5rem; }
+    .point-text { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; }
+    .point-bar { height: 3px; background: rgba(61,43,31,0.1); border-radius: 3px; margin-top: 1rem; overflow: hidden; }
+    .point-bar-fill { height: 100%; border-radius: 3px; background: var(--gold); }
+
+    /* COMPÉTENCES TECHNIQUES */
+    .tech-section { background: var(--marron); padding: 3rem; }
+    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .tech-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+    .tech-col-title::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
+    .tech-item { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+    .tech-name { font-size: 0.88rem; font-weight: 500; color: var(--sable); min-width: 100px; }
+    .tech-bar-bg { flex: 1; height: 5px; background: rgba(237,224,206,0.1); border-radius: 5px; overflow: hidden; }
+    .tech-bar-fill { height: 100%; border-radius: 5px; background: var(--gold); }
+    .tech-pct { font-size: 0.72rem; color: rgba(237,224,206,0.4); min-width: 36px; text-align: right; }
+    .lang-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(237,224,206,0.08); }
+    .lang-item:last-child { border-bottom: none; }
+    .lang-name { font-size: 0.88rem; font-weight: 500; color: var(--sable); }
+    .lang-level { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; color: var(--gold); background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.3); border-radius: 20px; padding: 3px 12px; }
+
+    /* AXES DE PROGRESSION */
+    .axes-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .axe-box { border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; }
+    .axe-box.green { background: rgba(255,255,255,0.4); }
+    .axe-box.orange { background: rgba(193,123,74,0.05); border-color: rgba(193,123,74,0.2); }
+    .axe-box::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 60px; height: 60px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
+    .axe-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .axe-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; }
+    .axe-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
+    .axe-dot.orange { background: var(--terra); }
+    .axe-text { font-size: 0.88rem; color: var(--marron-mid); line-height: 1.6; }
+
+    /* REGARD RÉFLEXIF */
+    .reflexif-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
+    .reflexif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .reflexif-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+    .reflexif-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: rgba(212,160,23,0.25); line-height: 1; flex-shrink: 0; min-width: 36px; }
+    .reflexif-text { font-size: 0.92rem; color: var(--marron-mid); line-height: 1.8; }
+    .reflexif-text strong { color: var(--marron); }
+    .reflexif-quote { background: var(--marron); border-radius: 10px; padding: 2rem; }
+    .quote-big { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: -0.5rem; }
+    .quote-text { font-size: 0.95rem; color: rgba(237,224,206,0.8); line-height: 1.9; font-style: italic; }
+    .quote-author { font-size: 0.72rem; font-weight: 600; color: var(--gold); margin-top: 1rem; letter-spacing: 0.08em; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">M. Hasanovic</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="introduction.html">Introduction</a></li>
+      <li class="dropdown">
+        <span class="dropdown-toggle" onclick="toggleDropdown(this)">Compétences</span>
+        <div class="dropdown-menu">
+          <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
+          <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
+          <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
+          <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
+        </div>
+      </li>
+      <li><a href="bilan.html" class="active">Bilan</a></li>
+      <li><a href="conclusion.html">Conclusion & Remerciements</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="h-circle-1"></div>
+    <div class="h-circle-2"></div>
+    <div class="h-circle-3"></div>
+    <div class="h-diamond"></div>
+    <div class="h-dot-1"></div>
+    <div class="h-corner-tl"></div>
+    <div class="h-corner-tr"></div>
+    <p class="tag">Portfolio BUT GEA · GC2F</p>
+    <h1>Mon Bilan</h1>
+    <div class="header-line"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- POINTS FORTS -->
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:200px;height:200px;top:-80px;right:-80px;"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
+      <div class="deco-dot" style="width:6px;height:6px;bottom:40px;left:55px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="deco-inner points-section">
+        <p class="section-label">Mes qualités</p>
+        <h2 class="section-title">Mes points forts</h2>
+        <div class="points-grid">
+          <div class="point-card">
+            <div class="point-icon">🎯</div>
+            <div class="point-title">Rigueur & Précision</div>
+            <div class="point-text">Saisies comptables, déclarations fiscales, clôtures — chaque mission demande un souci du détail que j'ai développé au fil de mes expériences.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:95%;"></div></div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">🔄</div>
+            <div class="point-title">Adaptabilité</div>
+            <div class="point-text">D'une TPE artisanale à un groupe multi-filiales, j'ai su m'adapter à chaque environnement, chaque logiciel, chaque culture d'entreprise.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:90%;"></div></div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">💪</div>
+            <div class="point-title">Autonomie</div>
+            <div class="point-text">En alternance chez Tecmaplast, je gère en totale autonomie la trésorerie, les notes de frais et les clôtures comptables.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:88%;"></div></div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">🗣️</div>
+            <div class="point-title">Aisance à l'oral</div>
+            <div class="point-text">Présentations devant jury, soutenances de SAE, restitutions en entreprise — j'ai développé une vraie aisance dans la communication orale.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:85%;"></div></div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">🤝</div>
+            <div class="point-title">Esprit d'équipe</div>
+            <div class="point-text">Projets tutorés, SAE en groupe, collaboration avec les équipes comptables — le travail collectif est une force que j'ai cultivée tout au long du BUT.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:90%;"></div></div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">💡</div>
+            <div class="point-title">Sens de l'innovation</div>
+            <div class="point-text">Création de supports de suivi chez AdduXi, nouvelles approches dans les SAE — j'aime proposer des solutions concrètes et créatives.</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:80%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- COMPÉTENCES TECHNIQUES -->
+    <div class="deco-wrap dark">
+      <div class="deco-circle" style="width:200px;height:200px;top:-80px;left:-80px;border-color:rgba(212,160,23,0.1);"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;right:30px;"></div>
+      <div class="corner-tl" style="border-color:rgba(212,160,23,0.3);"></div>
+      <div class="corner-br" style="border-color:rgba(212,160,23,0.3);"></div>
+      <div class="deco-inner tech-section">
+        <p class="section-label" style="color:var(--gold);">Outils & Langues</p>
+        <h2 class="section-title" style="color:var(--sable);">Compétences techniques</h2>
+        <div class="tech-grid">
+          <div>
+            <div class="tech-col-title">Logiciels & Outils</div>
+            <div class="tech-item">
+              <span class="tech-name">Excel</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:90%;"></div></div>
+              <span class="tech-pct">90%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Sage</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:85%;"></div></div>
+              <span class="tech-pct">85%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Power BI</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:70%;"></div></div>
+              <span class="tech-pct">70%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Word</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:95%;"></div></div>
+              <span class="tech-pct">95%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">PowerPoint</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:88%;"></div></div>
+              <span class="tech-pct">88%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Canva</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:85%;"></div></div>
+              <span class="tech-pct">85%</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">SphinxCampus</span>
+              <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:75%;"></div></div>
+              <span class="tech-pct">75%</span>
+            </div>
+          </div>
+          <div>
+            <div class="tech-col-title">Langues</div>
+            <div class="lang-item">
+              <span class="lang-name">🇫🇷 Français</span>
+              <span class="lang-level">C2 · Langue maternelle</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">🇧🇦 Bosniaque</span>
+              <span class="lang-level">C2 · Langue maternelle</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">🇬🇧 Anglais</span>
+              <span class="lang-level">B1+ · Intermédiaire</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">🇩🇪 Allemand</span>
+              <span class="lang-level">A2 · Notions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- AXES DE PROGRESSION -->
+    <div>
+      <p class="section-label">Ce que le BUT m'a appris</p>
+      <h2 class="section-title">Points forts & Axes de progression</h2>
+    </div>
+    <div class="axes-section">
+      <div class="deco-wrap">
+        <div class="deco-circle" style="width:120px;height:120px;top:-40px;right:-40px;"></div>
+        <div class="corner-tl"></div>
+        <div class="deco-inner axe-box green">
+          <div class="axe-title">✓ Ce que j'ai consolidé</div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Rigueur comptable</strong> — saisies, rapprochements, déclarations sans erreur</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Analyse financière</strong> — lecture et interprétation des états financiers</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Autonomie professionnelle</strong> — gestion de missions sans supervision constante</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Communication orale</strong> — soutenances, restitutions, présentations jury</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Maîtrise des outils</strong> — Excel avancé, Sage, Power BI, logiciels métier</div></div>
+        </div>
+      </div>
+      <div class="deco-wrap">
+        <div class="deco-circle" style="width:120px;height:120px;bottom:-40px;left:-40px;border-color:rgba(193,123,74,0.2);"></div>
+        <div class="corner-br" style="border-color:rgba(193,123,74,0.3);"></div>
+        <div class="deco-inner axe-box orange">
+          <div class="axe-title" style="color:var(--terra);">→ Mes axes de progression</div>
+          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Anglais professionnel</strong> — développer le vocabulaire métier et la fluidité à l'écrit</div></div>
+          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Supply Chain & Logistique</strong> — approfondir les outils et méthodes du secteur visé</div></div>
+          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Power BI avancé</strong> — maîtriser la data visualisation pour le reporting</div></div>
+          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Gestion de projet</strong> — structurer et piloter des projets de A à Z</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- REGARD RÉFLEXIF -->
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:200px;height:200px;top:-80px;right:-80px;"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
+      <div class="deco-dot" style="width:6px;height:6px;top:30px;left:60px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="deco-inner reflexif-section">
+        <p class="section-label">Regard réflexif</p>
+        <h2 class="section-title">Qui suis-je devenue en 3 ans ?</h2>
+        <div class="reflexif-grid">
+          <div>
+            <div class="reflexif-item">
+              <div class="reflexif-num">01</div>
+              <div class="reflexif-text"><strong>Une professionnelle de la comptabilité</strong> — je suis passée de l'étudiante qui découvrait le plan comptable à l'alternante qui gère des clôtures en totale autonomie.</div>
+            </div>
+            <div class="reflexif-item">
+              <div class="reflexif-num">02</div>
+              <div class="reflexif-text"><strong>Une apprenante sur le terrain</strong> — plus de 3 ans chez AdduXi, un stage chez Motelec, une alternance chez Tecmaplast. Chaque expérience a enrichi ma vision du métier.</div>
+            </div>
+            <div class="reflexif-item">
+              <div class="reflexif-num">03</div>
+              <div class="reflexif-text"><strong>Une étudiante qui sait collaborer</strong> — les SAE m'ont appris à travailler en équipe sous pression, à gérer des projets longs et à m'adapter aux imprévus.</div>
+            </div>
+            <div class="reflexif-item">
+              <div class="reflexif-num">04</div>
+              <div class="reflexif-text"><strong>Une professionnelle tournée vers l'avenir</strong> — la comptabilité et la finance sont ma base. La Supply Chain est ma prochaine étape, une suite logique et assumée.</div>
+            </div>
+          </div>
+          <div class="reflexif-quote">
+            <div class="quote-big">«</div>
+            <div class="quote-text">Ces trois années m'ont transformée. Pas seulement professionnellement — humainement. J'ai appris à faire confiance à mon analyse, à prendre des initiatives, à travailler avec des professionnels exigeants. Le BUT GEA m'a donné les fondations. Ce que je construis dessus, c'est à moi de le choisir.</div>
+            <div class="quote-author">— Mélina Hasanovic · Juin 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+  <script>
+    function toggleDropdown(el) {
+      el.classList.toggle('open');
+      el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>
