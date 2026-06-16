@@ -70,62 +70,75 @@
 
     .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
     .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
-    .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 1.5rem; line-height: 1.2; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--marron); margin-bottom: 2rem; line-height: 1.2; }
 
     .sep { display: flex; align-items: center; gap: 1.5rem; }
     .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
     .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
-    /* POINTS FORTS */
+    /* POINTS FORTS - grandes cartes visuelles */
     .points-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
-    .points-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .point-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 1.8rem 1.5rem; text-align: center; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
-    .point-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.5); }
-    .point-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 40px; height: 40px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
-    .point-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-    .point-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marron); margin-bottom: 0.5rem; }
-    .point-text { font-size: 0.82rem; color: var(--marron-mid); line-height: 1.7; }
-    .point-bar { height: 3px; background: rgba(61,43,31,0.1); border-radius: 3px; margin-top: 1rem; overflow: hidden; }
-    .point-bar-fill { height: 100%; border-radius: 3px; background: var(--gold); }
+    .points-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .point-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem 1.2rem; text-align: center; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; cursor: default; }
+    .point-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 8px 30px rgba(61,43,31,0.1); }
+    .point-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.2s; }
+    .point-card:hover::before { opacity: 1; }
+    .point-card::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 40px; height: 40px; border: 1px solid rgba(212,160,23,0.15); transform: rotate(45deg); }
+    .point-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+    .point-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--marron); margin-bottom: 1rem; font-weight: 700; }
+    .point-bar { height: 4px; background: rgba(61,43,31,0.08); border-radius: 4px; overflow: hidden; margin-top: auto; }
+    .point-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--terra), var(--gold)); }
 
-    /* COMPÉTENCES TECHNIQUES */
+    /* STATS VISUELLES */
+    .stats-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(212,160,23,0.2); border-radius: 12px; overflow: hidden; }
+    .stat-cell { background: var(--marron); padding: 2.5rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
+    .stat-cell::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .stat-lbl { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(237,224,206,0.5); margin-top: 8px; }
+
+    /* COMPÉTENCES TECHNIQUES - visual */
     .tech-section { background: var(--marron); padding: 3rem; }
     .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .tech-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
     .tech-col-title::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
-    .tech-item { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
-    .tech-name { font-size: 0.88rem; font-weight: 500; color: var(--sable); min-width: 100px; }
-    .tech-bar-bg { flex: 1; height: 5px; background: rgba(237,224,206,0.1); border-radius: 5px; overflow: hidden; }
-    .tech-bar-fill { height: 100%; border-radius: 5px; background: var(--gold); }
+    .tech-item { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .tech-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .tech-name { font-size: 0.88rem; font-weight: 500; color: var(--sable); min-width: 110px; }
+    .tech-bar-bg { flex: 1; height: 6px; background: rgba(237,224,206,0.08); border-radius: 6px; overflow: hidden; }
+    .tech-bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--terra), var(--gold)); }
     .tech-pct { font-size: 0.72rem; color: rgba(237,224,206,0.4); min-width: 36px; text-align: right; }
-    .lang-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(237,224,206,0.08); }
-    .lang-item:last-child { border-bottom: none; }
-    .lang-name { font-size: 0.88rem; font-weight: 500; color: var(--sable); }
-    .lang-level { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; color: var(--gold); background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.3); border-radius: 20px; padding: 3px 12px; }
+    .lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .lang-card { background: rgba(237,224,206,0.05); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 1rem; text-align: center; }
+    .lang-flag { font-size: 1.8rem; margin-bottom: 6px; }
+    .lang-name { font-size: 0.82rem; font-weight: 600; color: var(--sable); margin-bottom: 4px; }
+    .lang-level { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: var(--gold); background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.3); border-radius: 20px; padding: 2px 10px; display: inline-block; }
 
-    /* AXES DE PROGRESSION */
+    /* AXES */
     .axes-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .axe-box { border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; }
-    .axe-box.green { background: rgba(255,255,255,0.4); }
-    .axe-box.orange { background: rgba(193,123,74,0.05); border-color: rgba(193,123,74,0.2); }
-    .axe-box::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 60px; height: 60px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
-    .axe-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-    .axe-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; }
-    .axe-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
+    .axe-box { border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; }
+    .axe-box.green { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); }
+    .axe-box.orange { background: rgba(193,123,74,0.05); border: 1px solid rgba(193,123,74,0.2); }
+    .axe-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; color: var(--gold); }
+    .axe-title.orange { color: var(--terra); }
+    .axe-item { display: flex; align-items: center; gap: 12px; margin-bottom: 0.8rem; background: rgba(255,255,255,0.4); border-radius: 8px; padding: 10px 14px; }
+    .axe-item.orange { background: rgba(193,123,74,0.06); }
+    .axe-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .axe-dot.orange { background: var(--terra); }
-    .axe-text { font-size: 0.88rem; color: var(--marron-mid); line-height: 1.6; }
+    .axe-text { font-size: 0.85rem; color: var(--marron); font-weight: 500; }
 
     /* REGARD RÉFLEXIF */
     .reflexif-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
-    .reflexif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .reflexif-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
-    .reflexif-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: rgba(212,160,23,0.25); line-height: 1; flex-shrink: 0; min-width: 36px; }
-    .reflexif-text { font-size: 0.92rem; color: var(--marron-mid); line-height: 1.8; }
-    .reflexif-text strong { color: var(--marron); }
-    .reflexif-quote { background: var(--marron); border-radius: 10px; padding: 2rem; }
-    .quote-big { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); opacity: 0.3; line-height: 1; margin-bottom: -0.5rem; }
-    .quote-text { font-size: 0.95rem; color: rgba(237,224,206,0.8); line-height: 1.9; font-style: italic; }
-    .quote-author { font-size: 0.72rem; font-weight: 600; color: var(--gold); margin-top: 1rem; letter-spacing: 0.08em; }
+    .reflexif-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .reflexif-card { background: var(--marron); border-radius: 10px; padding: 1.5rem; position: relative; overflow: hidden; }
+    .reflexif-card::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
+    .reflexif-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: rgba(212,160,23,0.2); line-height: 1; margin-bottom: 8px; }
+    .reflexif-title { font-size: 0.88rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .reflexif-text { font-size: 0.78rem; color: rgba(237,224,206,0.65); line-height: 1.7; }
+    .reflexif-quote { background: var(--marron); border-radius: 10px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden; }
+    .reflexif-quote::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
+    .quote-big { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); opacity: 0.2; line-height: 1; position: relative; z-index: 1; }
+    .quote-text { font-size: 1rem; color: rgba(237,224,206,0.85); line-height: 1.9; font-style: italic; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .quote-author { font-size: 0.72rem; font-weight: 600; color: var(--gold); margin-top: 1.5rem; letter-spacing: 0.1em; position: relative; z-index: 1; }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -167,11 +180,32 @@
 
   <div class="content">
 
+    <!-- STATS VISUELLES -->
+    <div class="stats-band">
+      <div class="stat-cell">
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">ans de formation</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">6+</div>
+        <div class="stat-lbl">SAE réalisées</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">entreprises</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">langues</div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
     <!-- POINTS FORTS -->
     <div class="deco-wrap">
       <div class="deco-circle" style="width:200px;height:200px;top:-80px;right:-80px;"></div>
       <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
-      <div class="deco-dot" style="width:6px;height:6px;bottom:40px;left:55px;"></div>
       <div class="corner-tl"></div>
       <div class="corner-br"></div>
       <div class="deco-inner points-section">
@@ -179,40 +213,44 @@
         <h2 class="section-title">Mes points forts</h2>
         <div class="points-grid">
           <div class="point-card">
-            <div class="point-icon">🎯</div>
+            <span class="point-icon">🎯</span>
             <div class="point-title">Rigueur & Précision</div>
-            <div class="point-text">Saisies comptables, déclarations fiscales, clôtures — chaque mission demande un souci du détail que j'ai développé au fil de mes expériences.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:95%;"></div></div>
           </div>
           <div class="point-card">
-            <div class="point-icon">🔄</div>
+            <span class="point-icon">🔄</span>
             <div class="point-title">Adaptabilité</div>
-            <div class="point-text">D'une TPE artisanale à un groupe multi-filiales, j'ai su m'adapter à chaque environnement, chaque logiciel, chaque culture d'entreprise.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:90%;"></div></div>
           </div>
           <div class="point-card">
-            <div class="point-icon">💪</div>
+            <span class="point-icon">💪</span>
             <div class="point-title">Autonomie</div>
-            <div class="point-text">En alternance chez Tecmaplast, je gère en totale autonomie la trésorerie, les notes de frais et les clôtures comptables.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:88%;"></div></div>
           </div>
           <div class="point-card">
-            <div class="point-icon">🗣️</div>
+            <span class="point-icon">🗣️</span>
             <div class="point-title">Aisance à l'oral</div>
-            <div class="point-text">Présentations devant jury, soutenances de SAE, restitutions en entreprise — j'ai développé une vraie aisance dans la communication orale.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:85%;"></div></div>
           </div>
           <div class="point-card">
-            <div class="point-icon">🤝</div>
+            <span class="point-icon">🤝</span>
             <div class="point-title">Esprit d'équipe</div>
-            <div class="point-text">Projets tutorés, SAE en groupe, collaboration avec les équipes comptables — le travail collectif est une force que j'ai cultivée tout au long du BUT.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:90%;"></div></div>
           </div>
           <div class="point-card">
-            <div class="point-icon">💡</div>
+            <span class="point-icon">💡</span>
             <div class="point-title">Sens de l'innovation</div>
-            <div class="point-text">Création de supports de suivi chez AdduXi, nouvelles approches dans les SAE — j'aime proposer des solutions concrètes et créatives.</div>
             <div class="point-bar"><div class="point-bar-fill" style="width:80%;"></div></div>
+          </div>
+          <div class="point-card">
+            <span class="point-icon">⏰</span>
+            <div class="point-title">Ponctualité & Fiabilité</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:95%;"></div></div>
+          </div>
+          <div class="point-card" style="border-color:rgba(212,160,23,0.4);background:rgba(212,160,23,0.06);">
+            <span class="point-icon">🏭</span>
+            <div class="point-title">Monde du travail réel</div>
+            <div class="point-bar"><div class="point-bar-fill" style="width:100%;"></div></div>
           </div>
         </div>
       </div>
@@ -233,36 +271,43 @@
           <div>
             <div class="tech-col-title">Logiciels & Outils</div>
             <div class="tech-item">
+              <span class="tech-icon">📊</span>
               <span class="tech-name">Excel</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:90%;"></div></div>
               <span class="tech-pct">90%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">📘</span>
               <span class="tech-name">Sage</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:85%;"></div></div>
               <span class="tech-pct">85%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">📈</span>
               <span class="tech-name">Power BI</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:70%;"></div></div>
               <span class="tech-pct">70%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">📝</span>
               <span class="tech-name">Word</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:95%;"></div></div>
               <span class="tech-pct">95%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">🖥️</span>
               <span class="tech-name">PowerPoint</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:88%;"></div></div>
               <span class="tech-pct">88%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">🎨</span>
               <span class="tech-name">Canva</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:85%;"></div></div>
               <span class="tech-pct">85%</span>
             </div>
             <div class="tech-item">
+              <span class="tech-icon">📋</span>
               <span class="tech-name">SphinxCampus</span>
               <div class="tech-bar-bg"><div class="tech-bar-fill" style="width:75%;"></div></div>
               <span class="tech-pct">75%</span>
@@ -270,21 +315,27 @@
           </div>
           <div>
             <div class="tech-col-title">Langues</div>
-            <div class="lang-item">
-              <span class="lang-name">🇫🇷 Français</span>
-              <span class="lang-level">C2 · Langue maternelle</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-name">🇧🇦 Bosniaque</span>
-              <span class="lang-level">C2 · Langue maternelle</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-name">🇬🇧 Anglais</span>
-              <span class="lang-level">B1+ · Intermédiaire</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-name">🇩🇪 Allemand</span>
-              <span class="lang-level">A2 · Notions</span>
+            <div class="lang-grid">
+              <div class="lang-card">
+                <div class="lang-flag">🇫🇷</div>
+                <div class="lang-name">Français</div>
+                <div class="lang-level">C2</div>
+              </div>
+              <div class="lang-card">
+                <div class="lang-flag">🇧🇦</div>
+                <div class="lang-name">Bosniaque</div>
+                <div class="lang-level">C2</div>
+              </div>
+              <div class="lang-card">
+                <div class="lang-flag">🇬🇧</div>
+                <div class="lang-name">Anglais</div>
+                <div class="lang-level">B1+</div>
+              </div>
+              <div class="lang-card">
+                <div class="lang-flag">🇩🇪</div>
+                <div class="lang-name">Allemand</div>
+                <div class="lang-level">A2</div>
+              </div>
             </div>
           </div>
         </div>
@@ -293,33 +344,32 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- AXES DE PROGRESSION -->
+    <!-- AXES -->
     <div>
-      <p class="section-label">Ce que le BUT m'a appris</p>
+      <p class="section-label">Bilan honnête</p>
       <h2 class="section-title">Points forts & Axes de progression</h2>
     </div>
     <div class="axes-section">
       <div class="deco-wrap">
-        <div class="deco-circle" style="width:120px;height:120px;top:-40px;right:-40px;"></div>
         <div class="corner-tl"></div>
         <div class="deco-inner axe-box green">
           <div class="axe-title">✓ Ce que j'ai consolidé</div>
-          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Rigueur comptable</strong> — saisies, rapprochements, déclarations sans erreur</div></div>
-          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Analyse financière</strong> — lecture et interprétation des états financiers</div></div>
-          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Autonomie professionnelle</strong> — gestion de missions sans supervision constante</div></div>
-          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Communication orale</strong> — soutenances, restitutions, présentations jury</div></div>
-          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text"><strong>Maîtrise des outils</strong> — Excel avancé, Sage, Power BI, logiciels métier</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Rigueur comptable</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Analyse financière</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Autonomie professionnelle</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Communication orale</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Maîtrise des outils bureautiques</div></div>
+          <div class="axe-item"><div class="axe-dot"></div><div class="axe-text">Connaissance du monde ouvrier</div></div>
         </div>
       </div>
       <div class="deco-wrap">
-        <div class="deco-circle" style="width:120px;height:120px;bottom:-40px;left:-40px;border-color:rgba(193,123,74,0.2);"></div>
         <div class="corner-br" style="border-color:rgba(193,123,74,0.3);"></div>
         <div class="deco-inner axe-box orange">
-          <div class="axe-title" style="color:var(--terra);">→ Mes axes de progression</div>
-          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Anglais professionnel</strong> — développer le vocabulaire métier et la fluidité à l'écrit</div></div>
-          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Supply Chain & Logistique</strong> — approfondir les outils et méthodes du secteur visé</div></div>
-          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Power BI avancé</strong> — maîtriser la data visualisation pour le reporting</div></div>
-          <div class="axe-item"><div class="axe-dot orange"></div><div class="axe-text"><strong>Gestion de projet</strong> — structurer et piloter des projets de A à Z</div></div>
+          <div class="axe-title orange">→ Mes axes de progression</div>
+          <div class="axe-item orange"><div class="axe-dot orange"></div><div class="axe-text">Anglais professionnel</div></div>
+          <div class="axe-item orange"><div class="axe-dot orange"></div><div class="axe-text">Supply Chain & Logistique</div></div>
+          <div class="axe-item orange"><div class="axe-dot orange"></div><div class="axe-text">Power BI avancé</div></div>
+          <div class="axe-item orange"><div class="axe-dot orange"></div><div class="axe-text">Gestion de projet</div></div>
         </div>
       </div>
     </div>
@@ -330,36 +380,37 @@
     <div class="deco-wrap">
       <div class="deco-circle" style="width:200px;height:200px;top:-80px;right:-80px;"></div>
       <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
-      <div class="deco-dot" style="width:6px;height:6px;top:30px;left:60px;"></div>
       <div class="corner-tl"></div>
       <div class="corner-br"></div>
       <div class="deco-inner reflexif-section">
         <p class="section-label">Regard réflexif</p>
         <h2 class="section-title">Qui suis-je devenue en 3 ans ?</h2>
-        <div class="reflexif-grid">
-          <div>
-            <div class="reflexif-item">
-              <div class="reflexif-num">01</div>
-              <div class="reflexif-text"><strong>Une professionnelle de la comptabilité</strong> — je suis passée de l'étudiante qui découvrait le plan comptable à l'alternante qui gère des clôtures en totale autonomie.</div>
-            </div>
-            <div class="reflexif-item">
-              <div class="reflexif-num">02</div>
-              <div class="reflexif-text"><strong>Une apprenante sur le terrain</strong> — plus de 3 ans chez AdduXi, un stage chez Motelec, une alternance chez Tecmaplast. Chaque expérience a enrichi ma vision du métier.</div>
-            </div>
-            <div class="reflexif-item">
-              <div class="reflexif-num">03</div>
-              <div class="reflexif-text"><strong>Une étudiante qui sait collaborer</strong> — les SAE m'ont appris à travailler en équipe sous pression, à gérer des projets longs et à m'adapter aux imprévus.</div>
-            </div>
-            <div class="reflexif-item">
-              <div class="reflexif-num">04</div>
-              <div class="reflexif-text"><strong>Une professionnelle tournée vers l'avenir</strong> — la comptabilité et la finance sont ma base. La Supply Chain est ma prochaine étape, une suite logique et assumée.</div>
-            </div>
+        <div class="reflexif-cards">
+          <div class="reflexif-card">
+            <div class="reflexif-num">01</div>
+            <div class="reflexif-title">Une professionnelle de la comptabilité</div>
+            <div class="reflexif-text">De l'étudiante qui découvrait le plan comptable à l'alternante qui gère des clôtures en totale autonomie.</div>
           </div>
-          <div class="reflexif-quote">
-            <div class="quote-big">«</div>
-            <div class="quote-text">Ces trois années m'ont transformée. Pas seulement professionnellement — humainement. J'ai appris à faire confiance à mon analyse, à prendre des initiatives, à travailler avec des professionnels exigeants. Le BUT GEA m'a donné les fondations. Ce que je construis dessus, c'est à moi de le choisir.</div>
-            <div class="quote-author">— Mélina Hasanovic · Juin 2026</div>
+          <div class="reflexif-card">
+            <div class="reflexif-num">02</div>
+            <div class="reflexif-title">Une apprenante sur le terrain</div>
+            <div class="reflexif-text">AdduXi, Motelec, Tecmaplast — 3 entreprises, 3 cultures, une seule trajectoire construite pas à pas.</div>
           </div>
+          <div class="reflexif-card">
+            <div class="reflexif-num">03</div>
+            <div class="reflexif-title">L'usine comme école de vie</div>
+            <div class="reflexif-text">Plus de 3 ans à l'usine m'ont appris la rigueur, la ponctualité et la réalité du monde du travail avant même de commencer mes études.</div>
+          </div>
+          <div class="reflexif-card">
+            <div class="reflexif-num">04</div>
+            <div class="reflexif-title">Tournée vers l'avenir</div>
+            <div class="reflexif-text">La comptabilité est ma base. La Supply Chain est ma prochaine étape — une suite logique et assumée.</div>
+          </div>
+        </div>
+        <div class="reflexif-quote">
+          <div class="quote-big">«</div>
+          <div class="quote-text">Ces trois années m'ont transformée. Pas seulement professionnellement — humainement. J'ai appris à faire confiance à mon analyse, à prendre des initiatives, à travailler avec des professionnels exigeants. Le BUT GEA m'a donné les fondations. Ce que je construis dessus, c'est à moi de le choisir.</div>
+          <div class="quote-author">— Mélina Hasanovic · Juin 2026</div>
         </div>
       </div>
     </div>
