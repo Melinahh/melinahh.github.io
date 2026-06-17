@@ -105,6 +105,14 @@
     .proof-slot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
     .proof-slot-text { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; max-width: 220px; }
 
+    /* CITATION - en gros et visuelle */
+    .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
+    .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
+    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
+    .quote-big { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; position: relative; z-index: 1; }
+    .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
+
     /* NUAGE DE MOTS */
     .cloud-section { background: var(--marron); border-radius: 16px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
     .cloud-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
@@ -126,14 +134,6 @@
     .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
     .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
     .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
-
-    /* CITATION - en gros et visuelle */
-    .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
-    .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
-    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
-    .quote-big { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; position: relative; z-index: 1; }
-    .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
-    .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
 
     /* NAVIGATION */
     .nav-comp { display: flex; justify-content: flex-end; }
@@ -265,6 +265,15 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
+    <!-- CITATION BILAN -->
+    <div class="bilan-box">
+      <div class="quote-big">«</div>
+      <div class="bilan-text">Cette compétence m'a appris à lire une organisation dans sa globalité — pas seulement ses chiffres, mais ses processus, son environnement et ses acteurs.</div>
+      <div class="bilan-author">— Mélina Hasanovic</div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
     <!-- NUAGE DE MOTS -->
     <div class="cloud-section">
       <div class="cloud-label">CE1 · Matières mobilisées</div>
@@ -305,15 +314,6 @@
         <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & management</span></div>
         <div class="leg"><div class="leg-dot" style="background:#C17B4A;"></div><span>Compétences acquises</span></div>
       </div>
-    </div>
-
-    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
-
-    <!-- CITATION BILAN -->
-    <div class="bilan-box">
-      <div class="quote-big">«</div>
-      <div class="bilan-text">Cette compétence m'a appris à lire une organisation dans sa globalité — pas seulement ses chiffres, mais ses processus, son environnement et ses acteurs.</div>
-      <div class="bilan-author">— Mélina Hasanovic</div>
     </div>
 
     <!-- NAVIGATION -->
