@@ -96,6 +96,18 @@
     .comp-card-title { font-size: 1.25rem; font-weight: 700; color: var(--marron); margin-bottom: 0.8rem; line-height: 1.3; font-family: 'Playfair Display', serif; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
 
+    /* COMPOSANTE EN AVANT (titre agrandi + bouton acquis doré) */
+    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
+    .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
+    .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
+
+    /* JUSTIFICATION MOTS-CLÉS */
+    .keywords-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px dashed rgba(193,123,74,0.3); }
+    .keyword-pill { border: 2px solid var(--terra); border-radius: 30px; padding: 0.6rem 1.1rem; font-size: 0.78rem; font-weight: 600; color: var(--marron); background: rgba(255,255,255,0.5); }
+    .keyword-arrow { font-size: 1.1rem; color: var(--terra); padding: 0 0.2rem; }
+    .keyword-arrow-final { font-size: 1.1rem; color: var(--gold); padding: 0 0.2rem; }
+    .keyword-pill-final { background: var(--gold); border: 2px solid var(--gold); border-radius: 30px; padding: 0.6rem 1.2rem; font-size: 0.78rem; font-weight: 700; color: var(--marron); }
+
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
     .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -138,7 +150,7 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(212,160,23,0.25); }
 
-    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -209,11 +221,24 @@
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">📊</span>
-        <div>
-          <div class="acquis-badge">✓ Acquis</div>
-          <div class="comp-card-code">CE1.01</div>
-          <div class="comp-card-title">Déterminer les enjeux sociaux économiques et juridiques</div>
-          <div class="comp-card-text">J'ai identifié les enjeux clés de la boucherie (fidélisation, satisfaction, positionnement) et mesuré leurs conséquences concrètes sur l'activité. En alternance chez Tecmaplast, j'ai appliqué cette même lecture des enjeux économiques et juridiques à une PME industrielle.</div>
+        <div style="flex:1;">
+          <div class="comp-header-row">
+            <div>
+              <div class="comp-card-code">CE1.01</div>
+              <div class="comp-card-title-big">Déterminer les enjeux sociaux économiques et juridiques</div>
+            </div>
+            <div class="acquis-badge-gold">✓ Acquis</div>
+          </div>
+          <div class="comp-card-text">J'ai su identifier les enjeux clés à travers la SAE boucherie, mes différents stages, et les différentes entreprises étudiées en cas pratiques. Au début, cette analyse restait assez théorique, mais j'ai ensuite pu l'appliquer de façon concrète et réelle en alternance chez Tecmaplast.</div>
+          <div class="keywords-flow">
+            <div class="keyword-pill">SAE boucherie</div>
+            <span class="keyword-arrow">→</span>
+            <div class="keyword-pill">Stages</div>
+            <span class="keyword-arrow">→</span>
+            <div class="keyword-pill">Cas pratiques entreprises</div>
+            <span class="keyword-arrow-final">→</span>
+            <div class="keyword-pill-final">Tecmaplast</div>
+          </div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
