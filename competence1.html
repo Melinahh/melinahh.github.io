@@ -105,6 +105,28 @@
     .proof-slot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
     .proof-slot-text { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; max-width: 220px; }
 
+    /* NUAGE DE MOTS */
+    .cloud-section { background: var(--marron); border-radius: 16px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
+    .cloud-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .cloud-section::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
+    .cloud-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; position: relative; z-index: 1; }
+    .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 18px; position: relative; z-index: 1; }
+    .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
+    .w:hover { transform: scale(1.08); }
+    .s1 { font-size: 2rem; }
+    .s2 { font-size: 1.5rem; }
+    .s3 { font-size: 1.1rem; }
+    .s4 { font-size: 0.88rem; }
+    .s5 { font-size: 0.72rem; }
+    .wgold { color: #D4A017; }
+    .wsable { color: #EDE0CE; }
+    .wterra { color: #C17B4A; }
+    .wmuted { color: rgba(237,224,206,0.5); }
+    .wvmuted { color: rgba(237,224,206,0.3); }
+    .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
+    .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
+    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
+
     /* CITATION - en gros et visuelle */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
     .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
@@ -238,6 +260,50 @@
           <div class="proof-slot-label">CE1.03 · Parties prenantes</div>
           <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
         </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- NUAGE DE MOTS -->
+    <div class="cloud-section">
+      <div class="cloud-label">CE1 · Matières mobilisées</div>
+      <div class="cloud">
+        <span class="w s1 wgold">Économie</span>
+        <span class="w s2 wsable">Droit des sociétés</span>
+        <span class="w s3 wterra">Marketing</span>
+        <span class="w s1 wsable">Management</span>
+        <span class="w s4 wmuted">Droit du travail</span>
+        <span class="w s2 wgold">Sociologie</span>
+        <span class="w s5 wvmuted">Droit du numérique</span>
+        <span class="w s3 wsable">Ressources humaines</span>
+        <span class="w s4 wterra">Institutions FR & UE</span>
+        <span class="w s1 wterra">Droit des affaires</span>
+        <span class="w s5 wmuted">Droit administratif</span>
+        <span class="w s2 wsable">Théorie des organisations</span>
+        <span class="w s3 wgold">Projet professionnel</span>
+        <span class="w s4 wmuted">Droit des obligations</span>
+        <span class="w s5 wvmuted">Entreprises en difficulté</span>
+        <span class="w s2 wterra">Management d'activités</span>
+        <span class="w s3 wsable">Analyse d'environnement</span>
+        <span class="w s4 wgold">Vision stratégique</span>
+        <span class="w s5 wmuted">Parties prenantes</span>
+        <span class="w s1 wgold">Organisation</span>
+        <span class="w s3 wterra">PESTEL</span>
+        <span class="w s4 wsable">Diagnostic</span>
+        <span class="w s5 wvmuted">Enjeux juridiques</span>
+        <span class="w s2 wsable">Autonomie</span>
+        <span class="w s3 wgold">Rigueur</span>
+        <span class="w s4 wterra">Adaptabilité</span>
+        <span class="w s5 wmuted">Recommandations</span>
+        <span class="w s2 wgold">Comprendre</span>
+        <span class="w s3 wsable">Recul stratégique</span>
+        <span class="w s4 wmuted">Acteurs</span>
+      </div>
+      <div class="cloud-legend">
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Matières juridiques & éco</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & management</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#C17B4A;"></div><span>Compétences acquises</span></div>
       </div>
     </div>
 
