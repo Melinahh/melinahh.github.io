@@ -16,7 +16,7 @@
       --terra: #C17B4A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; }
+    body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; font-size: 16px; }
 
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -39,75 +39,88 @@
     .dropdown-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold); }
     .dropdown-menu-num { font-size: 0.65rem; color: var(--gold); font-weight: 700; min-width: 32px; }
 
-    .page-header { padding: 8rem 2rem 4rem; text-align: center; background: var(--marron); position: relative; overflow: hidden; }
-    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-    .page-header p { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; position: relative; }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; }
+    /* HEADER */
+    .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; text-align: center; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .h-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; top: -100px; right: -100px; }
+    .h-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; top: -40px; right: -40px; }
+    .h-circle-3 { position: absolute; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; bottom: -80px; left: -80px; }
+    .h-diamond { position: absolute; width: 14px; height: 14px; background: rgba(212,160,23,0.3); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
+    .h-corner-tl { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-left: 2px solid rgba(212,160,23,0.3); }
+    .h-corner-tr { position: absolute; top: 80px; right: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.3); border-right: 2px solid rgba(212,160,23,0.3); }
+    .page-header p.tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .page-header p.tag::before, .page-header p.tag::after { content: ''; width: 40px; height: 1px; background: rgba(212,160,23,0.5); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.2; }
+    .header-line { width: 60px; height: 3px; background: var(--gold); margin: 1.5rem auto 0; position: relative; z-index: 1; }
 
-    .content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    /* DÉCO */
+    .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+    .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
+    .deco-circle { position: absolute; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .deco-diamond { position: absolute; background: rgba(212,160,23,0.25); transform: rotate(45deg); pointer-events: none; z-index: 0; }
+    .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(212,160,23,0.4); border-left: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(212,160,23,0.4); border-right: 2px solid rgba(212,160,23,0.4); pointer-events: none; z-index: 0; }
+    .deco-inner { position: relative; z-index: 1; }
+
+    .content { max-width: 1400px; margin: 0 auto; padding: 5rem 3rem 6rem; display: flex; flex-direction: column; gap: 3rem; }
+
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,160,23,0.2); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--marron); margin-bottom: 2rem; line-height: 1.2; }
+
+    .sep { display: flex; align-items: center; gap: 1.5rem; }
+    .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
+    .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
     /* BLOC PRINCIPAL */
-    .comp-bloc { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 3rem; background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 12px; padding: 2rem; }
-    .comp-number { width: 56px; height: 56px; background: var(--marron); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
-    .comp-info { flex: 1; }
-    .comp-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-    .comp-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--marron); margin-bottom: 1rem; line-height: 1.3; }
-    .comp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .comp-tag { background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3); border-radius: 20px; padding: 4px 14px; font-size: 0.68rem; font-weight: 600; color: var(--marron-mid); }
+    .comp-bloc { display: flex; align-items: center; gap: 2rem; background: var(--marron); border-radius: 14px; padding: 3rem; position: relative; overflow: hidden; }
+    .comp-bloc::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 140px; height: 140px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
+    .comp-number { width: 70px; height: 70px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--marron); flex-shrink: 0; position: relative; z-index: 1; }
+    .comp-info { flex: 1; position: relative; z-index: 1; }
+    .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
-    /* TIMELINE */
-    .section-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--marron); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid rgba(212,160,23,0.3); }
-    .timeline { display: flex; gap: 1rem; margin-bottom: 3rem; align-items: stretch; }
-    .timeline-step { flex: 1; background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.2rem; }
-    .step-but { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-    .step-title { font-size: 0.95rem; font-weight: 600; color: var(--marron); margin-bottom: 0.5rem; }
-    .step-text { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; }
-    .timeline-arrow { color: rgba(212,160,23,0.5); font-size: 1.5rem; align-self: center; flex-shrink: 0; }
+    /* GRAPHIQUE PROGRESSION */
+    .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
+    .chart-wrap { width: 100%; }
+    .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
 
-    /* COMPOSANTES */
-    .composante { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
-    .comp-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem; }
-    .acquis-badge { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.35); border-radius: 20px; padding: 2px 10px; font-size: 0.62rem; font-weight: 700; color: #2E7D32; white-space: nowrap; }
-    .comp-head-name { font-size: 0.92rem; font-weight: 600; color: var(--marron); }
-    .comp-text { font-size: 0.80rem; color: var(--marron-mid); line-height: 1.75; }
+    /* COMPOSANTES CÔTE À CÔTE */
+    .composantes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+    .composante-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(212,160,23,0.25); border-radius: 14px; padding: 2.2rem; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .composante-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(61,43,31,0.1); }
+    .composante-card::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
+    .comp-card-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+    .acquis-badge { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.35); border-radius: 20px; padding: 3px 12px; font-size: 0.65rem; font-weight: 700; color: #2E7D32; display: inline-block; margin-bottom: 1rem; width: fit-content; }
+    .comp-card-code { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .comp-card-title { font-size: 1.1rem; font-weight: 700; color: var(--marron); margin-bottom: 1rem; line-height: 1.3; font-family: 'Playfair Display', serif; }
+    .comp-card-text { font-size: 0.88rem; color: var(--marron-mid); line-height: 1.85; }
 
-    /* SAE */
-    .sae-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-    .sae-card { background: rgba(255,255,255,0.45); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: 1.3rem; }
-    .sae-card-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.5rem; }
-    .sae-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--marron); margin-bottom: 0.5rem; }
-    .sae-card p { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; }
+    /* GALERIE PREUVES */
+    .proof-section { background: rgba(255,255,255,0.3); border: 2px dashed rgba(212,160,23,0.35); padding: 3rem; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .proof-slot { background: rgba(255,255,255,0.5); border: 1px dashed rgba(212,160,23,0.4); border-radius: 12px; padding: 2.5rem 1.5rem; text-align: center; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; }
+    .proof-slot-icon { font-size: 2.5rem; opacity: 0.4; }
+    .proof-slot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+    .proof-slot-text { font-size: 0.78rem; color: var(--marron-mid); line-height: 1.6; max-width: 220px; }
 
-    /* NUAGE */
-    .cloud-section { background: var(--marron); border-radius: 12px; padding: 2rem; margin-bottom: 3rem; text-align: center; }
-    .cloud-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 16px; }
-    .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
-    .w:hover { transform: scale(1.08); }
-    .s1 { font-size: 2rem; }
-    .s2 { font-size: 1.5rem; }
-    .s3 { font-size: 1.1rem; }
-    .s4 { font-size: 0.88rem; }
-    .s5 { font-size: 0.72rem; }
-    .wgold { color: #D4A017; }
-    .wsable { color: #EDE0CE; }
-    .wterra { color: #C17B4A; }
-    .wmuted { color: rgba(237,224,206,0.5); }
-    .wvmuted { color: rgba(237,224,206,0.3); }
-    .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); }
-    .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
-    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
-
-    /* CITATION */
-    .bilan-box { background: rgba(212,160,23,0.1); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; margin-bottom: 3rem; border-radius: 0 8px 8px 0; }
-    .bilan-text { font-size: 0.88rem; color: var(--marron); line-height: 1.8; font-style: italic; }
+    /* CITATION - en gros et visuelle */
+    .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
+    .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
+    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
+    .quote-big { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; position: relative; z-index: 1; }
+    .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
 
     /* NAVIGATION */
-    .nav-comp { display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(61,43,31,0.15); }
-    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron-mid); transition: color 0.2s; }
-    .nav-comp a:hover { color: var(--gold); }
+    .nav-comp { display: flex; justify-content: flex-end; }
+    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
+    .nav-comp a:hover { background: rgba(212,160,23,0.25); }
 
-    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.72rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
+    @media (max-width: 900px) { .composantes-grid, .proof-grid { grid-template-columns: 1fr; } }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
 </head>
 <body>
@@ -133,8 +146,15 @@
   </nav>
 
   <div class="page-header">
-    <p>Compétence 1</p>
+    <div class="h-circle-1"></div>
+    <div class="h-circle-2"></div>
+    <div class="h-circle-3"></div>
+    <div class="h-diamond"></div>
+    <div class="h-corner-tl"></div>
+    <div class="h-corner-tr"></div>
+    <p class="tag">Compétence 1</p>
     <h1>Analyser les processus de l'organisation dans son environnement</h1>
+    <div class="header-line"></div>
   </div>
 
   <div class="content">
@@ -145,134 +165,89 @@
       <div class="comp-info">
         <p class="comp-label">Compétence CE1</p>
         <h2 class="comp-name">Analyser les processus de l'organisation dans son environnement</h2>
-        <div class="comp-tags">
-          <span class="comp-tag">CE1.01 · Enjeux socio-économiques</span>
-          <span class="comp-tag">CE1.02 · Identité de l'organisation</span>
-          <span class="comp-tag">CE1.03 · Parties prenantes</span>
+      </div>
+    </div>
+
+    <!-- GRAPHIQUE PROGRESSION -->
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:180px;height:180px;top:-60px;right:-60px;"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="deco-inner chart-section">
+        <p class="section-label">Évolution</p>
+        <h2 class="section-title">Ma progression BUT 1 → BUT 3</h2>
+        <div class="chart-wrap">
+          <canvas id="progressChart"></canvas>
         </div>
       </div>
     </div>
 
-    <!-- TIMELINE -->
-    <h2 class="section-title">Ma progression BUT 1 → BUT 3</h2>
-    <div class="timeline">
-      <div class="timeline-step">
-        <div class="step-but">BUT 1 · 2023-2024</div>
-        <div class="step-title">Découverte</div>
-        <div class="step-text">SAE Boucherie-Charcuterie · Premiers outils d'analyse · PESTEL · identification des acteurs</div>
-      </div>
-      <div class="timeline-arrow">→</div>
-      <div class="timeline-step">
-        <div class="step-but">BUT 2 · 2024-2025</div>
-        <div class="step-title">Approfondissement</div>
-        <div class="step-text">SAE Banque de France · Diagnostic financier complet · Structure juridique · Analyse concurrentielle</div>
-      </div>
-      <div class="timeline-arrow">→</div>
-      <div class="timeline-step">
-        <div class="step-but">BUT 3 · 2025-2026</div>
-        <div class="step-title">Expertise</div>
-        <div class="step-text">Alternance Tecmaplast · Analyse autonome des processus · Vision globale · Recommandations stratégiques</div>
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- COMPOSANTES CÔTE À CÔTE -->
+    <div>
+      <p class="section-label">Détail</p>
+      <h2 class="section-title">Les composantes évaluées</h2>
+      <div class="composantes-grid">
+
+        <div class="composante-card">
+          <span class="comp-card-icon">📊</span>
+          <div class="acquis-badge">✓ Acquis</div>
+          <div class="comp-card-code">CE1.01</div>
+          <div class="comp-card-title">Intégrer l'impact des enjeux sur l'organisation</div>
+          <div class="comp-card-text">J'ai identifié les enjeux clés de la boucherie (fidélisation, satisfaction, positionnement) et mesuré leurs conséquences concrètes sur l'activité. En alternance chez Tecmaplast, j'ai appliqué cette même lecture des enjeux économiques et juridiques à une PME industrielle.</div>
+        </div>
+
+        <div class="composante-card">
+          <span class="comp-card-icon">🏢</span>
+          <div class="acquis-badge">✓ Acquis</div>
+          <div class="comp-card-code">CE1.02</div>
+          <div class="comp-card-title">Identifier les dimensions de l'identité de l'organisation</div>
+          <div class="comp-card-text">J'ai su analyser la structure juridique, l'organigramme et les caractéristiques propres à chaque organisation rencontrée — de la TPE artisanale à la PME industrielle, en adaptant mes analyses à chaque contexte.</div>
+        </div>
+
+        <div class="composante-card">
+          <span class="comp-card-icon">🤝</span>
+          <div class="acquis-badge">✓ Acquis</div>
+          <div class="comp-card-code">CE1.03</div>
+          <div class="comp-card-title">Présenter les attentes des acteurs et partenaires</div>
+          <div class="comp-card-text">À partir de résultats d'enquêtes et d'analyses terrain, j'ai dégagé des axes d'amélioration concrets en tenant compte des attentes de chaque partie prenante — clients, fournisseurs, collaborateurs.</div>
+        </div>
+
       </div>
     </div>
 
-    <!-- COMPOSANTES -->
-    <h2 class="section-title">Les composantes évaluées</h2>
-
-    <div class="composante">
-      <div class="comp-header">
-        <span class="acquis-badge">✓ Acquis</span>
-        <span class="comp-head-name">CE1.01 · Intégrer l'impact des enjeux sur l'organisation</span>
-      </div>
-      <div class="comp-text">J'ai identifié les enjeux clés de la boucherie (fidélisation, satisfaction, positionnement) et mesuré leurs conséquences concrètes sur l'activité pour orienter les recommandations. En alternance chez Tecmaplast, j'ai appliqué cette même lecture des enjeux économiques et juridiques à une PME industrielle.</div>
-    </div>
-
-    <div class="composante">
-      <div class="comp-header">
-        <span class="acquis-badge">✓ Acquis</span>
-        <span class="comp-head-name">CE1.02 · Identifier les dimensions de l'identité de l'organisation</span>
-      </div>
-      <div class="comp-text">J'ai su analyser la structure juridique, l'organigramme et les caractéristiques propres à chaque organisation rencontrée — de la TPE artisanale à la PME industrielle. Cette compétence m'a permis d'adapter mes analyses à chaque contexte.</div>
-    </div>
-
-    <div class="composante">
-      <div class="comp-header">
-        <span class="acquis-badge">✓ Acquis</span>
-        <span class="comp-head-name">CE1.03 · Présenter les attentes des acteurs et partenaires</span>
-      </div>
-      <div class="comp-text">À partir des résultats d'enquêtes et d'analyses terrain, j'ai dégagé des axes d'amélioration opérationnels concrets en tenant compte des attentes de chaque partie prenante — clients, fournisseurs, collaborateurs.</div>
-    </div>
-
-    <!-- SAE -->
-    <h2 class="section-title" style="margin-top:3rem;">Mise en pratique · SAE & Missions</h2>
-    <div class="sae-grid">
-      <div class="sae-card">
-        <div class="sae-card-badge">BUT 1 · SAE Boucherie-Charcuterie</div>
-        <h4>La Maison Rivet · Ambérieu</h4>
-        <p>Analyse PESTEL · étude de marché · enquête clientèle · identification des dysfonctionnements · recommandations concrètes pour le gérant</p>
-      </div>
-      <div class="sae-card">
-        <div class="sae-card-badge">BUT 1 · Projet tutoré GEA'Jouets</div>
-        <h4>Collecte de jouets · Bourg-en-Bresse</div>
-        <p>Analyse des parties prenantes · coordination avec la Croix-Rouge, Radio Scoop, Century 21 · gestion des attentes de chaque acteur</p>
-      </div>
-      <div class="sae-card">
-        <div class="sae-card-badge">BUT 2 · SAE Banque de France</div>
-        <h4>Diagnostic financier complet</h4>
-        <p>Analyse de l'environnement économique · identification des enjeux · recommandations stratégiques pour convaincre la Banque de France</p>
-      </div>
-      <div class="sae-card">
-        <div class="sae-card-badge">BUT 3 · Alternance Tecmaplast</div>
-        <h4>Vision globale en entreprise</h4>
-        <p>Analyse des processus internes · compréhension de l'environnement industriel · application autonome des outils d'analyse</p>
+    <!-- GALERIE PREUVES -->
+    <div class="proof-section">
+      <p class="section-label">Justification</p>
+      <h2 class="section-title">Preuves & captures d'écran</h2>
+      <div class="proof-grid">
+        <div class="proof-slot">
+          <div class="proof-slot-icon">🖼️</div>
+          <div class="proof-slot-label">CE1.01 · Enjeux</div>
+          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        </div>
+        <div class="proof-slot">
+          <div class="proof-slot-icon">🖼️</div>
+          <div class="proof-slot-label">CE1.02 · Identité</div>
+          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        </div>
+        <div class="proof-slot">
+          <div class="proof-slot-icon">🖼️</div>
+          <div class="proof-slot-label">CE1.03 · Parties prenantes</div>
+          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        </div>
       </div>
     </div>
 
-    <!-- NUAGE DE MOTS -->
-    <h2 class="section-title">Matières mobilisées</h2>
-    <div class="cloud-section">
-      <div class="cloud-label">CE1 · Ce que j'ai appris à travers les matières</div>
-      <div class="cloud">
-        <span class="w s1 wgold">Économie</span>
-        <span class="w s2 wsable">Droit des sociétés</span>
-        <span class="w s3 wterra">Marketing</span>
-        <span class="w s1 wsable">Management</span>
-        <span class="w s4 wmuted">Droit du travail</span>
-        <span class="w s2 wgold">Sociologie</span>
-        <span class="w s5 wvmuted">Droit du numérique</span>
-        <span class="w s3 wsable">Ressources humaines</span>
-        <span class="w s4 wterra">Institutions FR & UE</span>
-        <span class="w s1 wterra">Droit des affaires</span>
-        <span class="w s5 wmuted">Droit administratif</span>
-        <span class="w s2 wsable">Théorie des organisations</span>
-        <span class="w s3 wgold">Projet professionnel</span>
-        <span class="w s4 wmuted">Droit des obligations</span>
-        <span class="w s5 wvmuted">Entreprises en difficulté</span>
-        <span class="w s2 wterra">Management d'activités</span>
-        <span class="w s3 wsable">Analyse d'environnement</span>
-        <span class="w s4 wgold">Vision stratégique</span>
-        <span class="w s5 wmuted">Parties prenantes</span>
-        <span class="w s1 wgold">Organisation</span>
-        <span class="w s3 wterra">PESTEL</span>
-        <span class="w s4 wsable">Diagnostic</span>
-        <span class="w s5 wvmuted">Enjeux juridiques</span>
-        <span class="w s2 wsable">Autonomie</span>
-        <span class="w s3 wgold">Rigueur</span>
-        <span class="w s4 wterra">Adaptabilité</span>
-        <span class="w s5 wmuted">Recommandations</span>
-        <span class="w s2 wgold">Comprendre</span>
-        <span class="w s3 wsable">Recul stratégique</span>
-        <span class="w s4 wmuted">Acteurs</span>
-      </div>
-      <div class="cloud-legend">
-        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Matières juridiques & éco</span></div>
-        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & management</span></div>
-        <div class="leg"><div class="leg-dot" style="background:#C17B4A;"></div><span>Compétences acquises</span></div>
-      </div>
-    </div>
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
     <!-- CITATION BILAN -->
     <div class="bilan-box">
-      <div class="bilan-text">« Cette compétence m'a appris à lire une organisation dans sa globalité — pas seulement ses chiffres, mais ses processus, son environnement et ses acteurs. C'est ce regard systémique que j'ai ensuite appliqué en alternance chez Tecmaplast, où j'ai pu analyser en autonomie les enjeux d'une PME industrielle. »</div>
+      <div class="quote-big">«</div>
+      <div class="bilan-text">Cette compétence m'a appris à lire une organisation dans sa globalité — pas seulement ses chiffres, mais ses processus, son environnement et ses acteurs.</div>
+      <div class="bilan-author">— Mélina Hasanovic</div>
     </div>
 
     <!-- NAVIGATION -->
@@ -284,7 +259,32 @@
 
   <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['BUT 1', 'BUT 2', 'BUT 3'],
+        datasets: [
+          { label: 'CE1.01 · Enjeux', data: [30, 60, 88], backgroundColor: '#C17B4A', borderRadius: 6 },
+          { label: 'CE1.02 · Identité', data: [25, 55, 85], backgroundColor: '#D4A017', borderRadius: 6 },
+          { label: 'CE1.03 · Parties prenantes', data: [20, 50, 90], backgroundColor: '#3D2B1F', borderRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#3D2B1F', font: { size: 13 }, usePointStyle: true, padding: 24 } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#3D2B1F', font: { size: 14, weight: '600' } } },
+          y: { beginAtZero: true, max: 100, grid: { color: 'rgba(61,43,31,0.08)' }, ticks: { color: 'rgba(61,43,31,0.5)', font: { size: 12 } } }
+        }
+      }
+    });
+
     function toggleDropdown(el) {
       el.classList.toggle('open');
       el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
@@ -299,4 +299,3 @@
 
 </body>
 </html>
- 
