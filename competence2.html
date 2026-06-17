@@ -122,6 +122,28 @@
     .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
     .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
 
+    /* NUAGE DE MOTS */
+    .cloud-section { background: var(--marron); border-radius: 16px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
+    .cloud-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .cloud-section::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(45,95,107,0.15); border-radius: 50%; }
+    .cloud-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce2); margin-bottom: 2rem; position: relative; z-index: 1; }
+    .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 18px; position: relative; z-index: 1; }
+    .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
+    .w:hover { transform: scale(1.08); }
+    .s1 { font-size: 2rem; }
+    .s2 { font-size: 1.5rem; }
+    .s3 { font-size: 1.1rem; }
+    .s4 { font-size: 0.88rem; }
+    .s5 { font-size: 0.72rem; }
+    .wgold { color: #D4A017; }
+    .wsable { color: #EDE0CE; }
+    .wterra { color: #6FA3B0; }
+    .wmuted { color: rgba(237,224,206,0.5); }
+    .wvmuted { color: rgba(237,224,206,0.3); }
+    .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
+    .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
+    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
+
     /* NAVIGATION */
     .nav-comp { display: flex; justify-content: space-between; }
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(45,95,107,0.12); border: 1px solid rgba(45,95,107,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
@@ -320,6 +342,33 @@
     </div>
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- NUAGE DE MOTS -->
+    <div class="cloud-section">
+      <div class="cloud-label">CE2 · Matières mobilisées</div>
+      <div class="cloud">
+        <span class="w s1 wgold">Comptabilité</span>
+        <span class="w s1 wgold">Contrôle de gestion</span>
+        <span class="w s2 wsable">Mathématiques</span>
+        <span class="w s2 wterra">Outils numériques de gestion</span>
+        <span class="w s2 wgold">Finance</span>
+        <span class="w s3 wgold">Fiscalité</span>
+        <span class="w s3 wterra">Traitement numérique des données</span>
+        <span class="w s3 wterra">Power BI</span>
+        <span class="w s2 wterra">Statistiques</span>
+        <span class="w s4 wterra">SQL</span>
+        <span class="w s4 wterra">Access</span>
+        <span class="w s4 wterra">VBA</span>
+        <span class="w s3 wsable">Modélisation des processus</span>
+        <span class="w s5 wmuted">PPP</span>
+        <span class="w s5 wvmuted">Matski</span>
+      </div>
+      <div class="cloud-legend">
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Comptabilité & finance</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Méthodes & projet</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#6FA3B0;"></div><span>Outils & données</span></div>
+      </div>
+    </div>
 
     <!-- NAVIGATION -->
     <div class="nav-comp">
