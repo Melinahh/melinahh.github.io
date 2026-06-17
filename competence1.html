@@ -102,11 +102,9 @@
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
 
     /* JUSTIFICATION MOTS-CLÉS */
-    .keywords-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px dashed rgba(193,123,74,0.3); }
-    .keyword-pill { border: 2px solid var(--terra); border-radius: 30px; padding: 0.6rem 1.1rem; font-size: 0.78rem; font-weight: 600; color: var(--marron); background: rgba(255,255,255,0.5); }
-    .keyword-arrow { font-size: 1.1rem; color: var(--terra); padding: 0 0.2rem; }
-    .keyword-arrow-final { font-size: 1.1rem; color: var(--gold); padding: 0 0.2rem; }
-    .keyword-pill-final { background: var(--gold); border: 2px solid var(--gold); border-radius: 30px; padding: 0.6rem 1.2rem; font-size: 0.78rem; font-weight: 700; color: var(--marron); }
+    .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
+    .keyword-arrow-in { font-size: 1.6rem; color: var(--terra); flex-shrink: 0; }
+    .keyword-pill-main { border: 2px solid var(--terra); border-radius: 50px; padding: 1.3rem 2.2rem; font-size: 0.95rem; font-weight: 500; color: var(--marron); text-align: center; background: rgba(255,255,255,0.5); line-height: 1.45; }
 
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
@@ -231,13 +229,8 @@
           </div>
           <div class="comp-card-text">J'ai su identifier les enjeux clés à travers la SAE boucherie, mes différents stages, et les différentes entreprises étudiées en cas pratiques. Au début, cette analyse restait assez théorique, mais j'ai ensuite pu l'appliquer de façon concrète et réelle en alternance chez Tecmaplast.</div>
           <div class="keywords-flow">
-            <div class="keyword-pill">SAE boucherie</div>
-            <span class="keyword-arrow">→</span>
-            <div class="keyword-pill">Stages</div>
-            <span class="keyword-arrow">→</span>
-            <div class="keyword-pill">Cas pratiques entreprises</div>
-            <span class="keyword-arrow-final">→</span>
-            <div class="keyword-pill-final">Tecmaplast</div>
+            <span class="keyword-arrow-in">→</span>
+            <div class="keyword-pill-main">Identifier les enjeux fiscaux et sociaux</div>
           </div>
         </div>
       </div>
@@ -372,9 +365,9 @@
       data: {
         labels: ['BUT 1', 'BUT 2', 'BUT 3'],
         datasets: [
-          { label: 'CE1.01 · Enjeux', data: [30, 60, 88], backgroundColor: '#C17B4A', borderRadius: 6 },
-          { label: 'CE1.02 · Identité', data: [25, 55, 85], backgroundColor: '#D4A017', borderRadius: 6 },
-          { label: 'CE1.03 · Parties prenantes', data: [20, 50, 90], backgroundColor: '#3D2B1F', borderRadius: 6 }
+          { label: 'CE1.01 · Enjeux', data: [65, 78, 85], backgroundColor: '#C17B4A', borderRadius: 6 },
+          { label: 'CE1.02 · Identité', data: [65, 78, 85], backgroundColor: '#D4A017', borderRadius: 6 },
+          { label: 'CE1.03 · Parties prenantes', data: [65, 78, 85], backgroundColor: '#3D2B1F', borderRadius: 6 }
         ]
       },
       options: {
