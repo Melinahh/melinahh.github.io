@@ -64,7 +64,7 @@
     .sep-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
     /* QUI SUIS-JE DEVENUE EN 3 ANS */
-    .reflexif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .reflexif-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
     .reflexif-card { background: var(--marron); border-radius: 14px; padding: 2.5rem; position: relative; overflow: hidden; }
     .reflexif-card::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 80px; height: 80px; border: 1px solid rgba(212,160,23,0.15); border-radius: 50%; }
     .reflexif-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: rgba(212,160,23,0.2); line-height: 1; margin-bottom: 0.5rem; }
@@ -109,8 +109,10 @@
     /* LANGUES */
     .lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .lang-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(212,160,23,0.15); border-radius: 12px; padding: 1.4rem 1.6rem; display: flex; align-items: center; gap: 1.2rem; }
-    .lang-flags { font-size: 1.6rem; }
-    .lang-flags.small { font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 3px; }
+    .lang-flags { display: flex; align-items: center; }
+    .lang-flags img { width: 42px; height: 30px; object-fit: cover; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.3); display: block; }
+    .lang-flags.small { display: flex; flex-wrap: wrap; gap: 4px; max-width: 96px; }
+    .lang-flags.small img { width: 22px; height: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
     .lang-info { flex: 1; }
     .lang-name { font-size: 0.88rem; font-weight: 700; color: var(--sable); margin-bottom: 0.3rem; }
     .lang-level { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.35); color: var(--gold); padding: 2px 8px; border-radius: 12px; display: inline-block; }
@@ -188,43 +190,6 @@
   </div>
 
   <div class="content">
-
-    <!-- QUI SUIS-JE DEVENUE EN 3 ANS -->
-    <div>
-      <p class="section-label">Regard réflexif</p>
-      <h2 class="section-title">Qui suis-je devenue en 3 ans ?</h2>
-      <div class="reflexif-grid">
-        <div class="reflexif-card">
-          <div class="reflexif-num">01</div>
-          <div class="reflexif-title">Une professionnelle de la comptabilité</div>
-          <div class="reflexif-text">De l'étudiante qui découvrait le plan comptable à l'alternante qui gère des clôtures en totale autonomie.</div>
-        </div>
-        <div class="reflexif-card">
-          <div class="reflexif-num">02</div>
-          <div class="reflexif-title">Une apprenante sur le terrain</div>
-          <div class="reflexif-text">AdduXi, Motelec, Tecmaplast — 3 entreprises, 3 cultures, une seule trajectoire construite pas à pas.</div>
-        </div>
-        <div class="reflexif-card">
-          <div class="reflexif-num">03</div>
-          <div class="reflexif-title">Forgée par le terrain</div>
-          <div class="reflexif-text">L'alternance et les SAE m'ont appris la rigueur, la gestion de l'imprévu et la réalité du monde professionnel, bien au-delà des cours.</div>
-        </div>
-        <div class="reflexif-card">
-          <div class="reflexif-num">04</div>
-          <div class="reflexif-title">Tournée vers l'avenir</div>
-          <div class="reflexif-text">La comptabilité est ma base. La Supply Chain est ma prochaine étape — une suite logique et assumée.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GRANDE CITATION -->
-    <div class="citation-box">
-      <div class="cit-icon">«</div>
-      <div class="cit-text">Ces trois années m'ont transformée. Pas seulement professionnellement — humainement. J'ai appris à faire confiance à mon analyse, à prendre des initiatives, à travailler avec des professionnels exigeants. Le BUT GEA m'a donné les fondations. Ce que je construis dessus, c'est à moi de le choisir.</div>
-      <div class="cit-author">— Mélina Hasanovic · Juin 2026</div>
-    </div>
-
-    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
     <!-- MES POINTS FORTS -->
     <div>
@@ -386,28 +351,34 @@
           <div class="tech-col-label">Langues</div>
           <div class="lang-grid">
             <div class="lang-card">
-              <div class="lang-flags">🇫🇷</div>
+              <div class="lang-flags"><img src="https://flagcdn.com/w80/fr.png" alt="Drapeau France"></div>
               <div class="lang-info">
                 <div class="lang-name">Français</div>
                 <span class="lang-level">C2</span>
               </div>
             </div>
             <div class="lang-card">
-              <div class="lang-flags small">🇧🇦 🇭🇷 🇷🇸 🇲🇪 🇸🇮</div>
+              <div class="lang-flags small">
+                <img src="https://flagcdn.com/w40/ba.png" alt="Drapeau Bosnie-Herzégovine">
+                <img src="https://flagcdn.com/w40/hr.png" alt="Drapeau Croatie">
+                <img src="https://flagcdn.com/w40/rs.png" alt="Drapeau Serbie">
+                <img src="https://flagcdn.com/w40/me.png" alt="Drapeau Monténégro">
+                <img src="https://flagcdn.com/w40/si.png" alt="Drapeau Slovénie">
+              </div>
               <div class="lang-info">
                 <div class="lang-name">Bosniaque / BCS</div>
                 <span class="lang-level">C2</span>
               </div>
             </div>
             <div class="lang-card">
-              <div class="lang-flags">🇬🇧</div>
+              <div class="lang-flags"><img src="https://flagcdn.com/w80/gb.png" alt="Drapeau Royaume-Uni"></div>
               <div class="lang-info">
                 <div class="lang-name">Anglais</div>
                 <span class="lang-level">B1+</span>
               </div>
             </div>
             <div class="lang-card">
-              <div class="lang-flags">🇩🇪</div>
+              <div class="lang-flags"><img src="https://flagcdn.com/w80/de.png" alt="Drapeau Allemagne"></div>
               <div class="lang-info">
                 <div class="lang-name">Allemand</div>
                 <span class="lang-level">A2</span>
@@ -437,7 +408,6 @@
         <div class="bilan3-card">
           <div class="bilan3-card-title">→ Mes axes de progression</div>
           <div class="bilan3-item"><div class="bilan3-dot terra"></div>Anglais professionnel des affaires</div>
-          <div class="bilan3-item"><div class="bilan3-dot terra"></div>Supply Chain & Logistique</div>
           <div class="bilan3-item"><div class="bilan3-dot terra"></div>Power BI niveau avancé</div>
           <div class="bilan3-item"><div class="bilan3-dot terra"></div>Comptabilité analytique & gestion budgétaire</div>
           <div class="bilan3-item"><div class="bilan3-dot terra"></div>Gestion de projet formalisée</div>
@@ -452,6 +422,38 @@
         <div class="regard-item"><span class="regard-arrow">→</span>Les SAE m'ont appris l'essentiel : travailler en groupe sur la durée, gérer des projets complexes, faire face aux imprévus et livrer malgré les obstacles. Des apprentissages qu'aucun cours magistral ne peut vraiment remplacer.</div>
         <div class="regard-item"><span class="regard-arrow">→</span>Ce BUT m'a fait progresser professionnellement — mais surtout humainement. La Supply Chain est ma prochaine étape : une suite logique, choisie et pleinement assumée.</div>
       </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- QUI SUIS-JE DEVENUE EN 3 ANS -->
+    <div>
+      <p class="section-label">Regard réflexif</p>
+      <h2 class="section-title">Qui suis-je devenue en 3 ans ?</h2>
+      <div class="reflexif-grid">
+        <div class="reflexif-card">
+          <div class="reflexif-num">01</div>
+          <div class="reflexif-title">Une professionnelle de la comptabilité</div>
+          <div class="reflexif-text">De l'étudiante qui découvrait le plan comptable à l'alternante qui gère des clôtures en totale autonomie.</div>
+        </div>
+        <div class="reflexif-card">
+          <div class="reflexif-num">02</div>
+          <div class="reflexif-title">Une apprenante sur le terrain</div>
+          <div class="reflexif-text">AdduXi, Motelec, Tecmaplast — 3 entreprises, 3 cultures, une seule trajectoire construite pas à pas.</div>
+        </div>
+        <div class="reflexif-card">
+          <div class="reflexif-num">03</div>
+          <div class="reflexif-title">Forgée par le terrain</div>
+          <div class="reflexif-text">L'alternance et les SAE m'ont appris la rigueur, la gestion de l'imprévu et la réalité du monde professionnel, bien au-delà des cours.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRANDE CITATION -->
+    <div class="citation-box">
+      <div class="cit-icon">«</div>
+      <div class="cit-text">Ces trois années m'ont transformée. Pas seulement professionnellement — humainement. J'ai appris à faire confiance à mon analyse, à prendre des initiatives, à travailler avec des professionnels exigeants. Le BUT GEA m'a donné les fondations. Ce que je construis dessus, c'est à moi de le choisir.</div>
+      <div class="cit-author">— Mélina Hasanovic · Juin 2026</div>
     </div>
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
