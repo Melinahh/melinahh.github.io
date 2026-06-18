@@ -57,7 +57,6 @@
     /* DÉCO */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
     .deco-circle { position: absolute; border: 1px solid rgba(45,95,107,0.18); border-radius: 50%; pointer-events: none; z-index: 0; }
     .deco-diamond { position: absolute; background: rgba(45,95,107,0.3); transform: rotate(45deg); pointer-events: none; z-index: 0; }
     .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(45,95,107,0.4); border-left: 2px solid rgba(45,95,107,0.4); pointer-events: none; z-index: 0; }
@@ -82,39 +81,52 @@
     .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #6FA3B0; margin-bottom: 0.5rem; }
     .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
-    /* GRAPHIQUE PROGRESSION */
+    /* GRAPHIQUE */
     .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(45,95,107,0.25); padding: 3rem; }
     .chart-wrap { width: 100%; }
     .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
 
-    /* BLOC COMPOSANTE + PREUVES (un bloc complet par composante) */
+    /* BLOC COMPOSANTE */
     .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(45,95,107,0.3); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
     .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(45,95,107,0.25); transform: rotate(45deg); }
-    .composante-top { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
     .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce2); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
-
-    /* COMPOSANTE EN AVANT (titre agrandi + bouton acquis doré) */
     .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
 
-    /* JUSTIFICATION MOTS-CLÉS */
+    /* MOTS-CLÉS */
     .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
     .keyword-arrow-in { font-size: 1.6rem; color: var(--terra); flex-shrink: 0; }
     .keyword-pill-main { border: 2px solid var(--terra); border-radius: 50px; padding: 1.3rem 2.2rem; font-size: 0.95rem; font-weight: 500; color: var(--marron); text-align: center; background: rgba(255,255,255,0.5); line-height: 1.45; }
-    .keywords-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
-    .keyword-row { display: flex; align-items: center; gap: 1.2rem; }
 
+    /* PREUVES */
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
-    .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .proof-slot { background: rgba(255,255,255,0.5); border: 1px dashed rgba(212,160,23,0.4); border-radius: 10px; padding: 1.8rem 1rem; text-align: center; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
-    .proof-slot-icon { font-size: 2rem; opacity: 0.4; }
-    .proof-slot-text { font-size: 0.72rem; color: var(--marron-mid); line-height: 1.5; max-width: 200px; }
 
-    /* CITATION - en gros et visuelle */
+    /* Zone dorée */
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+
+    /* Grilles */
+    .proof-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .proof-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .proof-grid-single { display: grid; grid-template-columns: 1fr; }
+
+    /* Slot image entière */
+    .proof-slot-img { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-slot-img img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .proof-slot-img-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Layout 2 colonnes texte + image */
+    .comp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+    /* Image inline dorée */
+    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+    .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .img-inline-gold-caption { background: var(--marron); padding: 0.5rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
     .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
     .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(212,160,23,0.1); border-radius: 50%; }
@@ -130,16 +142,9 @@
     .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 18px; position: relative; z-index: 1; }
     .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
     .w:hover { transform: scale(1.08); }
-    .s1 { font-size: 2rem; }
-    .s2 { font-size: 1.5rem; }
-    .s3 { font-size: 1.1rem; }
-    .s4 { font-size: 0.88rem; }
-    .s5 { font-size: 0.72rem; }
-    .wgold { color: #D4A017; }
-    .wsable { color: #EDE0CE; }
-    .wterra { color: #6FA3B0; }
-    .wmuted { color: rgba(237,224,206,0.5); }
-    .wvmuted { color: rgba(237,224,206,0.3); }
+    .s1 { font-size: 2rem; } .s2 { font-size: 1.5rem; } .s3 { font-size: 1.1rem; } .s4 { font-size: 0.88rem; } .s5 { font-size: 0.72rem; }
+    .wgold { color: #D4A017; } .wsable { color: #EDE0CE; } .wterra { color: #6FA3B0; }
+    .wmuted { color: rgba(237,224,206,0.5); } .wvmuted { color: rgba(237,224,206,0.3); }
     .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
     .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
     .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
@@ -149,7 +154,12 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(45,95,107,0.12); border: 1px solid rgba(45,95,107,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(45,95,107,0.25); }
 
-    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
+    @media (max-width: 900px) {
+      .comp-two-col { grid-template-columns: 1fr; }
+      .proof-grid-2 { grid-template-columns: 1fr; }
+      .proof-grid-3 { grid-template-columns: 1fr; }
+      .comp-header-row { flex-direction: column; }
+    }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -216,120 +226,119 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 + ses preuves -->
+    <!-- COMPOSANTE 1 — texte gauche, 2 images droite -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">💻</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE2.01</div>
-              <div class="comp-card-title-big">Utiliser efficacement un système d'information de gestion adaptée</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row" style="margin-bottom:1.5rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">💻</span>
+          <div>
+            <div class="comp-card-code">CE2.01</div>
+            <div class="comp-card-title-big">Utiliser efficacement un système d'information de gestion adaptée</div>
           </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-two-col">
+        <div>
           <div class="comp-card-text">J'ai utilisé SAGE pour la gestion comptable, ainsi que les ERP internes propres à chaque structure — SILVER chez Tecmaplast et 4D chez AdduXi. Cette maîtrise de systèmes d'information variés, pour la saisie, les rapprochements bancaires et le suivi des déclarations, m'a permis de gagner en autonomie et en adaptabilité d'une organisation à l'autre.</div>
           <div class="keywords-flow">
             <span class="keyword-arrow-in">→</span>
             <div class="keyword-pill-main">Utiliser un système d'information comptable et un ERP</div>
           </div>
         </div>
-      </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div>
+          <div class="proof-inline-title">Preuves & justification</div>
+          <div class="proof-zone-gold">
+            <div class="proof-grid-2">
+              <div class="proof-slot-img">
+                <img src="navision-4d.png" alt="ERP 4D – AdduXi">
+                <div class="proof-slot-img-caption">ERP 4D · AdduXi</div>
+              </div>
+              <div class="proof-slot-img">
+                <img src="sage-ecritures.png" alt="SAGE – Saisie des écritures · Tecmaplast">
+                <div class="proof-slot-img-caption">SAGE · Tecmaplast</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 + ses preuves -->
+    <!-- COMPOSANTE 2 — texte gauche, image SphinxCampus droite -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🖥️</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE2.02</div>
-              <div class="comp-card-title-big">Utiliser efficacement des outils numériques pertinents</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row" style="margin-bottom:1.5rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🖥️</span>
+          <div>
+            <div class="comp-card-code">CE2.02</div>
+            <div class="comp-card-title-big">Utiliser efficacement des outils numériques pertinents</div>
           </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-two-col">
+        <div>
           <div class="comp-card-text">J'ai mobilisé Excel de façon avancée — tableaux croisés dynamiques, formules conditionnelles — pour mes analyses financières, ainsi que d'autres outils numériques adaptés à chaque mission, en alternance comme dans mes SAE.</div>
         </div>
-      </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div>
+          <div class="proof-inline-title">Preuves & justification</div>
+          <div class="proof-zone-gold">
+            <div class="proof-grid-single">
+              <div class="proof-slot-img">
+                <img src="sphinx-campus.png" alt="SphinxCampus – Enquête SAE">
+                <div class="proof-slot-img-caption">SphinxCampus · Enquête SAE</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 + ses preuves -->
+    <!-- COMPOSANTE 3 — texte puis 3 images en dessous -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📈</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE2.03</div>
-              <div class="comp-card-title-big">Interpréter pertinemment les données quantitatives et qualitatives</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row" style="margin-bottom:1rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📈</span>
+          <div>
+            <div class="comp-card-code">CE2.03</div>
+            <div class="comp-card-title-big">Interpréter pertinemment les données quantitatives et qualitatives</div>
           </div>
-          <div class="comp-card-text">J'ai su croiser des données chiffrées — ratios financiers, soldes intermédiaires de gestion — et des éléments qualitatifs issus du terrain pour construire des recommandations argumentées, que ce soit lors de mes SAE ou dans mes missions en alternance.</div>
         </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
       </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="comp-card-text">J'ai su croiser des données chiffrées — ratios financiers, soldes intermédiaires de gestion — et des éléments qualitatifs issus du terrain pour construire des recommandations argumentées, que ce soit lors de mes SAE ou dans mes missions en alternance.</div>
+      <div class="proof-inline-title" style="margin-top:2rem;">Preuves & justification</div>
+      <div class="proof-zone-gold">
+        <div class="proof-grid-3">
+          <div class="proof-slot-img">
+            <img src="graphique-hotelerie.png" alt="Graphiques chiffre d'affaires hôtellerie">
+            <div class="proof-slot-img-caption">Évolution CA hôtellerie · SAE Griffon d'Or</div>
+          </div>
+          <div class="proof-slot-img">
+            <img src="texte-hotelerie.png" alt="Analyse qualitative hôtellerie">
+            <div class="proof-slot-img-caption">Analyse qualitative · Secteur hôtelier</div>
+          </div>
+          <div class="proof-slot-img">
+            <img src="taux-valeur-ajoutee.png" alt="Taux de valeur ajoutée et délai règlements clients">
+            <div class="proof-slot-img-caption">Ratios financiers · Taux de valeur ajoutée</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 + ses preuves -->
+    <!-- COMPOSANTE 4 — rien dans les preuves -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📋</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE2.04</div>
-              <div class="comp-card-title-big">Respecter rigoureusement les contraintes et les processus de l'organisation</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row" style="margin-bottom:1rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📋</span>
+          <div>
+            <div class="comp-card-code">CE2.04</div>
+            <div class="comp-card-title-big">Respecter rigoureusement les contraintes et les processus de l'organisation</div>
           </div>
-          <div class="comp-card-text">J'ai appris à m'adapter aux procédures internes propres à chaque structure rencontrée, en respectant les délais, les normes comptables et les processus de validation spécifiques à chaque organisation.</div>
         </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
       </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-      </div>
+      <div class="comp-card-text">J'ai appris à m'adapter aux procédures internes propres à chaque structure rencontrée, en respectant les délais, les normes comptables et les processus de validation spécifiques à chaque organisation.</div>
     </div>
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
