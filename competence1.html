@@ -88,13 +88,17 @@
     /* BLOC COMPOSANTE */
     .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.25); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
     .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(212,160,23,0.2); transform: rotate(45deg); }
-    .composante-top { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
     .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
     .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
+
+    /* LAYOUT DEUX COLONNES texte + image (CE1.01) */
+    .comp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .comp-text-col { display: flex; flex-direction: column; gap: 0; }
+    .comp-img-col { display: flex; flex-direction: column; }
 
     /* MOTS-CLÉS */
     .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
@@ -106,19 +110,18 @@
     /* PREUVES */
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
-
-    /* Zone de preuves avec contour doré */
     .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
-
-    /* Grille 2 colonnes */
     .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    /* Grille 1 colonne (image seule pleine largeur) */
-    .proof-inline-grid-single { display: grid; grid-template-columns: 1fr; gap: 1rem; }
 
-    /* Image entière sans rogner */
+    /* Image entière */
     .proof-slot-img { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
     .proof-slot-img img { width: 100%; display: block; object-fit: contain; background: #fff; }
     .proof-slot-img-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Image inline (à côté du texte) */
+    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+    .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .img-inline-gold-caption { background: var(--marron); padding: 0.5rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -148,7 +151,11 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(212,160,23,0.25); }
 
-    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
+    @media (max-width: 900px) {
+      .comp-two-col { grid-template-columns: 1fr; }
+      .proof-inline-grid { grid-template-columns: 1fr; }
+      .comp-header-row { flex-direction: column; }
+    }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -215,62 +222,59 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — 1 image pleine largeur, pas de placeholder -->
+    <!-- COMPOSANTE 1 — texte gauche, image droite -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📊</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE1.01</div>
-              <div class="comp-card-title-big">Déterminer les enjeux sociaux économiques et juridiques</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row" style="margin-bottom:1.5rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📊</span>
+          <div>
+            <div class="comp-card-code">CE1.01</div>
+            <div class="comp-card-title-big">Déterminer les enjeux sociaux économiques et juridiques</div>
           </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-two-col">
+        <div class="comp-text-col">
           <div class="comp-card-text">J'ai su identifier les enjeux clés à travers la SAE boucherie, mes différents stages, et les différentes entreprises étudiées en cas pratiques. Au début, cette analyse restait assez théorique, mais j'ai ensuite pu l'appliquer de façon concrète et réelle en alternance chez Tecmaplast.</div>
           <div class="keywords-flow">
             <span class="keyword-arrow-in">→</span>
             <div class="keyword-pill-main">Identifier les enjeux fiscaux et sociaux</div>
           </div>
         </div>
-      </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-zone-gold">
-        <div class="proof-inline-grid-single">
-          <div class="proof-slot-img">
+        <div class="comp-img-col">
+          <div class="img-inline-gold">
             <img src="pestel.png" alt="Analyse PESTEL – SAE Boucherie">
-            <div class="proof-slot-img-caption">Analyse PESTEL · SAE Boucherie</div>
+            <div class="img-inline-gold-caption">Analyse PESTEL · SAE Boucherie</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 — 2 images côte à côte, pas de placeholder -->
+    <!-- COMPOSANTE 2 — 2 images côte à côte -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🏢</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE1.02</div>
-              <div class="comp-card-title-big">Identifier les différentes dimensions de l'identité et des caractéristiques de l'organisation</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
-          </div>
-          <div class="comp-card-text">J'ai appris à décrypter l'identité d'une organisation au-delà de ses chiffres : sa structure juridique, son organigramme, sa culture. De la TPE artisanale rencontrée en SAE à la PME industrielle Tecmaplast en alternance, j'ai su adapter mon regard à chaque contexte, en comprenant ce qui fait l'identité propre de chaque structure.</div>
-          <div class="keywords-list">
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Analyser la structure juridique</div>
-            </div>
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Décrire l'identité de l'organisation</div>
-            </div>
+      <div class="comp-header-row" style="margin-bottom:1rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🏢</span>
+          <div>
+            <div class="comp-card-code">CE1.02</div>
+            <div class="comp-card-title-big">Identifier les différentes dimensions de l'identité et des caractéristiques de l'organisation</div>
           </div>
         </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
       </div>
-      <div class="proof-inline-title">Preuves & justification</div>
+      <div class="comp-card-text" style="margin-bottom:0;">J'ai appris à décrypter l'identité d'une organisation au-delà de ses chiffres : sa structure juridique, son organigramme, sa culture. De la TPE artisanale rencontrée en SAE à la PME industrielle Tecmaplast en alternance, j'ai su adapter mon regard à chaque contexte, en comprenant ce qui fait l'identité propre de chaque structure.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Analyser la structure juridique</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Décrire l'identité de l'organisation</div>
+        </div>
+      </div>
+      <div class="proof-inline-title" style="margin-top:2rem;">Preuves & justification</div>
       <div class="proof-zone-gold">
         <div class="proof-inline-grid">
           <div class="proof-slot-img">
@@ -287,22 +291,20 @@
 
     <!-- COMPOSANTE 3 — rien dans les preuves -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🤝</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE1.03</div>
-              <div class="comp-card-title-big">Présenter de manière détaillée les attentes de chacun des acteurs et partenaires de l'organisation</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
-          </div>
-          <div class="comp-card-text">À partir de résultats d'enquêtes et d'analyses terrain, j'ai dégagé des axes d'amélioration concrets en tenant compte des attentes de chaque partie prenante — clients, fournisseurs, collaborateurs.</div>
-          <div class="keywords-flow">
-            <span class="keyword-arrow-in">→</span>
-            <div class="keyword-pill-main">Recueillir les besoins des parties prenantes</div>
+      <div class="comp-header-row" style="margin-bottom:1rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🤝</span>
+          <div>
+            <div class="comp-card-code">CE1.03</div>
+            <div class="comp-card-title-big">Présenter de manière détaillée les attentes de chacun des acteurs et partenaires de l'organisation</div>
           </div>
         </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">À partir de résultats d'enquêtes et d'analyses terrain, j'ai dégagé des axes d'amélioration concrets en tenant compte des attentes de chaque partie prenante — clients, fournisseurs, collaborateurs.</div>
+      <div class="keywords-flow">
+        <span class="keyword-arrow-in">→</span>
+        <div class="keyword-pill-main">Recueillir les besoins des parties prenantes</div>
       </div>
     </div>
 
