@@ -107,30 +107,17 @@
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
 
-    /* Zone de preuves avec contour doré quand il y a des images */
-    .proof-zone-gold {
-      border: 2.5px solid var(--gold);
-      border-radius: 14px;
-      padding: 1.2rem;
-      background: rgba(212,160,23,0.03);
-      box-shadow: 0 0 0 6px rgba(212,160,23,0.08);
-    }
+    /* Zone de preuves avec contour doré */
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
 
+    /* Grille 2 colonnes */
     .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    /* Grille 1 colonne (image seule pleine largeur) */
+    .proof-inline-grid-single { display: grid; grid-template-columns: 1fr; gap: 1rem; }
 
-    /* Slot vide (placeholder) */
-    .proof-slot { background: rgba(255,255,255,0.5); border: 1px dashed rgba(212,160,23,0.4); border-radius: 10px; padding: 1.8rem 1rem; text-align: center; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
-    .proof-slot-icon { font-size: 2rem; opacity: 0.4; }
-    .proof-slot-text { font-size: 0.72rem; color: var(--marron-mid); line-height: 1.5; max-width: 200px; }
-
-    /* Slot avec image — affichage complet, pas rogné */
+    /* Image entière sans rogner */
     .proof-slot-img { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
-    .proof-slot-img img {
-      width: 100%;
-      display: block;
-      object-fit: contain; /* image entière, pas rognée */
-      background: #fff;
-    }
+    .proof-slot-img img { width: 100%; display: block; object-fit: contain; background: #fff; }
     .proof-slot-img-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
@@ -228,7 +215,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — image PESTEL avec contour doré -->
+    <!-- COMPOSANTE 1 — 1 image pleine largeur, pas de placeholder -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">📊</span>
@@ -249,20 +236,16 @@
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-inline-grid">
+        <div class="proof-inline-grid-single">
           <div class="proof-slot-img">
-            <img src="pestel.png" alt="Analyse PESTEL – SAE boucherie">
+            <img src="pestel.png" alt="Analyse PESTEL – SAE Boucherie">
             <div class="proof-slot-img-caption">Analyse PESTEL · SAE Boucherie</div>
-          </div>
-          <div class="proof-slot">
-            <div class="proof-slot-icon">🖼️</div>
-            <div class="proof-slot-text">Insère ici une deuxième capture liée à cette composante</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 — images Motelec avec contour doré -->
+    <!-- COMPOSANTE 2 — 2 images côte à côte, pas de placeholder -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">🏢</span>
@@ -302,7 +285,7 @@
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 — placeholder simple (pas de contour doré) -->
+    <!-- COMPOSANTE 3 — rien dans les preuves -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">🤝</span>
@@ -319,17 +302,6 @@
             <span class="keyword-arrow-in">→</span>
             <div class="keyword-pill-main">Recueillir les besoins des parties prenantes</div>
           </div>
-        </div>
-      </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
         </div>
       </div>
     </div>
