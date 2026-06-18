@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CE5 – Évaluer l'activité de l'organisation – Mélina Hasanovic</title>
+  <title>CE4 – Produire l'information comptable – Mélina Hasanovic</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,8 +14,8 @@
       --marron-mid: #6B4C35;
       --gold: #D4A017;
       --terra: #C17B4A;
-      --ce5: #5E3A7A;
-      --ce5-light: #B89CC6;
+      --ce4: #4A6B3A;
+      --ce4-light: #A8C49A;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Raleway', sans-serif; background-color: var(--sable); color: var(--marron); min-height: 100vh; font-size: 16px; }
@@ -44,63 +44,63 @@
     /* HEADER */
     .page-header { padding: 8rem 4rem 5rem; background: var(--marron); position: relative; overflow: hidden; text-align: center; }
     .page-header::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
-    .h-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; top: -100px; right: -100px; }
-    .h-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(94,58,122,0.3); border-radius: 50%; top: -40px; right: -40px; }
-    .h-circle-3 { position: absolute; width: 200px; height: 200px; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; bottom: -80px; left: -80px; }
-    .h-diamond { position: absolute; width: 14px; height: 14px; background: rgba(94,58,122,0.45); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
-    .h-corner-tl { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(94,58,122,0.45); border-left: 2px solid rgba(94,58,122,0.45); }
-    .h-corner-tr { position: absolute; top: 80px; right: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(94,58,122,0.45); border-right: 2px solid rgba(94,58,122,0.45); }
-    .page-header p.tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce5-light); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .page-header p.tag::before, .page-header p.tag::after { content: ''; width: 40px; height: 1px; background: rgba(184,156,198,0.5); }
+    .h-circle-1 { position: absolute; width: 300px; height: 300px; border: 1px solid rgba(74,107,58,0.2); border-radius: 50%; top: -100px; right: -100px; }
+    .h-circle-2 { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(74,107,58,0.28); border-radius: 50%; top: -40px; right: -40px; }
+    .h-circle-3 { position: absolute; width: 200px; height: 200px; border: 1px solid rgba(74,107,58,0.2); border-radius: 50%; bottom: -80px; left: -80px; }
+    .h-diamond { position: absolute; width: 14px; height: 14px; background: rgba(74,107,58,0.45); transform: rotate(45deg); bottom: 2rem; right: 6rem; }
+    .h-corner-tl { position: absolute; top: 80px; left: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(74,107,58,0.45); border-left: 2px solid rgba(74,107,58,0.45); }
+    .h-corner-tr { position: absolute; top: 80px; right: 2rem; width: 28px; height: 28px; border-top: 2px solid rgba(74,107,58,0.45); border-right: 2px solid rgba(74,107,58,0.45); }
+    .page-header p.tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce4-light); margin-bottom: 0.8rem; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .page-header p.tag::before, .page-header p.tag::after { content: ''; width: 40px; height: 1px; background: rgba(168,196,154,0.5); }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--sable); position: relative; z-index: 1; line-height: 1.2; }
-    .header-line { width: 60px; height: 3px; background: var(--ce5); margin: 1.5rem auto 0; position: relative; z-index: 1; }
+    .header-line { width: 60px; height: 3px; background: var(--ce4); margin: 1.5rem auto 0; position: relative; z-index: 1; }
 
     /* DÉCO */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
     .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
-    .deco-circle { position: absolute; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; pointer-events: none; z-index: 0; }
-    .deco-diamond { position: absolute; background: rgba(94,58,122,0.3); transform: rotate(45deg); pointer-events: none; z-index: 0; }
-    .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(94,58,122,0.4); border-left: 2px solid rgba(94,58,122,0.4); pointer-events: none; z-index: 0; }
-    .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(94,58,122,0.4); border-right: 2px solid rgba(94,58,122,0.4); pointer-events: none; z-index: 0; }
+    .deco-circle { position: absolute; border: 1px solid rgba(74,107,58,0.22); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .deco-diamond { position: absolute; background: rgba(74,107,58,0.32); transform: rotate(45deg); pointer-events: none; z-index: 0; }
+    .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(74,107,58,0.4); border-left: 2px solid rgba(74,107,58,0.4); pointer-events: none; z-index: 0; }
+    .corner-br { position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 2px solid rgba(74,107,58,0.4); border-right: 2px solid rgba(74,107,58,0.4); pointer-events: none; z-index: 0; }
     .deco-inner { position: relative; z-index: 1; }
 
     .content { max-width: 1400px; margin: 0 auto; padding: 5rem 3rem 6rem; display: flex; flex-direction: column; gap: 3rem; }
 
-    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce5); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(94,58,122,0.25); }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce4); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(74,107,58,0.25); }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--marron); margin-bottom: 2rem; line-height: 1.2; }
 
     .sep { display: flex; align-items: center; gap: 1.5rem; }
     .sep-line { flex: 1; height: 1px; background: rgba(61,43,31,0.1); }
-    .sep-diamond { width: 8px; height: 8px; background: var(--ce5); transform: rotate(45deg); }
+    .sep-diamond { width: 8px; height: 8px; background: var(--ce4); transform: rotate(45deg); }
 
     /* BLOC PRINCIPAL */
     .comp-bloc { display: flex; align-items: center; gap: 2rem; background: var(--marron); border-radius: 14px; padding: 3rem; position: relative; overflow: hidden; }
-    .comp-bloc::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 140px; height: 140px; border: 1px solid rgba(94,58,122,0.3); border-radius: 50%; }
-    .comp-number { width: 70px; height: 70px; background: var(--ce5); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--sable); flex-shrink: 0; position: relative; z-index: 1; }
+    .comp-bloc::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 140px; height: 140px; border: 1px solid rgba(74,107,58,0.3); border-radius: 50%; }
+    .comp-number { width: 70px; height: 70px; background: var(--ce4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--sable); flex-shrink: 0; position: relative; z-index: 1; }
     .comp-info { flex: 1; position: relative; z-index: 1; }
-    .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce5-light); margin-bottom: 0.5rem; }
+    .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce4-light); margin-bottom: 0.5rem; }
     .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
     /* GRAPHIQUE PROGRESSION */
-    .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(94,58,122,0.3); padding: 3rem; }
+    .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(74,107,58,0.3); padding: 3rem; }
     .chart-wrap { width: 100%; }
     .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
 
     /* BLOC COMPOSANTE + PREUVES */
-    .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(94,58,122,0.3); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
-    .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(94,58,122,0.25); transform: rotate(45deg); }
+    .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(74,107,58,0.35); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
+    .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(74,107,58,0.3); transform: rotate(45deg); }
     .composante-top { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
-    .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce5); margin-bottom: 0.4rem; }
+    .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce4); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
 
     /* COMPOSANTE EN AVANT */
     .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
-    .en-cours-badge { background: rgba(94,58,122,0.1); border: 1.5px solid rgba(94,58,122,0.4); color: var(--ce5); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
+    .en-cours-badge { background: rgba(74,107,58,0.1); border: 1.5px solid rgba(74,107,58,0.4); color: var(--ce4); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
 
     /* JUSTIFICATION MOTS-CLÉS */
     .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
@@ -119,7 +119,7 @@
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
     .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
-    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; }
+    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(74,107,58,0.25); border-radius: 50%; }
     .quote-big { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; position: relative; z-index: 1; }
     .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
     .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
@@ -127,8 +127,8 @@
     /* NUAGE DE MOTS */
     .cloud-section { background: var(--marron); border-radius: 16px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
     .cloud-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
-    .cloud-section::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; }
-    .cloud-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce5-light); margin-bottom: 2rem; position: relative; z-index: 1; }
+    .cloud-section::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(74,107,58,0.25); border-radius: 50%; }
+    .cloud-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce4-light); margin-bottom: 2rem; position: relative; z-index: 1; }
     .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 18px; position: relative; z-index: 1; }
     .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
     .w:hover { transform: scale(1.08); }
@@ -139,7 +139,7 @@
     .s5 { font-size: 0.72rem; }
     .wgold { color: #D4A017; }
     .wsable { color: #EDE0CE; }
-    .wterra { color: #B89CC6; }
+    .wterra { color: #A8C49A; }
     .wmuted { color: rgba(237,224,206,0.5); }
     .wvmuted { color: rgba(237,224,206,0.3); }
     .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
@@ -148,8 +148,8 @@
 
     /* NAVIGATION */
     .nav-comp { display: flex; justify-content: space-between; }
-    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(94,58,122,0.1); border: 1px solid rgba(94,58,122,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
-    .nav-comp a:hover { background: rgba(94,58,122,0.22); }
+    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(74,107,58,0.12); border: 1px solid rgba(74,107,58,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
+    .nav-comp a:hover { background: rgba(74,107,58,0.25); }
 
     @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
 
@@ -169,8 +169,8 @@
           <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
           <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
           <a href="competence3.html"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
-          <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
-          <a href="competence5.html" class="active"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
+          <a href="competence4.html" class="active"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
         </div>
       </li>
       <li><a href="bilan.html">Bilan</a></li>
@@ -185,8 +185,8 @@
     <div class="h-diamond"></div>
     <div class="h-corner-tl"></div>
     <div class="h-corner-tr"></div>
-    <p class="tag">Compétence 5</p>
-    <h1>Évaluer l'activité de l'organisation</h1>
+    <p class="tag">Compétence 4</p>
+    <h1>Produire l'information comptable, fiscale et sociale de l'organisation</h1>
     <div class="header-line"></div>
   </div>
 
@@ -194,10 +194,10 @@
 
     <!-- BLOC PRINCIPAL -->
     <div class="comp-bloc">
-      <div class="comp-number">5</div>
+      <div class="comp-number">4</div>
       <div class="comp-info">
-        <p class="comp-label">Compétence CE5</p>
-        <h2 class="comp-name">Évaluer l'activité de l'organisation</h2>
+        <p class="comp-label">Compétence CE4</p>
+        <h2 class="comp-name">Produire l'information comptable, fiscale et sociale de l'organisation</h2>
       </div>
     </div>
 
@@ -221,16 +221,16 @@
     <!-- COMPOSANTE 1 — ACQUIS -->
     <div class="composante-block">
       <div class="composante-top">
-        <span class="comp-card-icon">🔎</span>
+        <span class="comp-card-icon">📒</span>
         <div style="flex:1;">
           <div class="comp-header-row">
             <div>
-              <div class="comp-card-code">CE5.01</div>
-              <div class="comp-card-title-big">Identifier les points forts et les points faibles de l'organisation aussi bien en termes d'activité que de structure financière</div>
+              <div class="comp-card-code">CE4.01</div>
+              <div class="comp-card-title-big">Traiter et contrôler l'ensemble des opérations de comptabilité générale et de comptabilité approfondie en conformité avec les règles comptables, fiscales et sociales et dans le respect des normes professionnelles</div>
             </div>
             <div class="acquis-badge-gold">✓ Acquis</div>
           </div>
-          <div class="comp-card-text">J'ai mené des analyses financières complètes en m'appuyant sur les soldes intermédiaires de gestion, les ratios de structure et de rentabilité, et les bilans fonctionnels. En alternance chez Tecmaplast comme dans mes SAE, j'ai su repérer les forces et les vulnérabilités d'une organisation pour en faire une synthèse argumentée.</div>
+          <div class="comp-card-text">En alternance chez Tecmaplast, j'ai traité et contrôlé les opérations courantes de comptabilité générale — saisies, lettrage, rapprochements bancaires — dans le respect des règles comptables, fiscales et sociales et des normes professionnelles en vigueur.</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
@@ -249,16 +249,16 @@
     <!-- COMPOSANTE 2 — EN COURS -->
     <div class="composante-block">
       <div class="composante-top">
-        <span class="comp-card-icon">📐</span>
+        <span class="comp-card-icon">🧾</span>
         <div style="flex:1;">
           <div class="comp-header-row">
             <div>
-              <div class="comp-card-code">CE5.02</div>
-              <div class="comp-card-title-big">Mesurer la rentabilité d'un investissement</div>
+              <div class="comp-card-code">CE4.02</div>
+              <div class="comp-card-title-big">Distinguer les différents acteurs de la comptabilité et leur environnement réglementaire</div>
             </div>
             <div class="en-cours-badge">⏳ En cours</div>
           </div>
-          <div class="comp-card-text">J'ai abordé les outils de mesure de la rentabilité d'un investissement — VAN, TRI, délai de récupération — notamment en cours de finance. C'est une compétence que j'ai commencé à appliquer sur des cas pratiques mais que je continue à développer pour l'intégrer pleinement dans mes analyses.</div>
+          <div class="comp-card-text">J'ai commencé à identifier le rôle des différents acteurs de la chaîne comptable — expert-comptable, commissaire aux comptes, administration fiscale — et à mieux comprendre leur environnement réglementaire. C'est une compétence que je continue à approfondir.</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
@@ -277,16 +277,16 @@
     <!-- COMPOSANTE 3 — EN COURS -->
     <div class="composante-block">
       <div class="composante-top">
-        <span class="comp-card-icon">📅</span>
+        <span class="comp-card-icon">🔍</span>
         <div style="flex:1;">
           <div class="comp-header-row">
             <div>
-              <div class="comp-card-code">CE5.03</div>
-              <div class="comp-card-title-big">Réaliser des prévisions au niveau de l'activité, de la trésorerie et du patrimoine dans une optique de financement de l'organisation</div>
+              <div class="comp-card-code">CE4.03</div>
+              <div class="comp-card-title-big">Prendre en charge la révision comptable en contrôlant les différents cycles de l'organisation</div>
             </div>
             <div class="en-cours-badge">⏳ En cours</div>
           </div>
-          <div class="comp-card-text">J'ai travaillé sur des exercices de prévision d'activité et de trésorerie dans le cadre de mes cours, en construisant des budgets prévisionnels et des plans de financement. Cette compétence est encore en développement, notamment pour ce qui concerne la dimension patrimoine.</div>
+          <div class="comp-card-text">J'ai abordé les principes de la révision comptable et le contrôle des cycles en cours de formation. J'ai pu en appliquer certains aspects en alternance, notamment sur les cycles achats et trésorerie, mais cette compétence reste en cours de développement.</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
@@ -309,12 +309,12 @@
         <div style="flex:1;">
           <div class="comp-header-row">
             <div>
-              <div class="comp-card-code">CE5.04</div>
-              <div class="comp-card-title-big">Mettre en place une comptabilité analytique et une gestion budgétaire</div>
+              <div class="comp-card-code">CE4.04</div>
+              <div class="comp-card-title-big">Établir les comptes annuels à l'aide des outils de digitalisation</div>
             </div>
             <div class="en-cours-badge">⏳ En cours</div>
           </div>
-          <div class="comp-card-text">J'ai découvert les fondements de la comptabilité analytique et de la gestion budgétaire en cours de contrôle de gestion — centres de coûts, méthodes d'imputation, suivi des écarts. Je continue à approfondir cette compétence, notamment à travers mes missions en alternance chez Tecmaplast.</div>
+          <div class="comp-card-text">J'ai découvert les bases de l'établissement des comptes annuels en cours, sans encore avoir eu l'occasion de les mettre pleinement en pratique. C'est une compétence que je suis en train d'acquérir progressivement.</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
@@ -335,7 +335,7 @@
     <!-- CITATION BILAN -->
     <div class="bilan-box">
       <div class="quote-big">«</div>
-      <div class="bilan-text">Cette compétence me projette vers l'avenir : évaluer une organisation, c'est comprendre d'où elle vient pour mieux anticiper où elle va.</div>
+      <div class="bilan-text">Cette compétence m'a permis de comprendre que la fiabilité des comptes repose autant sur la rigueur des contrôles que sur la maîtrise des outils numériques.</div>
       <div class="bilan-author">— Mélina Hasanovic</div>
     </div>
 
@@ -343,36 +343,38 @@
 
     <!-- NUAGE DE MOTS -->
     <div class="cloud-section">
-      <div class="cloud-label">CE5 · Matières mobilisées</div>
+      <div class="cloud-label">CE4 · Matières mobilisées</div>
       <div class="cloud">
-        <span class="w s1 wgold">Finance</span>
-        <span class="w s1 wsable">Contrôle de gestion</span>
-        <span class="w s2 wgold">Analyse financière</span>
-        <span class="w s2 wterra">Comptabilité analytique</span>
-        <span class="w s2 wsable">Gestion budgétaire</span>
-        <span class="w s3 wgold">SIG</span>
-        <span class="w s3 wterra">Ratios financiers</span>
-        <span class="w s3 wsable">Bilan fonctionnel</span>
-        <span class="w s3 wgold">Investissement</span>
-        <span class="w s4 wterra">VAN · TRI</span>
-        <span class="w s4 wsable">Budget prévisionnel</span>
-        <span class="w s4 wmuted">Plan de financement</span>
-        <span class="w s4 wterra">Trésorerie prévisionnelle</span>
-        <span class="w s5 wvmuted">Centres de coûts</span>
-        <span class="w s5 wmuted">Écarts budgétaires</span>
-        <span class="w s5 wvmuted">Rentabilité</span>
+        <span class="w s1 wgold">Fiscalité</span>
+        <span class="w s1 wsable">Comptabilité approfondie</span>
+        <span class="w s2 wgold">Comptabilité générale</span>
+        <span class="w s2 wterra">TVA</span>
+        <span class="w s2 wsable">Bilan</span>
+        <span class="w s2 wgold">Compte de résultat</span>
+        <span class="w s3 wterra">Paie & charges sociales</span>
+        <span class="w s3 wsable">Révision comptable</span>
+        <span class="w s3 wgold">Amortissements</span>
+        <span class="w s3 wsable">Annexes comptables</span>
+        <span class="w s3 wterra">Clôture des comptes</span>
+        <span class="w s4 wmuted">Impôt sur les sociétés</span>
+        <span class="w s4 wsable">Provisions</span>
+        <span class="w s4 wterra">Cycles achats & ventes</span>
+        <span class="w s4 wmuted">Trésorerie</span>
+        <span class="w s5 wvmuted">Normes professionnelles</span>
+        <span class="w s5 wmuted">Digitalisation comptable</span>
+        <span class="w s5 wvmuted">Lettrage</span>
       </div>
       <div class="cloud-legend">
-        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Finance & analyse</span></div>
-        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & pilotage</span></div>
-        <div class="leg"><div class="leg-dot" style="background:#B89CC6;"></div><span>Outils & méthodes</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Fiscalité & comptes</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Comptabilité générale</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#A8C49A;"></div><span>Cycles & contrôle</span></div>
       </div>
     </div>
 
     <!-- NAVIGATION -->
     <div class="nav-comp">
-      <a href="competence4.html">← CE4 · Produire l'information comptable</a>
-      <a href="bilan.html">Bilan →</a>
+      <a href="competence3.html">← CE3 · Piloter les parties prenantes</a>
+      <a href="competence5.html">CE5 · Evaluer l'activité →</a>
     </div>
 
   </div>
@@ -387,10 +389,10 @@
       data: {
         labels: ['BUT 2', 'BUT 3'],
         datasets: [
-          { label: 'CE5.01 · Points forts & faibles', data: [55, 75], backgroundColor: '#5E3A7A', borderRadius: 6 },
-          { label: 'CE5.02 · Rentabilité investissement', data: [40, 60], backgroundColor: '#D4A017', borderRadius: 6 },
-          { label: 'CE5.03 · Prévisions', data: [40, 60], backgroundColor: '#3D2B1F', borderRadius: 6 },
-          { label: 'CE5.04 · Compta analytique & budget', data: [40, 60], backgroundColor: '#B89CC6', borderRadius: 6 }
+          { label: 'CE4.01 · Compta générale & approfondie', data: [60, 76], backgroundColor: '#4A6B3A', borderRadius: 6 },
+          { label: 'CE4.02 · Acteurs & réglementation', data: [50, 65], backgroundColor: '#D4A017', borderRadius: 6 },
+          { label: 'CE4.03 · Révision comptable', data: [50, 65], backgroundColor: '#3D2B1F', borderRadius: 6 },
+          { label: 'CE4.04 · Comptes annuels & digitalisation', data: [45, 60], backgroundColor: '#A8C49A', borderRadius: 6 }
         ]
       },
       options: {
