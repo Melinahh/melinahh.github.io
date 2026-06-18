@@ -80,7 +80,7 @@
     .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
     .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
-    /* GRAPHIQUE PROGRESSION */
+    /* GRAPHIQUE */
     .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(212,160,23,0.2); padding: 3rem; }
     .chart-wrap { width: 100%; }
     .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
@@ -92,8 +92,6 @@
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
     .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
-
-    /* COMPOSANTE EN AVANT */
     .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
@@ -108,6 +106,16 @@
     /* PREUVES */
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
+
+    /* Zone de preuves avec contour doré quand il y a des images */
+    .proof-zone-gold {
+      border: 2.5px solid var(--gold);
+      border-radius: 14px;
+      padding: 1.2rem;
+      background: rgba(212,160,23,0.03);
+      box-shadow: 0 0 0 6px rgba(212,160,23,0.08);
+    }
+
     .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
     /* Slot vide (placeholder) */
@@ -115,11 +123,15 @@
     .proof-slot-icon { font-size: 2rem; opacity: 0.4; }
     .proof-slot-text { font-size: 0.72rem; color: var(--marron-mid); line-height: 1.5; max-width: 200px; }
 
-    /* Slot avec image réelle — contour doré */
-    .proof-slot-img { border: 2px solid var(--gold); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 0 0 4px rgba(212,160,23,0.12); transition: box-shadow 0.2s; }
-    .proof-slot-img:hover { box-shadow: 0 0 0 6px rgba(212,160,23,0.22); }
-    .proof-slot-img img { width: 100%; display: block; object-fit: cover; max-height: 320px; }
-    .proof-slot-img-caption { background: var(--marron); padding: 0.6rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+    /* Slot avec image — affichage complet, pas rogné */
+    .proof-slot-img { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-slot-img img {
+      width: 100%;
+      display: block;
+      object-fit: contain; /* image entière, pas rognée */
+      background: #fff;
+    }
+    .proof-slot-img-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -216,7 +228,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 + image PESTEL -->
+    <!-- COMPOSANTE 1 — image PESTEL avec contour doré -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">📊</span>
@@ -236,19 +248,21 @@
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot-img">
-          <img src="pestel.png" alt="Analyse PESTEL – SAE boucherie">
-          <div class="proof-slot-img-caption">Analyse PESTEL · SAE Boucherie</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une deuxième capture liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-inline-grid">
+          <div class="proof-slot-img">
+            <img src="pestel.png" alt="Analyse PESTEL – SAE boucherie">
+            <div class="proof-slot-img-caption">Analyse PESTEL · SAE Boucherie</div>
+          </div>
+          <div class="proof-slot">
+            <div class="proof-slot-icon">🖼️</div>
+            <div class="proof-slot-text">Insère ici une deuxième capture liée à cette composante</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 + images Motelec -->
+    <!-- COMPOSANTE 2 — images Motelec avec contour doré -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">🏢</span>
@@ -274,19 +288,21 @@
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot-img">
-          <img src="tableau-caracterisation.png" alt="Tableau de caractérisation – Motelec Industrie">
-          <div class="proof-slot-img-caption">Tableau de caractérisation · Motelec Industrie</div>
-        </div>
-        <div class="proof-slot-img">
-          <img src="texte-sarl.png" alt="Analyse juridique – Structure SARL">
-          <div class="proof-slot-img-caption">Analyse juridique · Structure SARL</div>
+      <div class="proof-zone-gold">
+        <div class="proof-inline-grid">
+          <div class="proof-slot-img">
+            <img src="tableau-caracterisation.png" alt="Tableau de caractérisation – Motelec Industrie">
+            <div class="proof-slot-img-caption">Tableau de caractérisation · Motelec Industrie</div>
+          </div>
+          <div class="proof-slot-img">
+            <img src="texte-sarl.png" alt="Analyse juridique – Structure SARL">
+            <div class="proof-slot-img-caption">Analyse juridique · Structure SARL</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 + placeholder -->
+    <!-- COMPOSANTE 3 — placeholder simple (pas de contour doré) -->
     <div class="composante-block">
       <div class="composante-top">
         <span class="comp-card-icon">🤝</span>
