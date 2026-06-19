@@ -108,10 +108,18 @@
     /* PREUVES */
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
-    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
-    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.5rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+
+    /* Images compactes, centrées, taille limitée mais lisibles */
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; max-width: 560px; width: 100%; }
     .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
-    .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+    .proof-full-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Variante : texte à côté de l'image (pour 1 seule preuve) */
+    .comp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); max-width: 460px; margin: 0 auto; }
+    .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .img-inline-gold-caption { background: var(--marron); padding: 0.5rem 1rem; font-size: 0.68rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -148,7 +156,10 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(94,58,122,0.1); border: 1px solid rgba(94,58,122,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(94,58,122,0.22); }
 
-    @media (max-width: 900px) { .comp-header-row { flex-direction: column; } }
+    @media (max-width: 900px) {
+      .comp-header-row { flex-direction: column; }
+      .comp-two-col { grid-template-columns: 1fr; }
+    }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -215,7 +226,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — ACQUIS, bulles + 3 images -->
+    <!-- COMPOSANTE 1 — ACQUIS, bulles + 3 images compactes -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -280,7 +291,7 @@
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 — EN COURS, bulles + 2 images -->
+    <!-- COMPOSANTE 3 — EN COURS, bulles + 2 images compactes -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -316,7 +327,7 @@
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 — EN COURS, bulles + 3 images SAE IPAJE -->
+    <!-- COMPOSANTE 4 — EN COURS, bulles + 3 images compactes SAE IPAJE -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
