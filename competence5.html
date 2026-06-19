@@ -58,7 +58,6 @@
     /* DÉCO */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
     .deco-circle { position: absolute; border: 1px solid rgba(94,58,122,0.2); border-radius: 50%; pointer-events: none; z-index: 0; }
     .deco-diamond { position: absolute; background: rgba(94,58,122,0.3); transform: rotate(45deg); pointer-events: none; z-index: 0; }
     .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(94,58,122,0.4); border-left: 2px solid rgba(94,58,122,0.4); pointer-events: none; z-index: 0; }
@@ -83,38 +82,36 @@
     .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce5-light); margin-bottom: 0.5rem; }
     .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
-    /* GRAPHIQUE PROGRESSION */
+    /* GRAPHIQUE */
     .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(94,58,122,0.3); padding: 3rem; }
     .chart-wrap { width: 100%; }
     .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
 
-    /* BLOC COMPOSANTE + PREUVES */
+    /* BLOC COMPOSANTE */
     .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(94,58,122,0.3); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
     .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(94,58,122,0.25); transform: rotate(45deg); }
-    .composante-top { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
     .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce5); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
-
-    /* COMPOSANTE EN AVANT */
-    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
+    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.2rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
     .en-cours-badge { background: rgba(94,58,122,0.1); border: 1.5px solid rgba(94,58,122,0.4); color: var(--ce5); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
 
-    /* JUSTIFICATION MOTS-CLÉS */
+    /* MOTS-CLÉS */
     .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
     .keyword-arrow-in { font-size: 1.6rem; color: var(--terra); flex-shrink: 0; }
     .keyword-pill-main { border: 2px solid var(--terra); border-radius: 50px; padding: 1.3rem 2.2rem; font-size: 0.95rem; font-weight: 500; color: var(--marron); text-align: center; background: rgba(255,255,255,0.5); line-height: 1.45; }
     .keywords-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
     .keyword-row { display: flex; align-items: center; gap: 1.2rem; }
 
-    .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+    /* PREUVES */
+    .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
-    .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .proof-slot { background: rgba(255,255,255,0.5); border: 1px dashed rgba(212,160,23,0.4); border-radius: 10px; padding: 1.8rem 1rem; text-align: center; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
-    .proof-slot-icon { font-size: 2rem; opacity: 0.4; }
-    .proof-slot-text { font-size: 0.72rem; color: var(--marron-mid); line-height: 1.5; max-width: 200px; }
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -151,7 +148,7 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(94,58,122,0.1); border: 1px solid rgba(94,58,122,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(94,58,122,0.22); }
 
-    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
+    @media (max-width: 900px) { .comp-header-row { flex-direction: column; } }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -218,114 +215,143 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — ACQUIS -->
+    <!-- COMPOSANTE 1 — ACQUIS, bulles + 3 images -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🔎</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE5.01</div>
-              <div class="comp-card-title-big">Identifier les points forts et les points faibles de l'organisation aussi bien en termes d'activité que de structure financière</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🔎</span>
+          <div>
+            <div class="comp-card-code">CE5.01</div>
+            <div class="comp-card-title-big">Identifier les points forts et les points faibles de l'organisation aussi bien en termes d'activité que de structure financière</div>
           </div>
-          <div class="comp-card-text">J'ai mené des analyses financières complètes en m'appuyant sur les soldes intermédiaires de gestion, les ratios de structure et de rentabilité, et les bilans fonctionnels. En alternance chez Tecmaplast comme dans mes SAE, j'ai su repérer les forces et les vulnérabilités d'une organisation pour en faire une synthèse argumentée.</div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">J'ai mené des analyses financières complètes en m'appuyant sur les soldes intermédiaires de gestion, les ratios de structure et de rentabilité, et les bilans fonctionnels. En alternance chez Tecmaplast comme dans mes SAE, j'ai su repérer les forces et les vulnérabilités d'une organisation pour en faire une synthèse argumentée.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Analyser les soldes intermédiaires de gestion</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Identifier les points forts/faibles de la structure financière</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="sig-reprise-boulangerie.png" alt="SIG – Reprise d'une boulangerie · SAE La Doua">
+          <div class="proof-full-caption">Soldes intermédiaires de gestion · SAE La Doua, reprise d'une boulangerie</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="proof-full">
+          <img src="ratios-doua.png" alt="Ratios financiers · SAE La Doua">
+          <div class="proof-full-caption">Ratios financiers (endettement, rentabilité) · SAE La Doua</div>
+        </div>
+        <div class="proof-full">
+          <img src="caf-banque-france.png" alt="Capacité d'autofinancement · SAE Banque de France">
+          <div class="proof-full-caption">Capacité d'autofinancement (CAF) · SAE Banque de France</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 — EN COURS -->
+    <!-- COMPOSANTE 2 — EN COURS, bulles uniquement -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📐</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE5.02</div>
-              <div class="comp-card-title-big">Mesurer la rentabilité d'un investissement</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📐</span>
+          <div>
+            <div class="comp-card-code">CE5.02</div>
+            <div class="comp-card-title-big">Mesurer la rentabilité d'un investissement</div>
           </div>
-          <div class="comp-card-text">J'ai abordé les outils de mesure de la rentabilité d'un investissement — VAN, TRI, délai de récupération — notamment en cours de finance. C'est une compétence que j'ai commencé à appliquer sur des cas pratiques mais que je continue à développer pour l'intégrer pleinement dans mes analyses.</div>
         </div>
+        <div class="en-cours-badge">⏳ En cours</div>
       </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="comp-card-text">J'ai abordé les outils de mesure de la rentabilité d'un investissement — VAN, TRI, délai de récupération — notamment en cours de finance. C'est une compétence que j'ai commencé à appliquer sur des cas pratiques mais que je continue à développer pour l'intégrer pleinement dans mes analyses.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Calculer des ratios</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Comparer plusieurs scénarios d'investissement</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 — EN COURS -->
+    <!-- COMPOSANTE 3 — EN COURS, bulles + 2 images -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📅</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE5.03</div>
-              <div class="comp-card-title-big">Réaliser des prévisions au niveau de l'activité, de la trésorerie et du patrimoine dans une optique de financement de l'organisation</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📅</span>
+          <div>
+            <div class="comp-card-code">CE5.03</div>
+            <div class="comp-card-title-big">Réaliser des prévisions au niveau de l'activité, de la trésorerie et du patrimoine dans une optique de financement de l'organisation</div>
           </div>
-          <div class="comp-card-text">J'ai travaillé sur des exercices de prévision d'activité et de trésorerie dans le cadre de mes cours, en construisant des budgets prévisionnels et des plans de financement. Cette compétence est encore en développement, notamment pour ce qui concerne la dimension patrimoine.</div>
+        </div>
+        <div class="en-cours-badge">⏳ En cours</div>
+      </div>
+      <div class="comp-card-text">J'ai travaillé sur des exercices de prévision d'activité et de trésorerie dans le cadre de mes cours, en construisant des budgets prévisionnels et des plans de financement. Cette compétence est encore en développement, notamment pour ce qui concerne la dimension patrimoine.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Établir un budget de trésorerie</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Faire des prévisions d'activité</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="budget-tresorerie-doua.png" alt="Budget de trésorerie – SAE La Doua, reprise boulangerie">
+          <div class="proof-full-caption">Budget de trésorerie · SAE La Doua, reprise d'une boulangerie</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="proof-full">
+          <img src="prevision-ca-doua.png" alt="Prévision augmentation du chiffre d'affaires – SAE La Doua">
+          <div class="proof-full-caption">Prévision d'augmentation du CA · SAE La Doua</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 — EN COURS -->
+    <!-- COMPOSANTE 4 — EN COURS, bulles + 3 images SAE IPAJE -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📊</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE5.04</div>
-              <div class="comp-card-title-big">Mettre en place une comptabilité analytique et une gestion budgétaire</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📊</span>
+          <div>
+            <div class="comp-card-code">CE5.04</div>
+            <div class="comp-card-title-big">Mettre en place une comptabilité analytique et une gestion budgétaire</div>
           </div>
-          <div class="comp-card-text">J'ai découvert les fondements de la comptabilité analytique et de la gestion budgétaire en cours de contrôle de gestion — centres de coûts, méthodes d'imputation, suivi des écarts. Je continue à approfondir cette compétence, notamment à travers mes missions en alternance chez Tecmaplast.</div>
+        </div>
+        <div class="en-cours-badge">⏳ En cours</div>
+      </div>
+      <div class="comp-card-text">J'ai découvert les fondements de la comptabilité analytique et de la gestion budgétaire en cours de contrôle de gestion — centres de coûts, méthodes d'imputation, suivi des écarts. Je continue à approfondir cette compétence, notamment à travers mes missions en alternance chez Tecmaplast.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Mettre en place un suivi budgétaire</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Calculer les coûts de revient par centre d'analyse ou par produit</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="suivi-budgetaire-ipaje.png" alt="Mise en place du suivi budgétaire – SAE IPAJE / Choose">
+          <div class="proof-full-caption">Mise en place du suivi budgétaire · SAE IPAJE / Choose</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="proof-full">
+          <img src="analyse-produit-ipaje.png" alt="Analyse du résultat d'exploitation par produit – SAE IPAJE / Choose">
+          <div class="proof-full-caption">Analyse du résultat d'exploitation par produit · SAE IPAJE / Choose</div>
+        </div>
+        <div class="proof-full">
+          <img src="analyse-zone-ipaje.png" alt="Analyse du résultat d'exploitation par couple produit/zone – SAE IPAJE / Choose">
+          <div class="proof-full-caption">Analyse du résultat d'exploitation par couple produit/zone · SAE IPAJE / Choose</div>
         </div>
       </div>
     </div>
@@ -342,35 +368,35 @@
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
     <!-- NUAGE DE MOTS -->
-<div class="cloud-section">
-  <div class="cloud-label">CE5 · Matières mobilisées</div>
-  <div class="cloud">
-    <span class="w s1 wgold">Finance</span>
-    <span class="w s1 wsable">Diagnostic financier</span>
-    <span class="w s1 wgold">Contrôle de gestion</span>
-    <span class="w s2 wsable">Résultat et performance</span>
-    <span class="w s2 wterra">BFR</span>
-    <span class="w s2 wsable">Droit des affaires</span>
-    <span class="w s3 wterra">Droit pénal</span>
-    <span class="w s3 wgold">Analyse financière</span>
-    <span class="w s3 wsable">Ratios financiers</span>
-    <span class="w s3 wterra">SIG</span>
-    <span class="w s4 wsable">Bilan fonctionnel</span>
-    <span class="w s4 wgold">Rentabilité</span>
-    <span class="w s4 wterra">Trésorerie</span>
-    <span class="w s4 wmuted">Budget prévisionnel</span>
-    <span class="w s4 wsable">VAN · TRI</span>
-    <span class="w s5 wmuted">Comptabilité analytique</span>
-    <span class="w s5 wvmuted">Gestion budgétaire</span>
-    <span class="w s5 wmuted">Écarts budgétaires</span>
-    <span class="w s5 wvmuted">Plan de financement</span>
-  </div>
-  <div class="cloud-legend">
-    <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Finance & performance</span></div>
-    <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & droit</span></div>
-    <div class="leg"><div class="leg-dot" style="background:#B89CC6;"></div><span>Outils & méthodes</span></div>
-  </div>
-</div>
+    <div class="cloud-section">
+      <div class="cloud-label">CE5 · Matières mobilisées</div>
+      <div class="cloud">
+        <span class="w s1 wgold">Finance</span>
+        <span class="w s1 wsable">Diagnostic financier</span>
+        <span class="w s1 wgold">Contrôle de gestion</span>
+        <span class="w s2 wsable">Résultat et performance</span>
+        <span class="w s2 wterra">BFR</span>
+        <span class="w s2 wsable">Droit des affaires</span>
+        <span class="w s3 wterra">Droit pénal</span>
+        <span class="w s3 wgold">Analyse financière</span>
+        <span class="w s3 wsable">Ratios financiers</span>
+        <span class="w s3 wterra">SIG</span>
+        <span class="w s4 wsable">Bilan fonctionnel</span>
+        <span class="w s4 wgold">Rentabilité</span>
+        <span class="w s4 wterra">Trésorerie</span>
+        <span class="w s4 wmuted">Budget prévisionnel</span>
+        <span class="w s4 wsable">VAN · TRI</span>
+        <span class="w s5 wmuted">Comptabilité analytique</span>
+        <span class="w s5 wvmuted">Gestion budgétaire</span>
+        <span class="w s5 wmuted">Écarts budgétaires</span>
+        <span class="w s5 wvmuted">Plan de financement</span>
+      </div>
+      <div class="cloud-legend">
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Finance & performance</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Gestion & droit</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#B89CC6;"></div><span>Outils & méthodes</span></div>
+      </div>
+    </div>
 
     <!-- NAVIGATION -->
     <div class="nav-comp">
@@ -389,12 +415,12 @@
       type: 'bar',
       data: {
         labels: ['BUT 2', 'BUT 3'],
-       datasets: [
-  { label: 'CE5.01 · Points forts & faibles', data: [60, 80], backgroundColor: '#5E3A7A', borderRadius: 6 },
-  { label: 'CE5.02 · Rentabilité investissement', data: [50, 70], backgroundColor: '#D4A017', borderRadius: 6 },
-  { label: 'CE5.03 · Prévisions', data: [50, 70], backgroundColor: '#3D2B1F', borderRadius: 6 },
-  { label: 'CE5.04 · Compta analytique & budget', data: [50, 70], backgroundColor: '#B89CC6', borderRadius: 6 }
-]
+        datasets: [
+          { label: 'CE5.01 · Points forts & faibles', data: [60, 80], backgroundColor: '#5E3A7A', borderRadius: 6 },
+          { label: 'CE5.02 · Rentabilité investissement', data: [50, 70], backgroundColor: '#D4A017', borderRadius: 6 },
+          { label: 'CE5.03 · Prévisions', data: [50, 70], backgroundColor: '#3D2B1F', borderRadius: 6 },
+          { label: 'CE5.04 · Compta analytique & budget', data: [50, 70], backgroundColor: '#B89CC6', borderRadius: 6 }
+        ]
       },
       options: {
         responsive: true,
