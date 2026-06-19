@@ -105,18 +105,13 @@
     .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
 
-    /* Zone dorée */
-    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+    /* Zone dorée englobant toutes les preuves d'une composante */
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
 
-    /* Grilles pleine largeur */
-    .proof-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-    .proof-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-    .proof-grid-single { display: grid; grid-template-columns: 1fr; }
-
-    /* Image entière lisible */
-    .proof-slot-img { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
-    .proof-slot-img img { width: 100%; display: block; object-fit: contain; background: #fff; min-height: 200px; }
-    .proof-slot-img-caption { background: var(--marron); padding: 0.6rem 1rem; font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+    /* Chaque image occupe TOUTE la largeur disponible, empilée verticalement */
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -146,10 +141,7 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(45,95,107,0.12); border: 1px solid rgba(45,95,107,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(45,95,107,0.25); }
 
-    @media (max-width: 900px) {
-      .proof-grid-2, .proof-grid-3 { grid-template-columns: 1fr; }
-      .comp-header-row { flex-direction: column; }
-    }
+    @media (max-width: 900px) { .comp-header-row { flex-direction: column; } }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -216,7 +208,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — texte puis images en dessous pleine largeur -->
+    <!-- COMPOSANTE 1 — 2 images empilées pleine largeur -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -235,20 +227,18 @@
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-grid-2">
-          <div class="proof-slot-img">
-            <img src="navision-4d.png" alt="ERP 4D – AdduXi">
-            <div class="proof-slot-img-caption">ERP 4D · AdduXi</div>
-          </div>
-          <div class="proof-slot-img">
-            <img src="sage-ecritures.png" alt="SAGE – Saisie des écritures · Tecmaplast">
-            <div class="proof-slot-img-caption">SAGE · Saisie des écritures · Tecmaplast</div>
-          </div>
+        <div class="proof-full">
+          <img src="navision-4d.png" alt="ERP 4D – AdduXi">
+          <div class="proof-full-caption">ERP 4D · AdduXi</div>
+        </div>
+        <div class="proof-full">
+          <img src="sage-ecritures.png" alt="SAGE – Saisie des écritures · Tecmaplast">
+          <div class="proof-full-caption">SAGE · Saisie des écritures · Tecmaplast</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 — texte puis image en dessous pleine largeur -->
+    <!-- COMPOSANTE 2 — 1 image pleine largeur -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -263,16 +253,14 @@
       <div class="comp-card-text">J'ai mobilisé Excel de façon avancée — tableaux croisés dynamiques, formules conditionnelles — pour mes analyses financières, ainsi que d'autres outils numériques adaptés à chaque mission, en alternance comme dans mes SAE.</div>
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-grid-single">
-          <div class="proof-slot-img">
-            <img src="sphinx-campus.png" alt="SphinxCampus – Enquête SAE">
-            <div class="proof-slot-img-caption">SphinxCampus · Enquête SAE</div>
-          </div>
+        <div class="proof-full">
+          <img src="sphinx-campus.png" alt="SphinxCampus – Enquête SAE">
+          <div class="proof-full-caption">SphinxCampus · Enquête SAE</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 — texte puis 3 images en dessous pleine largeur -->
+    <!-- COMPOSANTE 3 — 3 images empilées pleine largeur -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -287,24 +275,22 @@
       <div class="comp-card-text">J'ai su croiser des données chiffrées — ratios financiers, soldes intermédiaires de gestion — et des éléments qualitatifs issus du terrain pour construire des recommandations argumentées, que ce soit lors de mes SAE ou dans mes missions en alternance.</div>
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-grid-3">
-          <div class="proof-slot-img">
-            <img src="graphique-hotelerie.png" alt="Graphiques chiffre d'affaires hôtellerie">
-            <div class="proof-slot-img-caption">Évolution CA hôtellerie · SAE Griffon d'Or</div>
-          </div>
-          <div class="proof-slot-img">
-            <img src="texte-hotelerie.png" alt="Analyse qualitative hôtellerie">
-            <div class="proof-slot-img-caption">Analyse qualitative · Secteur hôtelier</div>
-          </div>
-          <div class="proof-slot-img">
-            <img src="taux-valeur-ajoutee.png" alt="Taux de valeur ajoutée">
-            <div class="proof-slot-img-caption">Ratios financiers · Taux de valeur ajoutée</div>
-          </div>
+        <div class="proof-full">
+          <img src="graphique-hotelerie.png" alt="Graphiques chiffre d'affaires hôtellerie">
+          <div class="proof-full-caption">Évolution CA hôtellerie · SAE Griffon d'Or</div>
+        </div>
+        <div class="proof-full">
+          <img src="texte-hotelerie.png" alt="Analyse qualitative hôtellerie">
+          <div class="proof-full-caption">Analyse qualitative · Secteur hôtelier</div>
+        </div>
+        <div class="proof-full">
+          <img src="taux-valeur-ajoutee.png" alt="Taux de valeur ajoutée">
+          <div class="proof-full-caption">Ratios financiers · Taux de valeur ajoutée</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 — rien dans les preuves -->
+    <!-- COMPOSANTE 4 — rien -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
