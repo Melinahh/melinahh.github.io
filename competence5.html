@@ -110,18 +110,18 @@
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
     .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.5rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
 
-    /* Image seule en bas, centrée, taille modérée */
-    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; max-width: 560px; width: 100%; }
-    .proof-full.large { max-width: 820px; }
+    /* Image seule en bas — taille généreuse */
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; max-width: 700px; width: 100%; }
+    .proof-full.large { max-width: 900px; }
     .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
-    .proof-full-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+    .proof-full-caption { background: var(--marron); padding: 0.6rem 1.1rem; font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
-    /* Layout texte + image(s) côte à côte */
-    .comp-two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: start; margin-bottom: 1rem; }
-    .comp-two-col-imgs { display: flex; flex-direction: column; gap: 1rem; }
-    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+    /* Layout texte + image(s) côte à côte — colonnes égales, images pleine largeur de colonne */
+    .comp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-bottom: 1rem; }
+    .comp-two-col-imgs { display: flex; flex-direction: column; gap: 1.2rem; }
+    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); width: 100%; }
     .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
-    .img-inline-gold-caption { background: var(--marron); padding: 0.5rem 1rem; font-size: 0.68rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+    .img-inline-gold-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
