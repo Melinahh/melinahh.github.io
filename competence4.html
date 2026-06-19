@@ -58,7 +58,6 @@
     /* DÉCO */
     .deco-wrap { position: relative; overflow: hidden; border-radius: 12px; }
     .deco-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,43,31,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(61,43,31,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-    .deco-wrap.dark::before { background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); }
     .deco-circle { position: absolute; border: 1px solid rgba(74,107,58,0.22); border-radius: 50%; pointer-events: none; z-index: 0; }
     .deco-diamond { position: absolute; background: rgba(74,107,58,0.32); transform: rotate(45deg); pointer-events: none; z-index: 0; }
     .corner-tl { position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 2px solid rgba(74,107,58,0.4); border-left: 2px solid rgba(74,107,58,0.4); pointer-events: none; z-index: 0; }
@@ -83,38 +82,48 @@
     .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce4-light); margin-bottom: 0.5rem; }
     .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
 
-    /* GRAPHIQUE PROGRESSION */
+    /* GRAPHIQUE */
     .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(74,107,58,0.3); padding: 3rem; }
     .chart-wrap { width: 100%; }
     .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
 
-    /* BLOC COMPOSANTE + PREUVES */
+    /* BLOC COMPOSANTE */
     .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(74,107,58,0.35); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
     .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(74,107,58,0.3); transform: rotate(45deg); }
-    .composante-top { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem; }
     .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
     .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce4); margin-bottom: 0.4rem; }
     .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
-
-    /* COMPOSANTE EN AVANT */
-    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; }
+    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.2rem; }
     .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
     .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
     .en-cours-badge { background: rgba(74,107,58,0.1); border: 1.5px solid rgba(74,107,58,0.4); color: var(--ce4); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
 
-    /* JUSTIFICATION MOTS-CLÉS */
+    /* MOTS-CLÉS */
     .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
     .keyword-arrow-in { font-size: 1.6rem; color: var(--terra); flex-shrink: 0; }
     .keyword-pill-main { border: 2px solid var(--terra); border-radius: 50px; padding: 1.3rem 2.2rem; font-size: 0.95rem; font-weight: 500; color: var(--marron); text-align: center; background: rgba(255,255,255,0.5); line-height: 1.45; }
     .keywords-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
     .keyword-row { display: flex; align-items: center; gap: 1.2rem; }
 
-    .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+    /* PREUVES */
+    .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
-    .proof-inline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .proof-slot { background: rgba(255,255,255,0.5); border: 1px dashed rgba(212,160,23,0.4); border-radius: 10px; padding: 1.8rem 1rem; text-align: center; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
-    .proof-slot-icon { font-size: 2rem; opacity: 0.4; }
-    .proof-slot-text { font-size: 0.72rem; color: var(--marron-mid); line-height: 1.5; max-width: 200px; }
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Layout texte + image côte à côte (CE4.04) */
+    .comp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); }
+    .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .img-inline-gold-caption { background: var(--marron); padding: 0.5rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Logos cycles (CE4.03) */
+    .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 500px; }
+    .logo-card { background: #fff; border-radius: 12px; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .logo-icon-emoji { font-size: 2.6rem; }
+    .logo-name { font-size: 0.82rem; font-weight: 700; color: var(--marron); letter-spacing: 0.03em; text-align: center; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -151,7 +160,11 @@
     .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(74,107,58,0.12); border: 1px solid rgba(74,107,58,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
     .nav-comp a:hover { background: rgba(74,107,58,0.25); }
 
-    @media (max-width: 900px) { .proof-inline-grid { grid-template-columns: 1fr; } .comp-header-row { flex-direction: column; } }
+    @media (max-width: 900px) {
+      .comp-two-col { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .comp-header-row { flex-direction: column; }
+    }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
   </style>
@@ -218,114 +231,141 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — ACQUIS -->
+    <!-- COMPOSANTE 1 — ACQUIS, bulles + 1 image -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📒</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE4.01</div>
-              <div class="comp-card-title-big">Traiter et contrôler l'ensemble des opérations de comptabilité générale et de comptabilité approfondie en conformité avec les règles comptables, fiscales et sociales et dans le respect des normes professionnelles</div>
-            </div>
-            <div class="acquis-badge-gold">✓ Acquis</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📒</span>
+          <div>
+            <div class="comp-card-code">CE4.01</div>
+            <div class="comp-card-title-big">Traiter et contrôler l'ensemble des opérations de comptabilité générale et de comptabilité approfondie en conformité avec les règles comptables, fiscales et sociales et dans le respect des normes professionnelles</div>
           </div>
-          <div class="comp-card-text">En alternance chez Tecmaplast, j'ai traité et contrôlé les opérations courantes de comptabilité générale — saisies, lettrage, rapprochements bancaires — dans le respect des règles comptables, fiscales et sociales et des normes professionnelles en vigueur.</div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">En alternance chez Tecmaplast, j'ai traité et contrôlé les opérations courantes de comptabilité générale — saisies, lettrage, rapprochements bancaires — dans le respect des règles comptables, fiscales et sociales et des normes professionnelles en vigueur.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Saisir</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Lettrer</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Contrôler les écritures comptables</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="motelec-rapprochement.png" alt="Rapprochement bancaire – Motelec Industrie">
+          <div class="proof-full-caption">Saisie & rapprochement bancaire · Motelec Industrie</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 2 — EN COURS -->
+    <!-- COMPOSANTE 2 — EN COURS, bulles uniquement -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🧾</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE4.02</div>
-              <div class="comp-card-title-big">Distinguer les différents acteurs de la comptabilité et leur environnement réglementaire</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🧾</span>
+          <div>
+            <div class="comp-card-code">CE4.02</div>
+            <div class="comp-card-title-big">Distinguer les différents acteurs de la comptabilité et leur environnement réglementaire</div>
           </div>
-          <div class="comp-card-text">J'ai commencé à identifier le rôle des différents acteurs de la chaîne comptable — expert-comptable, commissaire aux comptes, administration fiscale — et à mieux comprendre leur environnement réglementaire. C'est une compétence que je continue à approfondir.</div>
         </div>
+        <div class="en-cours-badge">⏳ En cours</div>
       </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="comp-card-text">J'ai commencé à identifier le rôle des différents acteurs de la chaîne comptable — expert-comptable, commissaire aux comptes, administration fiscale — et à mieux comprendre leur environnement réglementaire. C'est une compétence que je continue à approfondir.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Identifier les acteurs de la comptabilité</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Comprendre l'environnement réglementaire</div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 3 — EN COURS -->
+    <!-- COMPOSANTE 3 — EN COURS, bulles + logos cycles -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">🔍</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE4.03</div>
-              <div class="comp-card-title-big">Prendre en charge la révision comptable en contrôlant les différents cycles de l'organisation</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🔍</span>
+          <div>
+            <div class="comp-card-code">CE4.03</div>
+            <div class="comp-card-title-big">Prendre en charge la révision comptable en contrôlant les différents cycles de l'organisation</div>
           </div>
-          <div class="comp-card-text">J'ai abordé les principes de la révision comptable et le contrôle des cycles en cours de formation. J'ai pu en appliquer certains aspects en alternance, notamment sur les cycles achats et trésorerie, mais cette compétence reste en cours de développement.</div>
+        </div>
+        <div class="en-cours-badge">⏳ En cours</div>
+      </div>
+      <div class="comp-card-text">J'ai abordé les principes de la révision comptable et le contrôle des cycles en cours de formation. J'ai pu en appliquer certains aspects en alternance, notamment sur les cycles immobilisations et stocks, mais cette compétence reste en cours de développement.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Contrôler les cycles comptables</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Repérer et corriger les anomalies comptables</div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
-        </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="logo-grid">
+          <div class="logo-card">
+            <div class="logo-icon-emoji">🏗️</div>
+            <div class="logo-name">Cycle Immobilisations</div>
+          </div>
+          <div class="logo-card">
+            <div class="logo-icon-emoji">📦</div>
+            <div class="logo-name">Cycle Stocks</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 — EN COURS -->
+    <!-- COMPOSANTE 4 — EN COURS, texte+image côte à côte + 2 images en dessous -->
     <div class="composante-block">
-      <div class="composante-top">
-        <span class="comp-card-icon">📊</span>
-        <div style="flex:1;">
-          <div class="comp-header-row">
-            <div>
-              <div class="comp-card-code">CE4.04</div>
-              <div class="comp-card-title-big">Établir les comptes annuels à l'aide des outils de digitalisation</div>
-            </div>
-            <div class="en-cours-badge">⏳ En cours</div>
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">📊</span>
+          <div>
+            <div class="comp-card-code">CE4.04</div>
+            <div class="comp-card-title-big">Établir les comptes annuels à l'aide des outils de digitalisation</div>
           </div>
+        </div>
+        <div class="en-cours-badge">⏳ En cours</div>
+      </div>
+      <div class="comp-two-col">
+        <div>
           <div class="comp-card-text">J'ai découvert les bases de l'établissement des comptes annuels en cours, sans encore avoir eu l'occasion de les mettre pleinement en pratique. C'est une compétence que je suis en train d'acquérir progressivement.</div>
+          <div class="keywords-flow">
+            <span class="keyword-arrow-in">→</span>
+            <div class="keyword-pill-main">Produire le bilan et le compte de résultat via des outils numériques</div>
+          </div>
+        </div>
+        <div>
+          <div class="img-inline-gold">
+            <img src="resultat-previsionnel-banque-france.png" alt="Compte de résultat prévisionnel – SAE Banque de France">
+            <div class="img-inline-gold-caption">Compte de résultat prévisionnel · SAE Banque de France</div>
+          </div>
         </div>
       </div>
       <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-inline-grid">
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="bilan-ouverture-doua.png" alt="Bilan d'ouverture – SAE à la Doua">
+          <div class="proof-full-caption">Bilan d'ouverture · SAE à la Doua</div>
         </div>
-        <div class="proof-slot">
-          <div class="proof-slot-icon">🖼️</div>
-          <div class="proof-slot-text">Insère ici une capture d'écran liée à cette composante</div>
+        <div class="proof-full">
+          <img src="resultat-doua.png" alt="Compte de résultat – SAE à la Doua">
+          <div class="proof-full-caption">Compte de résultat · SAE à la Doua</div>
         </div>
       </div>
     </div>
