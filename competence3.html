@@ -109,6 +109,7 @@
     .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
     .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
     .proof-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .proof-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
     .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
     .proof-full img { max-width: 100%; height: auto; display: block; object-fit: contain; background: #fff; margin: 0 auto; }
     .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
@@ -157,6 +158,7 @@
 
     @media (max-width: 900px) {
       .proof-grid-3 { grid-template-columns: 1fr; }
+      .proof-grid-4 { grid-template-columns: 1fr 1fr; }
       .logo-grid { grid-template-columns: repeat(2, 1fr); }
       .comp-header-row { flex-direction: column; }
     }
@@ -226,7 +228,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — photo cohésion + bulles -->
+    <!-- COMPOSANTE 1 — bulles + 4 photos (cohésion, BUT1, Strasbourg, GEA'Jouets) -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -249,13 +251,28 @@
           <div class="keyword-pill-main">Favoriser la cohésion dans un groupe</div>
         </div>
       </div>
-     <div class="proof-inline-title">Preuves & justification</div>
-<div class="proof-zone-gold">
-  <div class="proof-full" style="max-width:480px;margin:0 auto;">
-    <img src="photo-cohesion-groupe.png" alt="Sortie de groupe – cohésion entre étudiants">
-    <div class="proof-full-caption">Sortie entre étudiants · Renforcement de la cohésion de groupe</div>
-  </div>
-</div>
+      <div class="proof-inline-title">Preuves & justification</div>
+      <div class="proof-zone-gold">
+        <div class="proof-grid-4">
+          <div class="proof-full">
+            <img src="photo-cohesion-groupe.png" alt="Sortie de groupe – cohésion entre étudiants">
+            <div class="proof-full-caption">Sortie entre étudiants · Renforcement de la cohésion de groupe</div>
+          </div>
+          <div class="proof-full">
+            <img src="But-1.png" alt="Promotion BUT 1 – IUT Lyon 1">
+            <div class="proof-full-caption">Promotion BUT 1 · IUT Lyon 1</div>
+          </div>
+          <div class="proof-full">
+            <img src="photo-parlement.png" alt="Visite du Parlement Européen avec la promotion GEA">
+            <div class="proof-full-caption">Parlement Européen · Strasbourg</div>
+          </div>
+          <div class="proof-full">
+            <img src="collecte-jouets-groupe.png" alt="SAE GEA'Jouets – Équipe avec les jouets collectés">
+            <div class="proof-full-caption">SAE GEA'Jouets · Cohésion d'équipe</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- COMPOSANTE 2 — bulles + 3 photos collecte de jouets -->
     <div class="composante-block">
@@ -348,45 +365,47 @@
     </div>
 
     <!-- COMPOSANTE 4 — colonne gauche (texte+bulles+PESTEL) / colonne droite (SWOT pleine hauteur) -->
-<div class="composante-block">
-  <div class="comp-header-row">
-    <div style="display:flex;gap:1rem;align-items:flex-start;">
-      <span class="comp-card-icon">🎯</span>
-      <div>
-        <div class="comp-card-code">CE3.04</div>
-        <div class="comp-card-title-big">Apprécier la cohérence de la stratégie de l'organisation à l'aide d'outils internes et externes pertinents</div>
+    <div class="composante-block">
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🎯</span>
+          <div>
+            <div class="comp-card-code">CE3.04</div>
+            <div class="comp-card-title-big">Apprécier la cohérence de la stratégie de l'organisation à l'aide d'outils internes et externes pertinents</div>
+          </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
       </div>
-    </div>
-    <div class="acquis-badge-gold">✓ Acquis</div>
-  </div>
 
-  <div style="display:grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: stretch; margin-top: 1.2rem;">
-    <div>
-      <div class="comp-card-text">J'ai mobilisé des outils d'analyse stratégique, comme le PESTEL ou le SWOT, pour évaluer la cohérence entre les choix stratégiques d'une organisation et son environnement interne comme externe.</div>
-      <div class="keywords-list">
-        <div class="keyword-row">
-          <span class="keyword-arrow-in">→</span>
-          <div class="keyword-pill-main">Mobiliser des outils d'analyse stratégique</div>
+      <div style="display:grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: stretch; margin-top: 1.2rem;">
+        <div>
+          <div class="comp-card-text">J'ai mobilisé des outils d'analyse stratégique, comme le PESTEL ou le SWOT, pour évaluer la cohérence entre les choix stratégiques d'une organisation et son environnement interne comme externe.</div>
+          <div class="keywords-list">
+            <div class="keyword-row">
+              <span class="keyword-arrow-in">→</span>
+              <div class="keyword-pill-main">Mobiliser des outils d'analyse stratégique</div>
+            </div>
+            <div class="keyword-row">
+              <span class="keyword-arrow-in">→</span>
+              <div class="keyword-pill-main">Apprécier la cohérence interne et externe</div>
+            </div>
+          </div>
+          <div class="proof-inline-title">Preuves & justification</div>
+          <div class="proof-zone-gold">
+            <div class="proof-full" style="max-width:480px; margin:0 auto;">
+              <img src="pestel-boucherie.png" alt="Analyse PESTEL – SAE Boucherie" style="max-height:400px; width:auto; margin:0 auto;">
+              <div class="proof-full-caption">Analyse PESTEL · SAE Boucherie</div>
+            </div>
+          </div>
         </div>
-        <div class="keyword-row">
-          <span class="keyword-arrow-in">→</span>
-          <div class="keyword-pill-main">Apprécier la cohérence interne et externe</div>
-        </div>
-      </div>
-      <div class="proof-inline-title">Preuves & justification</div>
-      <div class="proof-zone-gold">
-        <div class="proof-full" style="max-width:480px; margin:0 auto;">
-          <img src="pestel-boucherie.png" alt="Analyse PESTEL – SAE Boucherie" style="max-height:400px; width:auto; margin:0 auto;">
-          <div class="proof-full-caption">Analyse PESTEL · SAE Boucherie</div>
+        <div class="proof-full" style="height:100%; display:flex; flex-direction:column;">
+          <img src="swot-motelec.png" alt="SWOT Motelec Industrie" style="width:100%; height:auto; flex:1; object-fit:contain;">
+          <div class="proof-full-caption">SWOT · Motelec Industrie</div>
         </div>
       </div>
     </div>
-    <div class="proof-full" style="height:100%; display:flex; flex-direction:column;">
-      <img src="swot-motelec.png" alt="SWOT Motelec Industrie" style="width:100%; height:auto; flex:1; object-fit:contain;">
-      <div class="proof-full-caption">SWOT · Motelec Industrie</div>
-    </div>
-  </div>
-</div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
     <!-- CITATION BILAN -->
     <div class="bilan-box">
