@@ -77,4 +77,398 @@
     /* BLOC PRINCIPAL */
     .comp-bloc { display: flex; align-items: center; gap: 2rem; background: var(--marron); border-radius: 14px; padding: 3rem; position: relative; overflow: hidden; }
     .comp-bloc::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 140px; height: 140px; border: 1px solid rgba(122,52,66,0.25); border-radius: 50%; }
-    .comp-number { width: 70px; height: 70px; background: var(--ce3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size
+    .comp-number { width: 70px; height: 70px; background: var(--ce3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--sable); flex-shrink: 0; position: relative; z-index: 1; }
+    .comp-info { flex: 1; position: relative; z-index: 1; }
+    .comp-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce3-light); margin-bottom: 0.5rem; }
+    .comp-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--sable); line-height: 1.3; }
+
+    /* GRAPHIQUE */
+    .chart-section { background: rgba(255,255,255,0.4); border: 1px solid rgba(122,52,66,0.3); padding: 3rem; }
+    .chart-wrap { width: 100%; }
+    .chart-wrap canvas { width: 100% !important; height: auto !important; max-height: 380px; }
+
+    /* BLOC COMPOSANTE */
+    .composante-block { background: rgba(255,255,255,0.4); border: 1px solid rgba(122,52,66,0.35); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
+    .composante-block::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 70px; height: 70px; border: 1px solid rgba(122,52,66,0.3); transform: rotate(45deg); }
+    .comp-card-icon { font-size: 3rem; flex-shrink: 0; }
+    .comp-card-code { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ce3); margin-bottom: 0.4rem; }
+    .comp-card-text { font-size: 0.9rem; color: var(--marron-mid); line-height: 1.85; }
+    .comp-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.2rem; }
+    .comp-card-title-big { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--marron); line-height: 1.3; margin-top: 0.3rem; }
+    .acquis-badge-gold { background: var(--gold); color: var(--marron); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
+
+    /* MOTS-CLÉS */
+    .keywords-flow { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
+    .keyword-arrow-in { font-size: 1.6rem; color: var(--terra); flex-shrink: 0; }
+    .keyword-pill-main { border: 2px solid var(--terra); border-radius: 50px; padding: 1.3rem 2.2rem; font-size: 0.95rem; font-weight: 500; color: var(--marron); text-align: center; background: rgba(255,255,255,0.5); line-height: 1.45; }
+    .keywords-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed rgba(193,123,74,0.3); }
+    .keyword-row { display: flex; align-items: center; gap: 1.2rem; }
+
+    /* PREUVES */
+    .proof-inline-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+    .proof-inline-title::after { content: ''; flex: 1; height: 1px; background: rgba(193,123,74,0.25); }
+    .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.2rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; gap: 1.2rem; }
+    .proof-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+    .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
+    .proof-full-caption { background: var(--marron); padding: 0.65rem 1.2rem; font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* LOGOS RÉSEAUX (CE3.03) */
+    .logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .logo-card { background: #fff; border-radius: 12px; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .logo-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 100%; height: 100%; }
+    .logo-name { font-size: 0.78rem; font-weight: 700; color: var(--marron); letter-spacing: 0.04em; }
+
+    /* CITATION */
+    .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
+    .bilan-box::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.02) 1px, transparent 1px); background-size: 30px 30px; }
+    .bilan-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(122,52,66,0.2); border-radius: 50%; }
+    .quote-big { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; position: relative; z-index: 1; }
+    .bilan-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sable); line-height: 1.6; font-style: italic; font-weight: 600; position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .bilan-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 1.5rem; position: relative; z-index: 1; }
+
+    /* NUAGE DE MOTS */
+    .cloud-section { background: var(--marron); border-radius: 16px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
+    .cloud-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(237,224,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(237,224,206,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .cloud-section::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border: 1px solid rgba(122,52,66,0.2); border-radius: 50%; }
+    .cloud-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ce3-light); margin-bottom: 2rem; position: relative; z-index: 1; }
+    .cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 18px; position: relative; z-index: 1; }
+    .w { font-weight: 600; cursor: default; transition: transform 0.2s; }
+    .w:hover { transform: scale(1.08); }
+    .s1 { font-size: 2rem; }
+    .s2 { font-size: 1.5rem; }
+    .s3 { font-size: 1.1rem; }
+    .s4 { font-size: 0.88rem; }
+    .s5 { font-size: 0.72rem; }
+    .wgold { color: #D4A017; }
+    .wsable { color: #EDE0CE; }
+    .wterra { color: #D9A0A8; }
+    .wmuted { color: rgba(237,224,206,0.5); }
+    .wvmuted { color: rgba(237,224,206,0.3); }
+    .cloud-legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(237,224,206,0.1); position: relative; z-index: 1; }
+    .leg { display: flex; align-items: center; gap: 5px; font-size: 0.68rem; color: rgba(237,224,206,0.6); }
+    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+    /* NAVIGATION */
+    .nav-comp { display: flex; justify-content: space-between; }
+    .nav-comp a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marron); background: rgba(122,52,66,0.12); border: 1px solid rgba(122,52,66,0.3); border-radius: 30px; padding: 0.8rem 1.6rem; transition: background 0.2s; }
+    .nav-comp a:hover { background: rgba(122,52,66,0.25); }
+
+    @media (max-width: 900px) {
+      .proof-grid-3 { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: repeat(2, 1fr); }
+      .comp-header-row { flex-direction: column; }
+    }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">M. Hasanovic</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="introduction.html">Introduction</a></li>
+      <li class="dropdown">
+        <span class="dropdown-toggle active" onclick="toggleDropdown(this)">Compétences</span>
+        <div class="dropdown-menu">
+          <a href="competence1.html"><span class="dropdown-menu-num">CE1</span>Analyser les processus</a>
+          <a href="competence2.html"><span class="dropdown-menu-num">CE2</span>Aide à la prise de décision</a>
+          <a href="competence3.html" class="active"><span class="dropdown-menu-num">CE3</span>Piloter les parties prenantes</a>
+          <a href="competence4.html"><span class="dropdown-menu-num">CE4</span>Produire l'information comptable</a>
+          <a href="competence5.html"><span class="dropdown-menu-num">CE5</span>Evaluer l'activité</a>
+        </div>
+      </li>
+      <li><a href="bilan.html">Bilan</a></li>
+      <li><a href="conclusion.html">Conclusion & Remerciements</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="h-circle-1"></div>
+    <div class="h-circle-2"></div>
+    <div class="h-circle-3"></div>
+    <div class="h-diamond"></div>
+    <div class="h-corner-tl"></div>
+    <div class="h-corner-tr"></div>
+    <p class="tag">Compétence 3</p>
+    <h1>Piloter les relations avec les parties prenantes de l'organisation</h1>
+    <div class="header-line"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- BLOC PRINCIPAL -->
+    <div class="comp-bloc">
+      <div class="comp-number">3</div>
+      <div class="comp-info">
+        <p class="comp-label">Compétence CE3</p>
+        <h2 class="comp-name">Piloter les relations avec les parties prenantes de l'organisation</h2>
+      </div>
+    </div>
+
+    <!-- GRAPHIQUE PROGRESSION -->
+    <div class="deco-wrap">
+      <div class="deco-circle" style="width:180px;height:180px;top:-60px;right:-60px;"></div>
+      <div class="deco-diamond" style="width:12px;height:12px;bottom:20px;left:30px;"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="deco-inner chart-section">
+        <p class="section-label">Évolution</p>
+        <h2 class="section-title">Ma progression BUT 1 → BUT 3</h2>
+        <div class="chart-wrap">
+          <canvas id="progressChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- COMPOSANTE 1 — photo cohésion + bulles -->
+    <div class="composante-block">
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🤝</span>
+          <div>
+            <div class="comp-card-code">CE3.01</div>
+            <div class="comp-card-title-big">Mettre en œuvre une démarche favorisant la cohésion de groupe</div>
+          </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">J'ai contribué à instaurer une dynamique de groupe positive, que ce soit lors de mes SAE en équipe ou dans le collectif vécu en alternance chez Tecmaplast, en favorisant l'écoute, l'entraide et une bonne circulation de l'information entre collègues. Pour favoriser cette cohésion, nous avons aussi créé de vrais liens en nous voyant souvent à l'extérieur, ce qui a renforcé la confiance et la solidarité au sein du groupe.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Travailler en équipe</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Favoriser la cohésion dans un groupe</div>
+        </div>
+      </div>
+     <div class="proof-inline-title">Preuves & justification</div>
+<div class="proof-zone-gold">
+  <div class="proof-full" style="max-width:480px;margin:0 auto;">
+    <img src="photo-cohesion-groupe.png" alt="Sortie de groupe – cohésion entre étudiants">
+    <div class="proof-full-caption">Sortie entre étudiants · Renforcement de la cohésion de groupe</div>
+  </div>
+</div>
+
+    <!-- COMPOSANTE 2 — bulles + 3 photos collecte de jouets -->
+    <div class="composante-block">
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">👥</span>
+          <div>
+            <div class="comp-card-code">CE3.02</div>
+            <div class="comp-card-title-big">Participer efficacement à des travaux collectifs ou des projets collaboratifs</div>
+          </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">J'ai pris part activement à de nombreux projets collaboratifs — SAE, business games SCIADO et IPAJE, missions en alternance — en sachant me positionner dans un collectif, répartir les tâches équitablement et tenir mes engagements envers le groupe.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Réaliser un projet collectif</div>
+        </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Contribuer efficacement à un travail de groupe</div>
+        </div>
+      </div>
+      <div class="proof-inline-title">Preuves & justification</div>
+      <div class="proof-zone-gold">
+        <div class="proof-grid-3">
+          <div class="proof-full">
+            <img src="collecte-jouets-groupe.png" alt="SAE GEA'Jouets – Équipe avec les jouets collectés">
+            <div class="proof-full-caption">SAE GEA'Jouets · Équipe au complet</div>
+          </div>
+          <div class="proof-full">
+            <img src="collecte-jouets-detail.png" alt="SAE GEA'Jouets – Détail des jouets collectés">
+            <div class="proof-full-caption">SAE GEA'Jouets · Jouets collectés</div>
+          </div>
+          <div class="proof-full">
+            <img src="collecte-jouets-affiche.png" alt="Affiche Collecte de jouets GEA'Jouets">
+            <div class="proof-full-caption">Affiche officielle · Collecte de jouets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPOSANTE 3 — bulle + logos réseaux -->
+    <div class="composante-block">
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">💬</span>
+          <div>
+            <div class="comp-card-code">CE3.03</div>
+            <div class="comp-card-title-big">Mobiliser des outils et techniques de communication adaptés aux enjeux de l'organisation</div>
+          </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+      <div class="comp-card-text">J'ai adapté mes supports et mon discours selon les interlocuteurs et les enjeux — présentations orales, comptes rendus écrits, échanges avec les différentes parties prenantes — en choisissant à chaque fois l'outil de communication le plus pertinent selon le contexte.</div>
+      <div class="keywords-flow">
+        <span class="keyword-arrow-in">→</span>
+        <div class="keyword-pill-main">Utiliser les différents outils de communication</div>
+      </div>
+      <div class="proof-inline-title">Preuves & justification</div>
+      <div class="proof-zone-gold">
+        <div class="logo-grid">
+          <div class="logo-card">
+            <div class="logo-icon">
+              <svg viewBox="0 0 48 48"><defs><radialGradient id="ig" cx="0.3" cy="1" r="1"><stop offset="0" stop-color="#fdf497"/><stop offset="0.1" stop-color="#fdf497"/><stop offset="0.3" stop-color="#fd5949"/><stop offset="0.6" stop-color="#d6249f"/><stop offset="1" stop-color="#285AEB"/></radialGradient></defs><rect width="48" height="48" rx="11" fill="url(#ig)"/><rect x="13" y="13" width="22" height="22" rx="6" fill="none" stroke="#fff" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="none" stroke="#fff" stroke-width="2.5"/><circle cx="32.5" cy="15.5" r="1.6" fill="#fff"/></svg>
+            </div>
+            <div class="logo-name">Instagram</div>
+          </div>
+          <div class="logo-card">
+            <div class="logo-icon">
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#fff"/><path d="M6 14 L24 26 L42 14" fill="none" stroke="#0078D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="12" width="36" height="24" rx="3" fill="none" stroke="#0078D4" stroke-width="3"/></svg>
+            </div>
+            <div class="logo-name">Outlook</div>
+          </div>
+          <div class="logo-card">
+            <div class="logo-icon">
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#fff"/><rect x="6" y="10" width="20" height="20" rx="3" fill="#5059C9"/><circle cx="33" cy="14" r="5" fill="#5059C9"/><rect x="24" y="22" width="18" height="16" rx="3" fill="#7B83EB"/><circle cx="14" cy="32" r="6" fill="#5059C9"/></svg>
+            </div>
+            <div class="logo-name">Teams</div>
+          </div>
+          <div class="logo-card">
+            <div class="logo-icon">
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#0077B5"/><rect x="8" y="18" width="6" height="22" fill="#fff"/><circle cx="11" cy="11" r="3.5" fill="#fff"/><path d="M20 18h6v3.2c1.3-2 3.6-3.6 7-3.6 6 0 7 4 7 9V40h-6V28.8c0-2.7 0-6.2-3.8-6.2s-4.2 3-4.2 6V40h-6V18z" fill="#fff"/></svg>
+            </div>
+            <div class="logo-name">LinkedIn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPOSANTE 4 — texte/bulles + SWOT à côté, PESTEL en dessous -->
+    <div class="composante-block">
+      <div class="comp-header-row">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span class="comp-card-icon">🎯</span>
+          <div>
+            <div class="comp-card-code">CE3.04</div>
+            <div class="comp-card-title-big">Apprécier la cohérence de la stratégie de l'organisation à l'aide d'outils internes et externes pertinents</div>
+          </div>
+        </div>
+        <div class="acquis-badge-gold">✓ Acquis</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: start; margin-top: 1.2rem;">
+        <div>
+          <div class="comp-card-text">J'ai mobilisé des outils d'analyse stratégique, comme le PESTEL ou le SWOT, pour évaluer la cohérence entre les choix stratégiques d'une organisation et son environnement interne comme externe.</div>
+          <div class="keywords-list">
+            <div class="keyword-row">
+              <span class="keyword-arrow-in">→</span>
+              <div class="keyword-pill-main">Mobiliser des outils d'analyse stratégique</div>
+            </div>
+            <div class="keyword-row">
+              <span class="keyword-arrow-in">→</span>
+              <div class="keyword-pill-main">Apprécier la cohérence interne et externe</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-full" style="align-self:start;">
+          <img src="swot-motelec.png" alt="SWOT Motelec Industrie">
+          <div class="proof-full-caption">SWOT · Motelec Industrie</div>
+        </div>
+      </div>
+
+      <div class="proof-inline-title">Preuves & justification</div>
+      <div class="proof-zone-gold">
+        <div class="proof-full">
+          <img src="pestel-boucherie.png" alt="Analyse PESTEL – SAE Boucherie">
+          <div class="proof-full-caption">Analyse PESTEL · SAE Boucherie</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- CITATION BILAN -->
+    <div class="bilan-box">
+      <div class="quote-big">«</div>
+      <div class="bilan-text">Cette compétence m'a appris que la réussite collective passe autant par les bons outils que par la qualité des relations humaines.</div>
+      <div class="bilan-author">— Mélina Hasanovic</div>
+    </div>
+
+    <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
+
+    <!-- NUAGE DE MOTS -->
+    <div class="cloud-section">
+      <div class="cloud-label">CE3 · Matières mobilisées</div>
+      <div class="cloud">
+        <span class="w s1 wgold">Expression et communication</span>
+        <span class="w s1 wsable">Anglais appliqué aux affaires</span>
+        <span class="w s1 wsable">PPP</span>
+        <span class="w s2 wgold">Outils numériques de communication</span>
+        <span class="w s3 wsable">Outil et pilotage de l'organisation</span>
+        <span class="w s3 wterra">Psychologie sociale</span>
+        <span class="w s3 wgold">Management interculturel</span>
+        <span class="w s4 wterra">Psychologie</span>
+        <span class="w s4 wmuted">Méthode d'enquête</span>
+      </div>
+      <div class="cloud-legend">
+        <div class="leg"><div class="leg-dot" style="background:#D4A017;"></div><span>Communication & langues</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#EDE0CE;"></div><span>Méthodes & projet</span></div>
+        <div class="leg"><div class="leg-dot" style="background:#D9A0A8;"></div><span>Sciences humaines</span></div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-comp">
+      <a href="competence2.html">← CE2 · Aide à la prise de décision</a>
+      <a href="competence4.html">CE4 · Produire l'information comptable →</a>
+    </div>
+
+  </div>
+
+  <footer>Mélina Hasanovic · BUT GEA GC2F · IUT Lyon 1 Bourg-en-Bresse · 2026</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['BUT 1', 'BUT 2', 'BUT 3'],
+        datasets: [
+          { label: 'CE3.01 · Cohésion de groupe', data: [65, 78, 85], backgroundColor: '#7A3442', borderRadius: 6 },
+          { label: 'CE3.02 · Travaux collaboratifs', data: [65, 78, 85], backgroundColor: '#D4A017', borderRadius: 6 },
+          { label: 'CE3.03 · Communication', data: [65, 78, 85], backgroundColor: '#3D2B1F', borderRadius: 6 },
+          { label: 'CE3.04 · Cohérence stratégique', data: [65, 78, 85], backgroundColor: '#D9A0A8', borderRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#3D2B1F', font: { size: 13 }, usePointStyle: true, padding: 24 } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#3D2B1F', font: { size: 14, weight: '600' } } },
+          y: { beginAtZero: true, max: 100, grid: { color: 'rgba(61,43,31,0.08)' }, ticks: { color: 'rgba(61,43,31,0.5)', font: { size: 12 } } }
+        }
+      }
+    });
+
+    function toggleDropdown(el) {
+      el.classList.toggle('open');
+      el.parentElement.querySelector('.dropdown-menu').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>
