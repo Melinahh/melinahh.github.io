@@ -111,8 +111,8 @@
     .proof-zone-gold { border: 2.5px solid var(--gold); border-radius: 14px; padding: 1.5rem; background: rgba(212,160,23,0.03); box-shadow: 0 0 0 6px rgba(212,160,23,0.08); display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
 
     /* Image seule en bas — taille généreuse */
-    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; max-width: 700px; width: 100%; }
-    .proof-full.large { max-width: 900px; }
+    .proof-full { border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #fff; max-width: 880px; width: 100%; }
+    .proof-full.large { max-width: 1100px; }
     .proof-full img { width: 100%; display: block; object-fit: contain; background: #fff; }
     .proof-full-caption { background: var(--marron); padding: 0.6rem 1.1rem; font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
 
@@ -122,6 +122,10 @@
     .img-inline-gold { border: 2.5px solid var(--gold); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 6px rgba(212,160,23,0.08); width: 100%; }
     .img-inline-gold img { width: 100%; display: block; object-fit: contain; background: #fff; }
     .img-inline-gold-caption { background: var(--marron); padding: 0.55rem 1rem; font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-align: center; }
+
+    /* Rangée d'images pleine largeur, placée sous le texte/les bulles */
+    .comp-img-row { display: flex; gap: 1.5rem; margin-top: 1.8rem; }
+    .comp-img-row .img-inline-gold { flex: 1; width: auto; min-width: 0; }
 
     /* CITATION */
     .bilan-box { background: var(--marron); border-radius: 16px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -161,6 +165,7 @@
     @media (max-width: 900px) {
       .comp-header-row { flex-direction: column; }
       .comp-two-col { grid-template-columns: 1fr; }
+      .comp-img-row { flex-direction: column; }
     }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(61,43,31,0.1); font-size: 0.78rem; color: var(--marron-mid); letter-spacing: 0.08em; background: var(--sable-dark); }
@@ -228,7 +233,7 @@
 
     <div class="sep"><div class="sep-line"></div><div class="sep-diamond"></div><div class="sep-line"></div></div>
 
-    <!-- COMPOSANTE 1 — ACQUIS : texte+bulles | ratios+CAF à côté, SIG en bas -->
+    <!-- COMPOSANTE 1 — ACQUIS : texte+bulles en pleine largeur, ratios+CAF côte à côte juste en dessous, SIG en bas -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -241,35 +246,32 @@
         <div class="acquis-badge-gold">✓ Acquis</div>
       </div>
 
-      <div class="comp-two-col">
-        <div>
-          <div class="comp-card-text">J'ai mené des analyses financières complètes en m'appuyant sur les soldes intermédiaires de gestion, les ratios de structure et de rentabilité, et les bilans fonctionnels. En alternance chez Tecmaplast comme dans mes SAE, j'ai su repérer les forces et les vulnérabilités d'une organisation pour en faire une synthèse argumentée.</div>
-          <div class="keywords-list">
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Analyser les soldes intermédiaires de gestion</div>
-            </div>
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Identifier les points forts/faibles de la structure financière</div>
-            </div>
-          </div>
+      <div class="comp-card-text">J'ai mené des analyses financières complètes en m'appuyant sur les soldes intermédiaires de gestion, les ratios de structure et de rentabilité, et les bilans fonctionnels. En alternance chez Tecmaplast comme dans mes SAE, j'ai su repérer les forces et les vulnérabilités d'une organisation pour en faire une synthèse argumentée.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Analyser les soldes intermédiaires de gestion</div>
         </div>
-        <div class="comp-two-col-imgs">
-          <div class="img-inline-gold">
-            <img src="ratios-doua.png" alt="Ratios financiers · SAE La Doua">
-            <div class="img-inline-gold-caption">Ratios financiers · SAE La Doua</div>
-          </div>
-          <div class="img-inline-gold">
-            <img src="caf-banque-france.png" alt="Capacité d'autofinancement · SAE Banque de France">
-            <div class="img-inline-gold-caption">CAF · SAE Banque de France</div>
-          </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Identifier les points forts/faibles de la structure financière</div>
+        </div>
+      </div>
+
+      <div class="comp-img-row">
+        <div class="img-inline-gold">
+          <img src="ratios-doua.png" alt="Ratios financiers · SAE La Doua">
+          <div class="img-inline-gold-caption">Ratios financiers · SAE La Doua</div>
+        </div>
+        <div class="img-inline-gold">
+          <img src="caf-banque-france.png" alt="Capacité d'autofinancement · SAE Banque de France">
+          <div class="img-inline-gold-caption">CAF · SAE Banque de France</div>
         </div>
       </div>
 
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-full">
+        <div class="proof-full large">
           <img src="sig-reprise-boulangerie.png" alt="SIG – Reprise d'une boulangerie · SAE La Doua">
           <div class="proof-full-caption">Soldes intermédiaires de gestion · SAE La Doua, reprise d'une boulangerie</div>
         </div>
@@ -345,7 +347,7 @@
       </div>
     </div>
 
-    <!-- COMPOSANTE 4 — EN COURS : texte+bulles | 2 analyses à côté, suivi budgétaire en bas -->
+    <!-- COMPOSANTE 4 — EN COURS : texte+bulles en pleine largeur, analyse produit + analyse produit/zone côte à côte en dessous, suivi budgétaire en bas -->
     <div class="composante-block">
       <div class="comp-header-row">
         <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -358,35 +360,32 @@
         <div class="en-cours-badge">⏳ En cours</div>
       </div>
 
-      <div class="comp-two-col">
-        <div>
-          <div class="comp-card-text">J'ai découvert les fondements de la comptabilité analytique et de la gestion budgétaire en cours de contrôle de gestion — centres de coûts, méthodes d'imputation, suivi des écarts. Je continue à approfondir cette compétence, notamment à travers mes missions en alternance chez Tecmaplast.</div>
-          <div class="keywords-list">
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Mettre en place un suivi budgétaire</div>
-            </div>
-            <div class="keyword-row">
-              <span class="keyword-arrow-in">→</span>
-              <div class="keyword-pill-main">Calculer les coûts de revient par centre d'analyse ou par produit</div>
-            </div>
-          </div>
+      <div class="comp-card-text">J'ai découvert les fondements de la comptabilité analytique et de la gestion budgétaire en cours de contrôle de gestion — centres de coûts, méthodes d'imputation, suivi des écarts. Je continue à approfondir cette compétence, notamment à travers mes missions en alternance chez Tecmaplast.</div>
+      <div class="keywords-list">
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Mettre en place un suivi budgétaire</div>
         </div>
-        <div class="comp-two-col-imgs">
-          <div class="img-inline-gold">
-            <img src="analyse-produit-ipaje.png" alt="Analyse du résultat d'exploitation par produit – SAE IPAJE / Choose">
-            <div class="img-inline-gold-caption">Analyse par produit · SAE IPAJE / Choose</div>
-          </div>
-          <div class="img-inline-gold">
-            <img src="analyse-zone-ipaje.png" alt="Analyse du résultat d'exploitation par couple produit/zone – SAE IPAJE / Choose">
-            <div class="img-inline-gold-caption">Analyse par produit/zone · SAE IPAJE / Choose</div>
-          </div>
+        <div class="keyword-row">
+          <span class="keyword-arrow-in">→</span>
+          <div class="keyword-pill-main">Calculer les coûts de revient par centre d'analyse ou par produit</div>
+        </div>
+      </div>
+
+      <div class="comp-img-row">
+        <div class="img-inline-gold">
+          <img src="analyse-produit-ipaje.png" alt="Analyse du résultat d'exploitation par produit – SAE IPAJE / Choose">
+          <div class="img-inline-gold-caption">Analyse par produit · SAE IPAJE / Choose</div>
+        </div>
+        <div class="img-inline-gold">
+          <img src="analyse-zone-ipaje.png" alt="Analyse du résultat d'exploitation par couple produit/zone – SAE IPAJE / Choose">
+          <div class="img-inline-gold-caption">Analyse par produit/zone · SAE IPAJE / Choose</div>
         </div>
       </div>
 
       <div class="proof-inline-title">Preuves & justification</div>
       <div class="proof-zone-gold">
-        <div class="proof-full">
+        <div class="proof-full large">
           <img src="suivi-budgetaire-ipaje.png" alt="Mise en place du suivi budgétaire – SAE IPAJE / Choose">
           <div class="proof-full-caption">Mise en place du suivi budgétaire · SAE IPAJE / Choose</div>
         </div>
